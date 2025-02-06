@@ -19,5 +19,4 @@ public class Base {
     public static void base_after(){
         driver.quit();
     }
-
 }

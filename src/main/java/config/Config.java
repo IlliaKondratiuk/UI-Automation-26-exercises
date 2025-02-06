@@ -5,9 +5,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Config {
-    static WebDriver driv;
-    static public WebDriver create(Drivers driver) {
 
+    static WebDriver driv;
+
+    static public WebDriver create(Drivers driver) {
         switch (driver) {
             case CHROME -> createchrome();
             case CHROME_INC -> createchromeinc();
@@ -35,5 +36,4 @@ public class Config {
 
         driv = new ChromeDriver(options);
     }
-
 }

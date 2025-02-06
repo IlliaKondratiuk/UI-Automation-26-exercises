@@ -1,6 +1,6 @@
 // This is "Test Case 1: Register User" from the Automation Exercise page at automationexercise.com
 // Steps 1(Launch browser) and 2(Navigate to url) have been skipped as common sense
-// Using JUnit 4.13.2, designing with Page Object Model and generating an Allure() report
+// Using JUnit 4.13.2, designing with Page Object Model and generating an Allure(2.32.2) report
 // The user data is parsed from src\resources\ex1values
 
 import config.Base;
@@ -9,15 +9,15 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import pages.*;
-
 import java.util.ResourceBundle;
 
 @Epic("User management")
 @Feature("Login functionality")
 @Story("User creates and deletes an account with valid data")
 @Severity(SeverityLevel.CRITICAL)
-public class RegisterDeleteUserTest extends Base
+public class Exercise1RegisterUserTest extends Base
 {
+
     private static MainPage mainPage;
     private static LoginPage loginPage;
     private static SignupPage signupPage;
@@ -64,15 +64,12 @@ public class RegisterDeleteUserTest extends Base
         signupPage.selectDOB(values.getString("dobday"), values.getString("dobmon"), values.getString("dobyear"));
 
         //Step 8. Select checkbox 'Sign up for our newsletter!'
-
         signupPage.checkNewsletterBox();
 
         //Step 9. Select checkbox 'Receive special offers from our partners!'
-
         signupPage.checkOffersBox();
 
         //Step 10. Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
-
         signupPage.enterFirstName(values.getString("firstName"));
         signupPage.enterLastName(values.getString("lastName"));
         signupPage.enterCompany(values.getString("company"));
@@ -85,14 +82,11 @@ public class RegisterDeleteUserTest extends Base
         signupPage.enterMobileNumber(values.getString("number"));
 
         //Step 11. Click 'Create Account button'
-
         signupPage.clickCreate();
 
         //Step 12. Verify that 'ACCOUNT CREATED!' is visible
-
         createdPage = new CreatedPage(driver);
         Assert.assertTrue("Step 12: 'ACCOUNT CREATED' is not visible", createdPage.createdIsVisible());
-
 
         //Step 13. Click 'Continue' button
         createdPage.clickContinue();
@@ -105,6 +99,7 @@ public class RegisterDeleteUserTest extends Base
         //Step 15. Click 'Delete Account' button
         mainPage.clickDeleteAccButton();
 
+        //Step 16. Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
         deletedPage = new DeletedPage(driver);
         Assert.assertTrue("Step 16: 'ACCOUNT DELETED!' is not visible", deletedPage.deletedLabelIsVisible());
         deletedPage.clickContinue();

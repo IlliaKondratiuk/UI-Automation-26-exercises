@@ -33,5 +33,4 @@ public class CreatedPage {
     public void clickContinue() {
         driver.findElement(continueButton).click();
     }
-
 }

@@ -33,5 +33,4 @@ public class DeletedPage {
     public void clickContinue() {
         driver.findElement(continueButton).click();
     }
-
 }
