@@ -38,10 +38,10 @@ public class Exercise1RegisterUserTest extends Base
     @Test
     public void registerDeleteTest() {
 
-        //Step 1. Checking if the logo is visible.
+        //Step 1. Check if the logo is visible.
         Assert.assertTrue("Step 1: The logo is not visible", mainPage.logoIsVisible());
 
-        //Step 2. Clicking on Signup/Login
+        //Step 2. Click on 'Signup / Login' button
         mainPage.clickSignupLogin();
 
         //Step 3. Verify 'New User Signup!' is visible

@@ -14,6 +14,7 @@ public class LoginPage {
     WebDriver driver;
 
     By signUpText = new By.ByXPath("//h2[text()='New User Signup!']");
+    By loginText = new By.ByXPath("//h2[text()='Login to your account']");
     By nameInput = new By.ByXPath("//input[@data-qa='signup-name']");
     By emailInput = new By.ByXPath("//input[@data-qa='signup-email']");
     By signUpButton = new By.ByXPath("//button[@data-qa='signup-button']");
@@ -26,6 +27,16 @@ public class LoginPage {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             WebElement signupTextEl = wait.until(ExpectedConditions.visibilityOfElementLocated(this.signUpText));
+        } catch (TimeoutException e) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean isLoginTextVisible() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement loginTextEl = wait.until(ExpectedConditions.visibilityOfElementLocated(this.loginText));
         } catch (TimeoutException e) {
             return false;
         }
