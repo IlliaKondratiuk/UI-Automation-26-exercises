@@ -14,6 +14,7 @@ public class MainPage {
     WebDriver driver;
 
     By logo = new By.ByXPath("//div[contains(@class, 'logo')]//a//img");
+
     By signupLoginButton = new By.ByXPath("//a[@href='/login']");
     By cookieConsentButton = new By.ByXPath("//button[contains(@class, 'fc-cta-consent')]");
     By loggedInAsLabelNav = new By.ByXPath("//i[contains(@class, 'fa-user')]");

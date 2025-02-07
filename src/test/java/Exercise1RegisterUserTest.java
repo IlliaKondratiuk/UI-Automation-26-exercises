@@ -6,7 +6,8 @@
 import config.Base;
 import io.qameta.allure.*;
 import org.junit.Assert;
-import org.junit.BeforeClass;
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import pages.*;
 import java.util.ResourceBundle;
@@ -25,8 +26,9 @@ public class Exercise1RegisterUserTest extends Base
     private static DeletedPage deletedPage;
     private static ResourceBundle values;
 
-    @BeforeClass
-    public static void begin() {
+    @Before
+    public void begin() {
+
     driver.get("https://automationexercise.com/");
 
     mainPage = new MainPage(driver);

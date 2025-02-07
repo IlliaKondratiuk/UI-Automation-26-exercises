@@ -28,7 +28,6 @@ public class Config {
 
     //Basic config for running tests in Chrome using incognito mode
     private static void createchromeinc() {
-
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--start-maximized");

@@ -15,9 +15,16 @@ public class LoginPage {
 
     By signUpText = new By.ByXPath("//h2[text()='New User Signup!']");
     By loginText = new By.ByXPath("//h2[text()='Login to your account']");
-    By nameInput = new By.ByXPath("//input[@data-qa='signup-name']");
-    By emailInput = new By.ByXPath("//input[@data-qa='signup-email']");
+
+    By nameSignupInput = new By.ByXPath("//input[@data-qa='signup-name']");
+    By emailSignupInput = new By.ByXPath("//input[@data-qa='signup-email']");
+    By emailLoginInput = new By.ByXPath("//input[@data-qa='login-email']");
+    By passLoginInput = new By.ByXPath("//input[@data-qa='login-password']");
+
     By signUpButton = new By.ByXPath("//button[@data-qa='signup-button']");
+    By loginButton = new By.ByXPath("//button[@data-qa='login-button']");
+
+    By incorrectCredentialsMessage = new By.ByXPath("//p[text()='Your email or password is incorrect!']");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -43,12 +50,34 @@ public class LoginPage {
         return true;
     }
 
+    public boolean isIncorrectCredentialsVisible() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement incorrectCredentialsLabel =
+                    wait.until(ExpectedConditions.visibilityOfElementLocated(this.incorrectCredentialsMessage));
+        } catch (TimeoutException e) {
+            return false;
+        }
+        return true;
+    }
+
     public void enterNameEmailSignup(String name, String email) {
-       driver.findElement(nameInput).sendKeys(name);
-       driver.findElement(emailInput).sendKeys(email);
+       driver.findElement(nameSignupInput).sendKeys(name);
+       driver.findElement(emailSignupInput).sendKeys(email);
+    }
+
+    public void enterEmailPassLogin(String email, String pass) {
+       driver.findElement(emailLoginInput).sendKeys(email);
+       driver.findElement(passLoginInput).sendKeys(pass);
     }
 
     public void clickSignUpButton() {
         driver.findElement(signUpButton).click();
     }
+
+    public void clickLoginButton() {
+        driver.findElement(loginButton).click();
+    }
+
+
 }
