@@ -53,7 +53,7 @@ public class LoginPage {
     public boolean isIncorrectCredentialsVisible() {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement incorrectCredentialsLabel =
+            WebElement incorrectCredentialsLabelEl =
                     wait.until(ExpectedConditions.visibilityOfElementLocated(this.incorrectCredentialsMessage));
         } catch (TimeoutException e) {
             return false;
