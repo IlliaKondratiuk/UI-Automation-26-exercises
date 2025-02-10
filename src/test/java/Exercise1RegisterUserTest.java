@@ -29,7 +29,7 @@ public class Exercise1RegisterUserTest extends Base
     mainPage = new MainPage(driver);
     mainPage.handleCookies();
 
-    values = ResourceBundle.getBundle("ex1values");
+    values = ResourceBundle.getBundle("validregister");
     }
 
     @Test
