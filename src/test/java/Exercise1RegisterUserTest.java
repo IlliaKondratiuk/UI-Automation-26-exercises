@@ -11,10 +11,6 @@ import org.junit.Test;
 import pages.*;
 import java.util.ResourceBundle;
 
-@Epic("User management")
-@Feature("Login functionality")
-@Story("User creates and deletes an account with valid data")
-@Severity(SeverityLevel.CRITICAL)
 public class Exercise1RegisterUserTest extends Base
 {
 
@@ -37,6 +33,10 @@ public class Exercise1RegisterUserTest extends Base
     }
 
     @Test
+    @Epic("User management")
+    @Feature("Login functionality")
+    @Story("User creates and deletes an account with valid data")
+    @Severity(SeverityLevel.CRITICAL)
     public void registerDeleteTest() {
 
         //Step 1. Check if the logo is visible.
