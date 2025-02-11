@@ -20,6 +20,7 @@ public class MainPage {
     By loggedInAsLabelNav = new By.ByXPath("//i[contains(@class, 'fa-user')]");
     By usernameNav;
     By deleteAccButton = new By.ByXPath("//a[@href='/delete_account']");
+    By logOutButton = new By.ByXPath("//a[@href='/logout']");
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -51,6 +52,9 @@ public class MainPage {
 
     public void clickSignupLogin() {
         driver.findElement(signupLoginButton).click();
+    }
+    public void clickLogOut() {
+        driver.findElement(logOutButton).click();
     }
 
     public boolean checkLoggedInAsLabelNav() {
