@@ -4,13 +4,16 @@
 // The user data is parsed from src\resources\ex1values
 
 import config.Base;
+import config.CriticalTests;
 import io.qameta.allure.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import pages.*;
 import java.util.ResourceBundle;
 
+@Category(CriticalTests.class)
 public class Exercise1RegisterUserTest extends Base
 {
 

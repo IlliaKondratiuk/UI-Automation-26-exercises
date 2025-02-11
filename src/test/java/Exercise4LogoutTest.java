@@ -10,6 +10,7 @@ import pages.MainPage;
 
 import java.util.ResourceBundle;
 
+@Category(CriticalTests.class)
 public class Exercise4LogoutTest extends Base {
 
     private static MainPage mainPage;

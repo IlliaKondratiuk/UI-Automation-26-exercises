@@ -8,8 +8,10 @@
 // The credentials are located in the Parameters class.
 
 import config.Base;
+import config.CriticalTests;
 import io.qameta.allure.*;
 import org.junit.*;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import pages.LoginPage;
@@ -18,6 +20,7 @@ import pages.MainPage;
 import java.util.Arrays;
 import java.util.Collection;
 
+@Category(CriticalTests.class)
 @RunWith(Parameterized.class)
 public class Exercises2and3LoginTests extends Base {
 
