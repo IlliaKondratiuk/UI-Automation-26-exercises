@@ -15,6 +15,7 @@ public class LoginPage {
 
     By signUpText = new By.ByXPath("//h2[text()='New User Signup!']");
     By loginText = new By.ByXPath("//h2[text()='Login to your account']");
+    By alreadyExistsText = new By.ByXPath("//p[text()='Email Address already exist!']");
 
     By nameSignupInput = new By.ByXPath("//input[@data-qa='signup-name']");
     By emailSignupInput = new By.ByXPath("//input[@data-qa='signup-email']");
@@ -61,6 +62,18 @@ public class LoginPage {
         return true;
     }
 
+    public boolean isAlreadyExistsVisible() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement alreadyExistsText =
+                    wait.until(ExpectedConditions.visibilityOfElementLocated(this.alreadyExistsText));
+        } catch (TimeoutException e) {
+            return false;
+        }
+        return true;
+    }
+
+
     public void enterNameEmailSignup(String name, String email) {
        driver.findElement(nameSignupInput).sendKeys(name);
        driver.findElement(emailSignupInput).sendKeys(email);
@@ -78,6 +91,7 @@ public class LoginPage {
     public void clickLoginButton() {
         driver.findElement(loginButton).click();
     }
+
 
 
 }
