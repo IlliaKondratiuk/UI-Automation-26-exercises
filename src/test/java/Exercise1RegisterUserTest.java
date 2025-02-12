@@ -1,7 +1,7 @@
 // This is "Test Case 1: Register User" from the Automation Exercise page at automationexercise.com
 // Steps 1(Launch browser) and 2(Navigate to url) have been skipped as common sense
 // Using JUnit 4.13.2, designing with Page Object Model and generating an Allure(2.32.2) report
-// The user data is parsed from src\resources\ex1values
+// The user data is parsed from src\resources\validregister
 
 import config.Base;
 import config.CriticalTests;
