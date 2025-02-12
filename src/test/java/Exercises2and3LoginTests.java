@@ -64,7 +64,7 @@ public class Exercises2and3LoginTests extends Base {
     @Test
     @Epic("User management")
     @Feature("Login functionality")
-    @Story("User successfully logs in using valid login credentials")
+    @Story("User successfully logs in using valid login credentials and can't log in with invalid credentials")
     @Severity(SeverityLevel.CRITICAL)
     public void Exercise2and3LoginTest() {
 
