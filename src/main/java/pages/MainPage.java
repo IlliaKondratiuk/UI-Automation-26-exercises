@@ -17,10 +17,12 @@ public class MainPage {
 
     By signupLoginButton = new By.ByXPath("//a[@href='/login']");
     By cookieConsentButton = new By.ByXPath("//button[contains(@class, 'fc-cta-consent')]");
-    By loggedInAsLabelNav = new By.ByXPath("//i[contains(@class, 'fa-user')]");
-    By usernameNav;
     By deleteAccButton = new By.ByXPath("//a[@href='/delete_account']");
     By logOutButton = new By.ByXPath("//a[@href='/logout']");
+    By contactUsButton = new By.ByXPath("//a[@href='/contact_us']");
+
+    By loggedInAsLabelNav = new By.ByXPath("//i[contains(@class, 'fa-user')]");
+    By usernameNav;
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -70,5 +72,9 @@ public class MainPage {
 
     public void clickDeleteAccButton() {
         driver.findElement(deleteAccButton).click();
+    }
+
+    public void clickContactUsButton() {
+        driver.findElement(contactUsButton).click();
     }
 }
