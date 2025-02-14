@@ -38,7 +38,7 @@ public class Exercise4LogoutTest extends Base {
     @Feature("Login functionality")
     @Story("User successfully logs out and is navigated to the login page afterwards")
     @Severity(SeverityLevel.CRITICAL)
-    public void LogoutTest() {
+    public void Ex4LogoutTest() {
         //Step 1. Check if the logo is visible.
         Assert.assertTrue("Step 1: The logo is not visible", mainPage.logoIsVisible());
 

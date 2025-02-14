@@ -37,7 +37,7 @@ public class Exercise5RegisterExistingEmailTest extends Base {
     @Feature("Login functionality")
     @Story("User can't create a new account using an email corresponding to an existing account")
     @Severity(SeverityLevel.CRITICAL)
-    public void registerExistingEmailTest() {
+    public void Ex5RegisterExistingEmailTest() {
 
         //Step 1. Check if the logo is visible.
         Assert.assertTrue("Step 1: The logo is not visible", mainPage.logoIsVisible());

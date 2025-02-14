@@ -41,7 +41,7 @@ public class Exercise6ContactUsTest extends Base {
     @Feature("Contact form")
     @Story("User successfully submits a filled out contact form with a file uploaded")
     @Severity(SeverityLevel.CRITICAL)
-    public void contactUsTest() {
+    public void Ex6ContactUsTest() {
 
         //Step 1. Check if the logo is visible.
         Assert.assertTrue("Step 1: The logo is not visible", mainPage.logoIsVisible());
