@@ -16,6 +16,7 @@ public class MainPage {
     By logo = new By.ByXPath("//div[contains(@class, 'logo')]//a//img");
 
     By signupLoginButton = new By.ByXPath("//a[@href='/login']");
+    By testCasesButton = new By.ByXPath("//a[@href='/test_cases']");
     By cookieConsentButton = new By.ByXPath("//button[contains(@class, 'fc-cta-consent')]");
     By deleteAccButton = new By.ByXPath("//a[@href='/delete_account']");
     By logOutButton = new By.ByXPath("//a[@href='/logout']");
@@ -76,5 +77,9 @@ public class MainPage {
 
     public void clickContactUsButton() {
         driver.findElement(contactUsButton).click();
+    }
+
+    public void clickTestCasesButton() {
+        driver.findElement(testCasesButton).click();
     }
 }
