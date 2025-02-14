@@ -42,7 +42,6 @@ public class Exercise6ContactUsTest extends Base {
     @Story("User successfully submits a filled out contact form with a file uploaded")
     @Severity(SeverityLevel.CRITICAL)
     public void Ex6ContactUsTest() {
-
         //Step 1. Check if the logo is visible.
         Assert.assertTrue("Step 1: The logo is not visible", mainPage.logoIsVisible());
 
@@ -76,7 +75,5 @@ public class Exercise6ContactUsTest extends Base {
         contactPage.clickHomeButton();
         Assert.assertEquals("Step 9: The user is not navigated to the login page after logging out.",
                 "https://automationexercise.com/", driver.getCurrentUrl());
-
     }
-
 }

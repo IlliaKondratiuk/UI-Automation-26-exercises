@@ -40,7 +40,6 @@ public class Exercise1RegisterUserTest extends Base
     @Story("User creates and deletes an account with valid data")
     @Severity(SeverityLevel.CRITICAL)
     public void Ex1RegisterDeleteTest() {
-
         //Step 1. Check if the logo is visible.
         Assert.assertTrue("Step 1: The logo is not visible", mainPage.logoIsVisible());
 

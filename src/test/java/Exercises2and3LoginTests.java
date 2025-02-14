@@ -68,7 +68,6 @@ public class Exercises2and3LoginTests extends Base {
     @Story("User successfully logs in using valid login credentials and can't log in with invalid credentials")
     @Severity(SeverityLevel.CRITICAL)
     public void Ex2and3LoginTest() {
-
         //Step 1. Check if the logo is visible.
         Assert.assertTrue("Step 1: The logo is not visible", mainPage.logoIsVisible());
 
