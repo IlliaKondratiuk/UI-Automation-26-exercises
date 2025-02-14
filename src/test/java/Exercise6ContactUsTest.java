@@ -1,3 +1,9 @@
+// This is "Test Case 6: Contact Us Form" from the Automation Exercise page at automationexercise.com
+// Steps 1(Launch browser) and 2(Navigate to url) have been skipped as common sense
+// Using JUnit 4.13.2, designing with Page Object Model and generating an Allure(2.32.2) report
+// The user data is parsed from src\resources\contactvalues.properties
+// The dummy file for step 5 is stored in src\resources\contactfile.pdf
+
 import config.Base;
 import config.CriticalTests;
 import io.qameta.allure.*;
