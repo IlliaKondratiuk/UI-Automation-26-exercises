@@ -24,7 +24,6 @@ public class Exercise5RegisterExistingEmailTest extends Base {
 
     @Before
     public void begin() {
-
         driver.get("https://automationexercise.com/");
 
         mainPage = new MainPage(driver);

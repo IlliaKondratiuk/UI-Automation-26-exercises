@@ -26,13 +26,12 @@ public class Exercise1RegisterUserTest extends Base
 
     @Before
     public void begin() {
+        driver.get("https://automationexercise.com/");
 
-    driver.get("https://automationexercise.com/");
+        mainPage = new MainPage(driver);
+        mainPage.handleCookies();
 
-    mainPage = new MainPage(driver);
-    mainPage.handleCookies();
-
-    values = ResourceBundle.getBundle("validregister");
+        values = ResourceBundle.getBundle("validregister");
     }
 
     @Test

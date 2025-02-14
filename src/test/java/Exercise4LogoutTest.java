@@ -25,7 +25,6 @@ public class Exercise4LogoutTest extends Base {
 
     @Before
     public void begin() {
-
         driver.get("https://automationexercise.com/");
 
         mainPage = new MainPage(driver);

@@ -52,6 +52,7 @@ public class Exercises2and3LoginTests extends Base {
     @Before
     public void begin() {
         driver.get("https://automationexercise.com/");
+
         mainPage = new MainPage(driver);
         mainPage.handleCookies();
     }

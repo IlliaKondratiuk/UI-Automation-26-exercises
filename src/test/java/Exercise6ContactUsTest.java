@@ -28,7 +28,6 @@ public class Exercise6ContactUsTest extends Base {
 
     @Before
     public void begin() {
-
         driver.get("https://automationexercise.com/");
 
         mainPage = new MainPage(driver);
