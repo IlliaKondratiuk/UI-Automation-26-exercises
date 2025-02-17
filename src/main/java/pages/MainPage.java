@@ -15,6 +15,7 @@ public class MainPage {
 
     By logo = new By.ByXPath("//div[contains(@class, 'logo')]//a//img");
 
+    By productsButton = new By.ByXPath("//a[@href='/products']");
     By signupLoginButton = new By.ByXPath("//a[@href='/login']");
     By testCasesButton = new By.ByXPath("//a[@href='/test_cases']");
     By cookieConsentButton = new By.ByXPath("//button[contains(@class, 'fc-cta-consent')]");
@@ -81,5 +82,9 @@ public class MainPage {
 
     public void clickTestCasesButton() {
         driver.findElement(testCasesButton).click();
+    }
+
+    public void clickProductsButton() {
+        driver.findElement(productsButton).click();
     }
 }
