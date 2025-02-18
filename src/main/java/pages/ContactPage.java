@@ -1,17 +1,10 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 
-public class ContactPage {
-
-    WebDriver driver;
+public class ContactPage extends BasePage {
 
     By getInTouchLabel = new By.ByXPath("//h2[text()='Get In Touch']");
     By successLabel = new By.ByXPath("//div[@class='contact-form']" +
@@ -32,13 +25,7 @@ public class ContactPage {
     }
 
     public boolean getInTouchIsVisible() {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement getInTouchLabelEl = wait.until(ExpectedConditions.visibilityOfElementLocated(this.getInTouchLabel));
-        } catch (TimeoutException e) {
-            return false;
-        }
-        return true;
+        return isElementVisible(getInTouchLabel);
     }
 
     public void enterName(String name) {
@@ -62,21 +49,14 @@ public class ContactPage {
     }
 
     public void clickSubmitButton() {
-        driver.findElement(submitButton).click();
+        clickElement(submitButton);
     }
 
     public void clickHomeButton() {
-        driver.findElement(homeButton).click();
+        clickElement(homeButton);
     }
 
     public boolean isSuccessTextVisible() {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement successLabelEl = wait.until(ExpectedConditions.visibilityOfElementLocated(this.successLabel));
-        } catch (TimeoutException e) {
-            return false;
-        }
-        return true;
+        return isElementVisible(successLabel);
     }
-
 }

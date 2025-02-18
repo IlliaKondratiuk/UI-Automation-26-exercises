@@ -10,9 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class ProductsPage {
-
-    WebDriver driver;
+public class ProductsPage extends BasePage {
 
     By productList = new By.ByClassName("single-products");
     String viewProductXPathBegin = "//a[@href='/product_details/";
@@ -35,7 +33,7 @@ public class ProductsPage {
     }
 
     public void clickViewProduct(int productIndex) {
-        driver.findElement(new By.ByXPath(viewProductXPathBegin + productIndex + "']")).click();
+        clickElement(new By.ByXPath(viewProductXPathBegin + productIndex + "']"));
     }
 
 

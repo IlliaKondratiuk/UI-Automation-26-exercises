@@ -1,17 +1,9 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class CreatedPage {
-
-    WebDriver driver;
+public class CreatedPage extends BasePage {
 
     By createdLabel = new By.ByXPath("//b[text()='Account Created!']");
     By continueButton = new By.ByXPath("//a[@data-qa='continue-button']");
@@ -21,16 +13,10 @@ public class CreatedPage {
     }
 
     public boolean createdIsVisible() {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement createdLabelEl = wait.until(ExpectedConditions.visibilityOfElementLocated(this.createdLabel));
-        } catch (TimeoutException e) {
-            return false;
-        }
-        return true;
+        return isElementVisible(createdLabel);
     }
 
     public void clickContinue() {
-        driver.findElement(continueButton).click();
+        clickElement(continueButton);
     }
 }

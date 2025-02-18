@@ -1,17 +1,9 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class LoginPage {
-
-    WebDriver driver;
+public class LoginPage extends BasePage {
 
     By signUpText = new By.ByXPath("//h2[text()='New User Signup!']");
     By loginText = new By.ByXPath("//h2[text()='Login to your account']");
@@ -32,47 +24,20 @@ public class LoginPage {
     }
 
     public boolean isSignUpTextVisible() {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement signupTextEl = wait.until(ExpectedConditions.visibilityOfElementLocated(this.signUpText));
-        } catch (TimeoutException e) {
-            return false;
-        }
-        return true;
+        return isElementVisible(signUpText);
     }
 
     public boolean isLoginTextVisible() {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement loginTextEl = wait.until(ExpectedConditions.visibilityOfElementLocated(this.loginText));
-        } catch (TimeoutException e) {
-            return false;
-        }
-        return true;
+        return isElementVisible(loginText);
     }
 
     public boolean isIncorrectCredentialsVisible() {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement incorrectCredentialsLabelEl =
-                    wait.until(ExpectedConditions.visibilityOfElementLocated(this.incorrectCredentialsMessage));
-        } catch (TimeoutException e) {
-            return false;
-        }
-        return true;
+        return isElementVisible(incorrectCredentialsMessage);
     }
 
     public boolean isAlreadyExistsVisible() {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement alreadyExistsText =
-                    wait.until(ExpectedConditions.visibilityOfElementLocated(this.alreadyExistsText));
-        } catch (TimeoutException e) {
-            return false;
-        }
-        return true;
+        return isElementVisible(alreadyExistsText);
     }
-
 
     public void enterNameEmailSignup(String name, String email) {
        driver.findElement(nameSignupInput).sendKeys(name);
@@ -85,13 +50,10 @@ public class LoginPage {
     }
 
     public void clickSignUpButton() {
-        driver.findElement(signUpButton).click();
+        clickElement(signUpButton);
     }
 
     public void clickLoginButton() {
-        driver.findElement(loginButton).click();
+        clickElement(loginButton);
     }
-
-
-
 }

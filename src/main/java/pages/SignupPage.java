@@ -1,18 +1,10 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class SignupPage {
-
-    WebDriver driver;
+public class SignupPage extends BasePage {
 
     By enterAccInfoLabel = new By.ByXPath("//b[text()='Enter Account Information']");
     By titleRadioMr = new By.ById("id_gender1");
@@ -39,17 +31,11 @@ public class SignupPage {
     }
 
     public boolean enterAccInfoIsVisible() {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement enterAccInfoEl = wait.until(ExpectedConditions.visibilityOfElementLocated(this.enterAccInfoLabel));
-        } catch (TimeoutException e) {
-            return false;
-        }
-        return true;
+        return isElementVisible(enterAccInfoLabel);
     }
 
     public void selectTitle() {
-        driver.findElement(titleRadioMr).click();
+        clickElement(titleRadioMr);
     }
 
     public void enterPass(String pass) {
@@ -67,11 +53,11 @@ public class SignupPage {
     }
 
     public void checkNewsletterBox() {
-        driver.findElement(newsletterBox).click();
+        clickElement(newsletterBox);
     }
 
     public void checkOffersBox() {
-        driver.findElement(offersBox).click();
+        clickElement(offersBox);
     }
 
     public void enterFirstName(String fName) {
@@ -116,6 +102,6 @@ public class SignupPage {
     }
 
     public void clickCreate() {
-        driver.findElement(createButton).click();
+        clickElement(createButton);
     }
 }

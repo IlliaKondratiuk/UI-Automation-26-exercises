@@ -9,9 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class MainPage {
-
-    WebDriver driver;
+public class MainPage extends BasePage {
 
     By logo = new By.ByXPath("//div[contains(@class, 'logo')]//a//img");
 
@@ -37,7 +35,7 @@ public class MainPage {
     public void handleCookies() {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement cookieConsentButtonEl = wait.until(ExpectedConditions.visibilityOfElementLocated(this.cookieConsentButton));
+            WebElement cookieConsentButtonEl = wait.until(ExpectedConditions.visibilityOfElementLocated(cookieConsentButton));
             cookieConsentButtonEl.click();
         } catch (TimeoutException e) {
             System.out.println("Cookie consent popup did not appear, continuing test...");
@@ -45,13 +43,7 @@ public class MainPage {
     }
 
     public boolean logoIsVisible() {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(this.logo));
-        } catch (TimeoutException e) {
-            return false;
-        }
-        return true;
+        return isElementVisible(logo);
     }
 
     public void clickSignupLogin() {
@@ -62,29 +54,22 @@ public class MainPage {
     }
 
     public boolean checkLoggedInAsLabelNav() {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement loggedInAsLabelEl = wait.until(ExpectedConditions.visibilityOfElementLocated(this.loggedInAsLabelNav));
-            WebElement usernameNavEl = wait.until(ExpectedConditions.visibilityOfElementLocated(this.usernameNav));
-        } catch (TimeoutException e) {
-            return false;
-        }
-        return true;
+        return isElementVisible(loggedInAsLabelNav) && isElementVisible(usernameNav);
     }
 
     public void clickDeleteAccButton() {
-        driver.findElement(deleteAccButton).click();
+        clickElement(deleteAccButton);
     }
 
     public void clickContactUsButton() {
-        driver.findElement(contactUsButton).click();
+        clickElement(contactUsButton);
     }
 
     public void clickTestCasesButton() {
-        driver.findElement(testCasesButton).click();
+        clickElement(testCasesButton);
     }
 
     public void clickProductsButton() {
-        driver.findElement(productsButton).click();
+        clickElement(productsButton);
     }
 }

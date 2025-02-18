@@ -9,9 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class TestCasesPage {
-
-    WebDriver driver;
+public class TestCasesPage extends BasePage {
 
     By testCases = new By.ByXPath("//a[@data-toggle='collapse']//u");
 
@@ -34,6 +32,4 @@ public class TestCasesPage {
         }
         return true;
     }
-
-
 }
