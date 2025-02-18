@@ -47,10 +47,10 @@ public class MainPage extends BasePage {
     }
 
     public void clickSignupLogin() {
-        driver.findElement(signupLoginButton).click();
+        clickElement(signupLoginButton);
     }
     public void clickLogOut() {
-        driver.findElement(logOutButton).click();
+        clickElement(logOutButton);
     }
 
     public boolean checkLoggedInAsLabelNav() {
