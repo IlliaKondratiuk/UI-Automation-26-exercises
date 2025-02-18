@@ -16,7 +16,6 @@ public class MainPage extends BasePage {
     By productsButton = new By.ByXPath("//a[@href='/products']");
     By signupLoginButton = new By.ByXPath("//a[@href='/login']");
     By testCasesButton = new By.ByXPath("//a[@href='/test_cases']");
-    By cookieConsentButton = new By.ByXPath("//button[contains(@class, 'fc-cta-consent')]");
     By deleteAccButton = new By.ByXPath("//a[@href='/delete_account']");
     By logOutButton = new By.ByXPath("//a[@href='/logout']");
     By contactUsButton = new By.ByXPath("//a[@href='/contact_us']");
@@ -30,16 +29,6 @@ public class MainPage extends BasePage {
 
     public void initUsername(String username) {
         usernameNav = new By.ByXPath("//i[contains(@class, 'fa-user')]/parent::a/b[text()=\"" + username + "\"]");
-    }
-
-    public void handleCookies() {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement cookieConsentButtonEl = wait.until(ExpectedConditions.visibilityOfElementLocated(cookieConsentButton));
-            cookieConsentButtonEl.click();
-        } catch (TimeoutException e) {
-            System.out.println("Cookie consent popup did not appear, continuing test...");
-        }
     }
 
     public boolean logoIsVisible() {
