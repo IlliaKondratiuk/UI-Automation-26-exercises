@@ -1,4 +1,4 @@
-//Base page class that contains universal methods for all chil page classes
+//Base page class that contains universal methods for all child page classes
 
 package pages;
 
