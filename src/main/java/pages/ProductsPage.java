@@ -33,11 +33,8 @@ public class ProductsPage extends BasePage {
     }
 
     public void clickViewProduct(int productIndex) {
+        scrollToElement(new By.ByXPath(viewProductXPathBegin + productIndex + "']"));
         clickElement(new By.ByXPath(viewProductXPathBegin + productIndex + "']"));
     }
 
-
-    public void handleAds() {
-        //this method will handle the ads that temporarily block the View Product buttons
-    }
 }

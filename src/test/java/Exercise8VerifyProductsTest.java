@@ -27,7 +27,6 @@ public class Exercise8VerifyProductsTest extends Base {
     @Story("User visits the products page and checks the details of an individual product")
     @Severity(SeverityLevel.CRITICAL)
     public void Ex8VerifyProductsTest() {
-
         //Step 1. Check if the logo is visible.
         Assert.assertTrue("Step 1: The logo is not visible", mainPage.logoIsVisible());
 
@@ -44,7 +43,7 @@ public class Exercise8VerifyProductsTest extends Base {
                 productsPage.isProductListVisible());
 
         //Step 5. Click on 'View Product' of first product
-        productsPage.handleAds(); //temporarily blocked here, will be fixed in the next commit
+        productsPage.handleAds();
         productsPage.clickViewProduct(1);
 
         //Step 6. User is landed to product detail page
