@@ -55,7 +55,7 @@ public class BasePage {
         //arrow on the bottom ad isn't clickable until the ad is fully displayed on the page, which is not trackable
         //by ExpectedConditions like ElementIsVisible or ElementIsClickable, so the use of Thread.sleep was chosen.
         try {
-            Thread.sleep(100);
+            Thread.sleep(150);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
