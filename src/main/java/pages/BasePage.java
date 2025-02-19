@@ -48,4 +48,18 @@ public class BasePage {
                 .scrollToElement(el)
                 .perform();
     }
+
+    public void handleAds() {
+        //Although using Thread.sleep() is a bad practice, this situation is caused by the fact that there are ads
+        //on the website during testing, which is unlikely to happen in a proper testing environment. The Google Ads
+        //arrow on the bottom ad isn't clickable until the ad is fully displayed on the page, which is not trackable
+        //by ExpectedConditions like ElementIsVisible or ElementIsClickable, so the use of Thread.sleep was chosen.
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        driver.findElement(By.className("grippy-host")).click();
+    }
 }
