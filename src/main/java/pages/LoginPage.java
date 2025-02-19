@@ -40,13 +40,13 @@ public class LoginPage extends BasePage {
     }
 
     public void enterNameEmailSignup(String name, String email) {
-       driver.findElement(nameSignupInput).sendKeys(name);
-       driver.findElement(emailSignupInput).sendKeys(email);
+        fillInput(nameSignupInput, name);
+        fillInput(emailSignupInput, email);
     }
 
     public void enterEmailPassLogin(String email, String pass) {
-       driver.findElement(emailLoginInput).sendKeys(email);
-       driver.findElement(passLoginInput).sendKeys(pass);
+        fillInput(emailLoginInput, email);
+        fillInput(passLoginInput, pass);
     }
 
     public void clickSignUpButton() {

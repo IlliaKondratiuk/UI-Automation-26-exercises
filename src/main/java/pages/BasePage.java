@@ -39,4 +39,8 @@ public class BasePage {
             System.out.println("Cookie consent popup did not appear, continuing test...");
         }
     }
+
+    public void fillInput(By el, String text) {
+        driver.findElement(el).sendKeys(text);
+    }
 }

@@ -29,23 +29,23 @@ public class ContactPage extends BasePage {
     }
 
     public void enterName(String name) {
-        driver.findElement(nameInput).sendKeys(name);
+        fillInput(nameInput, name);
     }
 
     public void enterEmail(String email) {
-        driver.findElement(emailInput).sendKeys(email);
+        fillInput(emailInput, email);
     }
 
     public void enterSubject(String subject) {
-        driver.findElement(subjectInput).sendKeys(subject);
+        fillInput(subjectInput, subject);
     }
 
     public void enterMessage(String message) {
-        driver.findElement(messageInput).sendKeys(message);
+        fillInput(messageInput, message);
     }
 
     public void uploadFile(String filePath) {
-        driver.findElement(fileUpload).sendKeys(filePath);
+        fillInput(fileUpload, filePath);
     }
 
     public void clickSubmitButton() {

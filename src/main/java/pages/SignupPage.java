@@ -39,7 +39,7 @@ public class SignupPage extends BasePage {
     }
 
     public void enterPass(String pass) {
-        driver.findElement(passInput).sendKeys(pass);
+        fillInput(passInput, pass);
     }
 
     public void selectDOB(String day, String month, String year) {
@@ -61,23 +61,23 @@ public class SignupPage extends BasePage {
     }
 
     public void enterFirstName(String fName) {
-        driver.findElement(firstNameInput).sendKeys(fName);
+        fillInput(firstNameInput, fName);
     }
 
     public void enterLastName(String lName) {
-        driver.findElement(lastNameInput).sendKeys(lName);
+        fillInput(lastNameInput, lName);
     }
 
     public void enterCompany(String company) {
-        driver.findElement(companyInput).sendKeys(company);
+        fillInput(companyInput, company);
     }
 
     public void enterAddress1(String address) {
-        driver.findElement(address1input).sendKeys(address);
+        fillInput(address1input, address);
     }
 
     public void enterAddress2(String address) {
-        driver.findElement(address2input).sendKeys(address);
+        fillInput(address2input, address);
     }
 
     public void selectCountry(String country) {
@@ -86,19 +86,19 @@ public class SignupPage extends BasePage {
     }
 
     public void enterState(String state) {
-        driver.findElement(stateInput).sendKeys(state);
+        fillInput(stateInput, state);
     }
 
     public void enterCity(String city) {
-        driver.findElement(cityInput).sendKeys(city);
+        fillInput(cityInput, city);
     }
 
     public void enterZipcode(String zipcode) {
-        driver.findElement(zipInput).sendKeys(zipcode);
+        fillInput(zipInput, zipcode);
     }
 
     public void enterMobileNumber(String number) {
-        driver.findElement(numberInput).sendKeys(number);
+        fillInput(numberInput, number);
     }
 
     public void clickCreate() {
