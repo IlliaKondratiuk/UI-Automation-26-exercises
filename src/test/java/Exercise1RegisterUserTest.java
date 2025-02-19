@@ -58,7 +58,7 @@ public class Exercise1RegisterUserTest extends Base
 
         //Step 6. Verify that 'ENTER ACCOUNT INFORMATION' is visible
         signupPage = new SignupPage(driver);
-        Assert.assertTrue(signupPage.enterAccInfoIsVisible());
+        Assert.assertTrue("Step 6: 'ENTER ACCOUNT INFORMATION' is not visible", signupPage.enterAccInfoIsVisible());
 
         //Step 7. Fill details: Title, Email, Password, Date of birth
         signupPage.selectTitle();
