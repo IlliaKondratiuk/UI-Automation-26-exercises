@@ -68,7 +68,6 @@ public class ProductsPage extends BasePage {
         //Comparing the name of each element in the list with each expected name
         for (int i = 0; i < expectedNames.size(); i++) {
             if (!productResults.get(2 * i).getText().equals(expectedNames.get(i))) {
-                String temp = productResults.get(i).getText();
                 return false;
             }
         }
