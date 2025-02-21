@@ -39,7 +39,7 @@ public class Exercise6ContactUsTest extends Base {
     @Test
     @Epic("User management")
     @Feature("Contact form")
-    @Story("User successfully submits a filled out contact form with a file uploaded")
+    @Story("As a user, I can fill out and submit a contact form so that I can communicate with the support team.")
     @Severity(SeverityLevel.CRITICAL)
     public void Ex6ContactUsTest() {
         //Step 1. Check if the logo is visible.

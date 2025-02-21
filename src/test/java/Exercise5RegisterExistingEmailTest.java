@@ -35,7 +35,7 @@ public class Exercise5RegisterExistingEmailTest extends Base {
     @Test
     @Epic("User management")
     @Feature("Login functionality")
-    @Story("User can't create a new account using an email corresponding to an existing account")
+    @Story("As a user, I cannot register with an email that is already in use so that my account remains unique and secure.")
     @Severity(SeverityLevel.CRITICAL)
     public void Ex5RegisterExistingEmailTest() {
         //Step 1. Check if the logo is visible.

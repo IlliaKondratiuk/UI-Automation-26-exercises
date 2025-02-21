@@ -36,7 +36,7 @@ public class Exercise4LogoutTest extends Base {
     @Test
     @Epic("User management")
     @Feature("Login functionality")
-    @Story("User successfully logs out and is navigated to the login page afterwards")
+    @Story("As a user, I can log out of my account to end my session securely.")
     @Severity(SeverityLevel.CRITICAL)
     public void Ex4LogoutTest() {
         //Step 1. Check if the logo is visible.

@@ -37,7 +37,7 @@ public class Exercise1RegisterUserTest extends Base
     @Test
     @Epic("User management")
     @Feature("Login functionality")
-    @Story("User creates and deletes an account with valid data")
+    @Story("As a user, I can create an account with valid data so that I can access the system and use its features.")
     @Severity(SeverityLevel.CRITICAL)
     public void Ex1RegisterDeleteTest() {
         //Step 1. Check if the logo is visible.

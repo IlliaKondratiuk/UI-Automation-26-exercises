@@ -24,7 +24,8 @@ public class Exercise8VerifyProductsTest extends Base {
     @Test
     @Epic("Products")
     @Feature("Products page")
-    @Story("User visits the products page and checks the details of an individual product")
+    @Story("As a user, I can browse the available products and check the details of a selected product " +
+            "so that I can make an informed purchase decision")
     @Severity(SeverityLevel.CRITICAL)
     public void Ex8VerifyProductsTest() {
         //Step 1. Check if the logo is visible.

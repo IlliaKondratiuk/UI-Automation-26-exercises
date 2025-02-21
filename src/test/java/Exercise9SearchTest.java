@@ -27,7 +27,7 @@ public class Exercise9SearchTest extends Base {
     @Test
     @Epic("Products")
     @Feature("Products page")
-    @Story("User can search for a product and see all relevant results")
+    @Story("As a user, I can search for a product so that I can see relevant results and choose from available options.")
     @Severity(SeverityLevel.CRITICAL)
     public void Ex9SearchProduct() {
         //Step 1. Check if the logo is visible.

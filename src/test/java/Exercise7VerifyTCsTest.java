@@ -37,7 +37,7 @@ public class Exercise7VerifyTCsTest extends Base {
     @Test
     @Epic("Test Cases")
     @Feature("Test cases page")
-    @Story("User visits the test cases page and sees all test cases with correct names")
+    @Story("As a user, I can visit the test cases page so that I can view all published exercises for test AQA specialists.")
     @Severity(SeverityLevel.CRITICAL)
     public void Ex7VerifyTCsTest() {
         //Step 1. Check if the logo is visible.
