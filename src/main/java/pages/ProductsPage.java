@@ -65,7 +65,9 @@ public class ProductsPage extends BasePage {
         //Finding all the collapsed TC names on the page
         List<WebElement> productResults = driver.findElements(searchResults);
 
-        //Comparing the name of each element in the list with each expected name
+        //Comparing the name of each second element in the list with each expected name
+        //This is due to the fact that the <p> elements with names are duplicated since they are also present in the divs
+        //that appear on hovering over the found results. Therefore, we compare expected names[i] to results[2*i]
         for (int i = 0; i < expectedNames.size(); i++) {
             if (!productResults.get(2 * i).getText().equals(expectedNames.get(i))) {
                 return false;
