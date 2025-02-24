@@ -1,10 +1,12 @@
 import config.Base;
+import config.CriticalTests;
 import config.PageNames;
 import io.qameta.allure.*;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import pages.BasePage;
@@ -15,6 +17,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
+@Category(CriticalTests.class)
 public class Exercises10and11SubscriptionTests extends Base {
 
     BasePage testedPage;

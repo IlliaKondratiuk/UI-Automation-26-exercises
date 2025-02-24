@@ -1,12 +1,15 @@
 import config.Base;
+import config.CriticalTests;
 import io.qameta.allure.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import pages.MainPage;
 import pages.ProductDetailsPage;
 import pages.ProductsPage;
 
+@Category(CriticalTests.class)
 public class Exercise8VerifyProductsTest extends Base {
 
     private static MainPage mainPage;
