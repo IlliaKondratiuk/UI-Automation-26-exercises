@@ -14,6 +14,11 @@ public class BasePage {
     WebDriver driver;
 
     By cookieConsentButton = new By.ByXPath("//button[contains(@class, 'fc-cta-consent')]");
+    By subscriptionArrowButton = new By.ById("subscribe");
+    By subscriptionFooterLabel = new By.ByXPath("//div[@class='single-widget']//h2[text()='Subscription']");
+    By subscriptionSuccessLabel = new By.ByXPath("//div[contains(@class, 'alert-success') and text()='You have been successfully subscribed!']");
+
+    By subscribeEmailInput = new By.ById("susbscribe_email");
 
     public void clickElement(By el) {
         driver.findElement(el).click();
@@ -62,4 +67,26 @@ public class BasePage {
 
         driver.findElement(By.className("grippy-host")).click();
     }
+
+    public void scrollToTheBottom() {
+        ((JavascriptExecutor) driver)
+                .executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+
+    public void enterSubscriptionEmail(String email) {
+        fillInput(subscribeEmailInput, email);
+    }
+
+    public void clickSubscriptionArrow() {
+        clickElement(subscriptionArrowButton);
+    }
+
+    public boolean isFooterSubscriptionLabelVisible() {
+        return isElementVisible(subscriptionFooterLabel);
+    }
+
+    public boolean isSubscriptionSuccessLabelVisible() {
+        return isElementVisible(subscriptionSuccessLabel);
+    }
+
 }
