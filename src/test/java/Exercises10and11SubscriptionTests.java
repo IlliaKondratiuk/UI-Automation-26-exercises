@@ -1,3 +1,12 @@
+// These are "Test Case 10: Verify Subscription in home page" and "Test Case 11: Verify Subscription in Cart page"
+// from the Automation Exercise page at automationexercise.com.
+// Two exercises have been merged into one test class as they test the same footer functionality on different pages.
+// Steps 1(Launch browser) and 2(Navigate to url) have been skipped as common sense.
+// Using JUnit 4.13.2, designing with Page Object Model and generating an Allure(2.32.2) report.
+// The parameterized class and the PageNames.enum were used to increase the flexibility of the test, making it
+// possible to run it for each page of the website. Even though technically the footer is the same on all pages,
+// the test was made pretending it's not, as it can theoretically be different on a commercial project.
+
 import config.Base;
 import config.CriticalTests;
 import config.PageNames;
