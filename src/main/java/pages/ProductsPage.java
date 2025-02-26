@@ -11,7 +11,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ProductsPage extends BasePage {
 
@@ -22,6 +24,7 @@ public class ProductsPage extends BasePage {
     By searchedProducts = new By.ByXPath("//h2[text()=\"Searched Products\"]");
     By searchResults = new By.ByXPath("//div[@class='single-products']//div//p");
 
+    String addToCartButtonXPathBegin = "//a[@data-product-id=1]";
     String viewProductXPathBegin = "//a[@href='/product_details/";
 
     public ProductsPage(WebDriver driver) {
@@ -44,6 +47,11 @@ public class ProductsPage extends BasePage {
     public void clickViewProduct(int productIndex) {
         scrollToElement(new By.ByXPath(viewProductXPathBegin + productIndex + "']"));
         clickElement(new By.ByXPath(viewProductXPathBegin + productIndex + "']"));
+    }
+
+    public void clickAddToCart(int productIndex) {
+        scrollToElement(new By.ByXPath(addToCartButtonXPathBegin + productIndex + "']"));
+        clickElement(new By.ByXPath(addToCartButtonXPathBegin + productIndex + "']"));
     }
 
     public void enterProduct(String product) {
@@ -74,5 +82,16 @@ public class ProductsPage extends BasePage {
             }
         }
         return true;
+    }
+
+    public Map<String, String> getProductDetails(int i) {
+        Map<String, String> temp = new HashMap<>();
+
+        By productPrice = new By.ByXPath("(//div[contains(@class, 'productinfo')])[" + i + "]//h2");
+        By productName = new By.ByXPath("(//div[contains(@class, 'productinfo')])[" + i + "]//p");
+        temp.put("name", driver.findElement(productName).getText());
+        temp.put("price", driver.findElement(productPrice).getText());
+
+        return temp;
     }
 }
