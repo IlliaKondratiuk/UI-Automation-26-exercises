@@ -23,8 +23,10 @@ public class ProductsPage extends BasePage {
     By searchButton = new By.ById("submit_search");
     By searchedProducts = new By.ByXPath("//h2[text()=\"Searched Products\"]");
     By searchResults = new By.ByXPath("//div[@class='single-products']//div//p");
+    By viewCartButton = new By.ByXPath("//a[@href='/view_cart']");
+    By continueShoppingButton = new By.ByXPath("//button[contains(@class, 'btn-success')]");
 
-    String addToCartButtonXPathBegin = "//a[@data-product-id=1]";
+    String addToCartButtonXPathBegin = "(//a[@data-product-id=";
     String viewProductXPathBegin = "//a[@href='/product_details/";
 
     public ProductsPage(WebDriver driver) {
@@ -50,8 +52,12 @@ public class ProductsPage extends BasePage {
     }
 
     public void clickAddToCart(int productIndex) {
-        scrollToElement(new By.ByXPath(addToCartButtonXPathBegin + productIndex + "']"));
-        clickElement(new By.ByXPath(addToCartButtonXPathBegin + productIndex + "']"));
+        scrollToElement(new By.ByXPath(viewProductXPathBegin + productIndex + "']"));
+        clickElement(new By.ByXPath(addToCartButtonXPathBegin + productIndex + "])"));
+    }
+
+    public void clickViewCart() {
+        clickElement(viewCartButton);
     }
 
     public void enterProduct(String product) {
@@ -60,6 +66,12 @@ public class ProductsPage extends BasePage {
 
     public void clickSearchButton() {
         clickElement(searchButton);
+    }
+
+    public void clickContinueShopping() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(continueShoppingButton));
+        clickElement(continueShoppingButton);
     }
 
     public boolean isSearchedProductsVisible() {
