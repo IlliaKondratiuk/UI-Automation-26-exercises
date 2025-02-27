@@ -9,7 +9,6 @@ import java.util.Map;
 
 public class CartPage extends BasePage {
 
-    By allProducts = new By.ByXPath("//tr[contains(@id, 'product')]");
     By allQuantitiesButtons = new By.ByXPath("//td[@class='cart_quantity']//button");
 
     String cartNameXPathBegin = "(//td[@class='cart_description']//a)[";
