@@ -27,10 +27,6 @@ public class CartPage extends BasePage {
                 .sum();
     }
 
-    public int getUniqueProductQuantity() {
-        return driver.findElements(allProducts).size();
-    }
-
     // Retrieving the name, price, quantity and total price of the product by index.
     public Map<String, String> getProductDetails(int i) {
         Map<String, String> details = new HashMap<>();
