@@ -96,14 +96,14 @@ public class ProductsPage extends BasePage {
         return true;
     }
 
-    public Map<String, String> getProductDetails(int i) {
-        Map<String, String> temp = new HashMap<>();
+    public Map<String, String> getProductDetails(int productIndex) {
+        Map<String, String> details = new HashMap<>();
 
-        By productPrice = new By.ByXPath("(//div[contains(@class, 'productinfo')])[" + i + "]//h2");
-        By productName = new By.ByXPath("(//div[contains(@class, 'productinfo')])[" + i + "]//p");
-        temp.put("name", driver.findElement(productName).getText());
-        temp.put("price", driver.findElement(productPrice).getText());
+        By productPrice = new By.ByXPath("(//div[contains(@class, 'productinfo')])[" + productIndex + "]//h2");
+        By productName = new By.ByXPath("(//div[contains(@class, 'productinfo')])[" + productIndex + "]//p");
+        details.put("name", driver.findElement(productName).getText());
+        details.put("price", driver.findElement(productPrice).getText());
 
-        return temp;
+        return details;
     }
 }
