@@ -24,6 +24,7 @@
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
         </dependency>
+
         <!-- Allure JUnit integration -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -44,6 +45,20 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.9.21</version>
+        </dependency>
+
+        <!-- Cucumber -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.14.0</version>
+        </dependency>
+
+        <!-- Cucumber JUnit -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>7.14.0</version>
         </dependency>
     </dependencies>
 
