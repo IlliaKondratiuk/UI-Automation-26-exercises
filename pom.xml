@@ -60,6 +60,13 @@
             <artifactId>cucumber-junit</artifactId>
             <version>7.14.0</version>
         </dependency>
+
+        <!-- Cucumber container for sharing test context -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>7.14.0</version> <!-- Use the same version as your Cucumber -->
+        </dependency>
     </dependencies>
 
     <build>
