@@ -44,6 +44,7 @@ public class BasePage {
     }
 
     public void fillInput(By el, String text) {
+        driver.findElement(el).clear(); //added in case the input has a default value
         driver.findElement(el).sendKeys(text);
     }
 
