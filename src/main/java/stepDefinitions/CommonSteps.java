@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import config.TestContext;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -29,7 +30,19 @@ public class CommonSteps {
     }
 
     @Then("the logo is visible")
-    public void theLogoIsVisible() {
+    public void the_logo_is_visible() {
         Assert.assertTrue("Step 1: The logo is not visible", mainPage.logoIsVisible());
+    }
+
+    @And("cookies window is handled")
+    public void cookies_are_handled() {
+        mainPage.handleCookies();
+    }
+
+    @Then("the cart page is opened")
+    public void the_cart_page_is_opened() {
+        Assert.assertEquals("The cart page is not opened",
+                "https://automationexercise.com/view_cart",
+                context.getDriver().getCurrentUrl());
     }
 }

@@ -17,6 +17,8 @@ public class MainPage extends BasePage {
     By loggedInAsLabelNav = new By.ByXPath("//i[contains(@class, 'fa-user')]");
     By usernameNav;
 
+    String viewProductXPathBegin = "(//a[contains(@href, 'product_details')])[";
+
     public MainPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -54,5 +56,9 @@ public class MainPage extends BasePage {
 
     public void clickProductsButton() {
         clickElement(productsButton);
+    }
+
+    public void clickViewProduct(int index) {
+        driver.findElement(new By.ByXPath(viewProductXPathBegin + index + "]")).click();
     }
 }

@@ -2,6 +2,10 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ProductDetailsPage extends BasePage {
     //The "//div[@class='product-details']" is included in all paths to ensure that the found elements are located
@@ -16,6 +20,11 @@ public class ProductDetailsPage extends BasePage {
             "/parent::p[text()]");
     By productBrand = new By.ByXPath("//div[@class='product-details']//b[contains(text(), 'Brand')]" +
             "/parent::p[text()]");
+
+    By viewCartButton = new By.ByXPath("//div[@id='cartModal']//a[@href='/view_cart']");
+    By addToCartButton = new By.ByXPath("//button[contains(@class, 'btn-default cart')]");
+
+    By quantityInput = new By.ById("quantity");
 
     public ProductDetailsPage(WebDriver driver) {
         this.driver = driver;
@@ -48,5 +57,20 @@ public class ProductDetailsPage extends BasePage {
     public boolean areAllDetailsVisible() {
         return isNameVisible() && isCategoryVisible() && isPriceVisible() && isAvailabilityVisible() &&
                 isConditionVisible() && isBrandVisible();
+    }
+
+    public void clickViewCart() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(viewCartButton));
+        clickElement(viewCartButton);
+    }
+
+    public void enterQuantity(int quantity) {
+        driver.findElement(quantityInput).clear();
+        fillInput(quantityInput, Integer.toString(quantity));
+    }
+
+    public void clickAddToCart() {
+        clickElement(addToCartButton);
     }
 }

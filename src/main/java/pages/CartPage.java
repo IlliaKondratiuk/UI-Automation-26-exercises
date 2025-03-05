@@ -85,4 +85,10 @@ public class CartPage extends BasePage {
 
         return isValid;
     }
+
+    public boolean isProductQuantityCorrect(int productIndex, int quantity) {
+        By productQuantity = new By.ByXPath(cartQuantXPathBegin + productIndex + "]");
+
+        return driver.findElement(productQuantity).getText().equals(Integer.toString(quantity));
+    }
 }
