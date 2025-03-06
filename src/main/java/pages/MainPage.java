@@ -10,7 +10,6 @@ public class MainPage extends BasePage {
     By productsButton = new By.ByXPath("//a[@href='/products']");
     By signupLoginButton = new By.ByXPath("//a[@href='/login']");
     By testCasesButton = new By.ByXPath("//a[@href='/test_cases']");
-    By deleteAccButton = new By.ByXPath("//a[@href='/delete_account']");
     By logOutButton = new By.ByXPath("//a[@href='/logout']");
     By contactUsButton = new By.ByXPath("//a[@href='/contact_us']");
 
@@ -40,10 +39,6 @@ public class MainPage extends BasePage {
 
     public boolean checkLoggedInAsLabelNav() {
         return isElementVisible(loggedInAsLabelNav) && isElementVisible(usernameNav);
-    }
-
-    public void clickDeleteAccButton() {
-        clickElement(deleteAccButton);
     }
 
     public void clickContactUsButton() {

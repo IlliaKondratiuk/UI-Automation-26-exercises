@@ -15,6 +15,8 @@ public class BasePage {
 
     By cookieConsentButton = new By.ByXPath("//button[contains(@class, 'fc-cta-consent')]");
     By subscriptionArrowButton = new By.ById("subscribe");
+    By deleteAccButton = new By.ByXPath("//a[@href='/delete_account']");
+
     By subscriptionFooterLabel = new By.ByXPath("//div[@class='single-widget']//h2[text()='Subscription']");
     By subscriptionSuccessLabel = new By.ByXPath("//div[contains(@class, 'alert-success') and text()='You have been successfully subscribed!']");
 
@@ -88,6 +90,10 @@ public class BasePage {
 
     public boolean isSubscriptionSuccessLabelVisible() {
         return isElementVisible(subscriptionSuccessLabel);
+    }
+
+    public void clickDeleteAccButton() {
+        clickElement(deleteAccButton);
     }
 
 }
