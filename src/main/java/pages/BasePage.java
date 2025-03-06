@@ -11,6 +11,10 @@ import java.time.Duration;
 
 public class BasePage {
 
+    public BasePage(WebDriver driver) {
+        this.driver = driver;
+    }
+
     WebDriver driver;
 
     By cookieConsentButton = new By.ByXPath("//button[contains(@class, 'fc-cta-consent')]");
