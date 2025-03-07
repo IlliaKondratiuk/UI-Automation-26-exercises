@@ -39,8 +39,8 @@ public class CommonSteps {
         mainPage.handleCookies();
     }
 
-    @Then("the cart page is opened")
-    public void the_cart_page_is_opened() {
+    @Then("the cart page is opened successfully")
+    public void the_cart_page_is_opened_successfully() {
         Assert.assertEquals("The cart page is not opened",
                 "https://automationexercise.com/view_cart",
                 context.getDriver().getCurrentUrl());

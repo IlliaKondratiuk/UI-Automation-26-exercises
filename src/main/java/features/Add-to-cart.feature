@@ -23,5 +23,5 @@ Feature: Add product to cart
     And the quantity is increased to 4
     And the product is added to the cart
     When 'View Cart' is clicked
-    Then the cart page is opened
+    Then the cart page is opened successfully
     And the product 1 in the cart has quantity 4
