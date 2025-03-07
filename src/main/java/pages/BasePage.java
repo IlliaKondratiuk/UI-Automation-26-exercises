@@ -26,11 +26,11 @@ public class BasePage {
 
     By subscribeEmailInput = new By.ById("susbscribe_email");
 
-    public void clickElement(By el) {
+    protected void clickElement(By el) {
         driver.findElement(el).click();
     }
 
-    public boolean isElementVisible(By el) {
+    protected boolean isElementVisible(By el) {
         try {
             new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(el));
         } catch (TimeoutException e) {
@@ -49,12 +49,12 @@ public class BasePage {
         }
     }
 
-    public void fillInput(By el, String text) {
+    protected void fillInput(By el, String text) {
         driver.findElement(el).clear(); //added in case the input has a default value
         driver.findElement(el).sendKeys(text);
     }
 
-    public void scrollToElement(By locator) {
+    protected void scrollToElement(By locator) {
         WebElement el = driver.findElement(locator);
         new Actions(driver)
                 .scrollToElement(el)
