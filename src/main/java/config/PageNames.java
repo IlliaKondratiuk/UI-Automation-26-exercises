@@ -6,10 +6,10 @@ public enum PageNames {
     MAIN("https://automationexercise.com/"),
     PRODUCTS("https://automationexercise.com/products"),
     CART("https://automationexercise.com/view_cart"),
-    SIGNUPLOGIN("https://automationexercise.com/login"),
-    TESTCASES("https://automationexercise.com/test_cases"),
-    APITESTING("https://automationexercise.com/api_list"),
-    CONTACTUS("https://automationexercise.com/contact_us");
+    SIGNUP_LOGIN("https://automationexercise.com/login"),
+    TEST_CASES("https://automationexercise.com/test_cases"),
+    API_TESTING("https://automationexercise.com/api_list"),
+    CONTACT_US("https://automationexercise.com/contact_us");
 
     final String url;
 
