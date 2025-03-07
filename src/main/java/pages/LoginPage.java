@@ -20,7 +20,7 @@ public class LoginPage extends BasePage {
     By incorrectCredentialsMessage = new By.ByXPath("//p[text()='Your email or password is incorrect!']");
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public boolean isSignUpTextVisible() {

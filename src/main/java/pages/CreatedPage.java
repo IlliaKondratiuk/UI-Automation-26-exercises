@@ -9,7 +9,7 @@ public class CreatedPage extends BasePage {
     By continueButton = new By.ByXPath("//a[@data-qa='continue-button']");
 
     public CreatedPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public boolean createdIsVisible() {

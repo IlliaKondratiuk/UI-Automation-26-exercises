@@ -17,7 +17,7 @@ public class CartPage extends BasePage {
     String cartTotalXPathBegin = "(//td[@class='cart_total']//p)[";
 
     public CartPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public int getAllProductsQuantity() {

@@ -14,7 +14,7 @@ public class TestCasesPage extends BasePage {
     By testCases = new By.ByXPath("//a[@data-toggle='collapse']//u");
 
     public TestCasesPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public boolean areTestNamesCorrect(String nameFilePath) throws IOException {

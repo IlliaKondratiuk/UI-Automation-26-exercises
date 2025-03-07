@@ -19,7 +19,7 @@ public class MainPage extends BasePage {
     String viewProductXPathBegin = "(//a[contains(@href, 'product_details')])[";
 
     public MainPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public void initUsername(String username) {

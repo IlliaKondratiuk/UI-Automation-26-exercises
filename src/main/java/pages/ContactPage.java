@@ -21,7 +21,7 @@ public class ContactPage extends BasePage {
     By homeButton = new By.ByXPath("//div[@id='form-section']//a[@href='/']");
 
     public ContactPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public boolean getInTouchIsVisible() {

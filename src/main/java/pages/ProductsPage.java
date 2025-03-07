@@ -30,7 +30,7 @@ public class ProductsPage extends BasePage {
     String viewProductXPathBegin = "//a[@href='/product_details/";
 
     public ProductsPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public boolean isProductListVisible() {

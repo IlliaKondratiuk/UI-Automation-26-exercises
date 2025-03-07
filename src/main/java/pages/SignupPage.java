@@ -27,7 +27,7 @@ public class SignupPage extends BasePage {
     By createButton = new By.ByXPath("//button[@data-qa = 'create-account']");
 
     public SignupPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public boolean enterAccInfoIsVisible() {

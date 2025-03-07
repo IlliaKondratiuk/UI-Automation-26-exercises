@@ -27,7 +27,7 @@ public class ProductDetailsPage extends BasePage {
     By quantityInput = new By.ById("quantity");
 
     public ProductDetailsPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public boolean isNameVisible() {

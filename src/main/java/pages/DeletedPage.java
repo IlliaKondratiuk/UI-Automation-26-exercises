@@ -9,7 +9,7 @@ public class DeletedPage extends BasePage {
     By continueButton = new By.ByXPath("//a[@data-qa='continue-button']");
 
     public DeletedPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public boolean deletedLabelIsVisible() {
