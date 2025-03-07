@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import config.PageNames;
 import config.TestContext;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -25,8 +26,14 @@ public class CommonSteps {
     }
 
     @When("the {string} page is opened")
-    public void the_page_is_opened(String url) {
-        context.getDriver().get(url);
+    public void the_page_is_opened(String pageName) {
+        PageNames page;
+        try {
+            page = PageNames.valueOf(pageName.toUpperCase().replace(" ", "_"));
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Unknown page name: " + pageName);
+        }
+        context.getDriver().get(page.getUrl());
     }
 
     @Then("the logo is visible")

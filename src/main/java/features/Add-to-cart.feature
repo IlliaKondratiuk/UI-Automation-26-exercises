@@ -8,7 +8,7 @@ Feature: Add product to cart
 
   Background:
     Given the browser is launched
-    When the 'http://automationexercise.com' page is opened
+    When the 'main' page is opened
     And cookies window is handled
     Then the logo is visible
 
