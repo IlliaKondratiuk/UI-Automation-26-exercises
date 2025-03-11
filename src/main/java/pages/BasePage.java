@@ -100,4 +100,9 @@ public class BasePage {
         clickElement(deleteAccButton);
     }
 
+    public void scrollToAndClickElement(By locator) {
+        scrollToElement(locator);
+        clickElement(locator);
+    }
+
 }
