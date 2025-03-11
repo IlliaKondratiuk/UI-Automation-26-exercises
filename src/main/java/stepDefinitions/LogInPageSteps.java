@@ -2,7 +2,6 @@ package stepDefinitions;
 
 import config.TestContext;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import pages.LoginPage;
 
 import java.util.ResourceBundle;

@@ -1,9 +1,7 @@
 package stepDefinitions;
 
 import config.TestContext;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import pages.PaymentPage;
 
 import java.util.ResourceBundle;
