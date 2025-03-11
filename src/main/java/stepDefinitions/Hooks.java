@@ -28,7 +28,7 @@ public class Hooks {
     }
 
     //Quitting the driver after the tests are done
-    @After
+    @After(order = 1)
     public void tearDown() {
         WebDriver driver = context.getDriver();
         if (driver != null) {
@@ -37,7 +37,7 @@ public class Hooks {
         }
     }
 
-    @After("@AccountCleanup") //only used in scenarios that include creating a new account and deleting it at the end
+    @After(value = "@AccountCleanup", order = 2) //only used in scenarios that include creating a new account and deleting it at the end
     public void deleteAccountAfterScenario() {
         BasePage basePage = new BasePage(context.getDriver());
 
