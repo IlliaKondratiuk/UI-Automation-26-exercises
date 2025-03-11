@@ -10,6 +10,8 @@ import java.util.Map;
 public class CartPage extends BasePage {
 
     By allQuantitiesButtons = new By.ByXPath("//td[@class='cart_quantity']//button");
+    By checkoutButton = new By.ByXPath("//a[contains(@class, 'check_out')]");
+    By registerLoginModalButton = new By.ByXPath("//div[@class='modal-body']//a[@href='/login']");
 
     String cartNameXPathBegin = "(//td[@class='cart_description']//a)[";
     String cartPriceXPathBegin = "(//td[@class='cart_price']//p)[";
@@ -90,5 +92,13 @@ public class CartPage extends BasePage {
         By productQuantity = new By.ByXPath(cartQuantXPathBegin + productIndex + "]");
 
         return driver.findElement(productQuantity).getText().equals(Integer.toString(quantity));
+    }
+
+    public void clickCheckoutButton() {
+        clickElement(checkoutButton);
+    }
+
+    public void clickRegisterLoginModalButton() {
+        clickElement(registerLoginModalButton);
     }
 }

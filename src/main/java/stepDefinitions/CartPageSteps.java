@@ -21,4 +21,14 @@ public class CartPageSteps {
         Assert.assertTrue("The product " + productIndex + " quantity is incorrect",
                 cartPage.isProductQuantityCorrect(productIndex, quantity));
     }
+
+    @And("checkout is initiated")
+    public void checkout_is_initiated() {
+        cartPage.clickCheckoutButton();
+    }
+
+    @And("login page is opened via the modal window")
+    public void login_page_is_opened_via_the_modal_window() {
+        cartPage.clickRegisterLoginModalButton();
+    }
 }

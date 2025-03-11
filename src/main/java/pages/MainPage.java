@@ -2,6 +2,10 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class MainPage extends BasePage {
 
@@ -12,10 +16,12 @@ public class MainPage extends BasePage {
     By testCasesButton = new By.ByXPath("//a[@href='/test_cases']");
     By logOutButton = new By.ByXPath("//a[@href='/logout']");
     By contactUsButton = new By.ByXPath("//a[@href='/contact_us']");
+    By continueShoppingButton = new By.ByXPath("//button[contains(@class, 'close-modal') and text()='Continue Shopping']");
 
     By loggedInAsLabelNav = new By.ByXPath("//i[contains(@class, 'fa-user')]");
     By usernameNav;
 
+    String addToCartButtonXPathBegin = "(//a[@data-product-id=";
     String viewProductXPathBegin = "(//a[contains(@href, 'product_details')])[";
 
     public MainPage(WebDriver driver) {
@@ -55,5 +61,16 @@ public class MainPage extends BasePage {
 
     public void clickViewProduct(int index) {
         driver.findElement(new By.ByXPath(viewProductXPathBegin + index + "]")).click();
+    }
+
+    public void clickAddToCart(int productIndex) {
+        scrollToElement(new By.ByXPath(viewProductXPathBegin + productIndex + "]"));
+        clickElement(new By.ByXPath(addToCartButtonXPathBegin + productIndex + "])"));
+    }
+
+    public void clickContinueShopping() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(continueShoppingButton));
+        clickElement(continueShoppingButton);
     }
 }

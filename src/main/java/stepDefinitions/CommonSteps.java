@@ -52,4 +52,9 @@ public class CommonSteps {
                 "https://automationexercise.com/view_cart",
                 context.getDriver().getCurrentUrl());
     }
+
+    @And("the user is redirected to 'payment done'")
+    public void the_user_is_redirected_to_payment_done() {
+        Assert.assertTrue(context.getDriver().getCurrentUrl().toUpperCase().contains("payment_done".toUpperCase()));
+    }
 }

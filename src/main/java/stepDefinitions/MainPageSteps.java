@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import config.TestContext;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -33,5 +34,14 @@ public class MainPageSteps {
     @Given("the product {int} detail page was opened")
     public void the_product_detail_page_was_opened(int index) {
         context.getDriver().get("https://automationexercise.com/product_details/" + index);
+    }
+
+    @Given("products are added to the cart")
+    public void products_are_added_to_the_cart() {
+        mainPage.handleAds();
+        mainPage.clickAddToCart(1);
+        mainPage.clickContinueShopping();
+        mainPage.clickAddToCart(2);
+        mainPage.clickContinueShopping();
     }
 }
