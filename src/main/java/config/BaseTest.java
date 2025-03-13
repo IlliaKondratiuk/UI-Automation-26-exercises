@@ -4,7 +4,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 
-public class Base {
+public class BaseTest {
 
     public static WebDriver driver;
 

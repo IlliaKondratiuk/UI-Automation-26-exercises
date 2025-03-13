@@ -7,7 +7,7 @@
 // possible to run it for each page of the website. Even though technically the footer is the same on all pages,
 // the test was made pretending it's not, as it can theoretically be different on a commercial project.
 
-import config.Base;
+import config.BaseTest;
 import config.CriticalTests;
 import config.PageNames;
 import io.qameta.allure.*;
@@ -27,7 +27,7 @@ import java.util.Collection;
 
 @RunWith(Parameterized.class)
 @Category(CriticalTests.class)
-public class Exercises10and11SubscriptionTests extends Base {
+public class Exercises10and11SubscriptionTests extends BaseTest {
 
     BasePage testedPage;
     MainPage mainPage;

@@ -3,7 +3,7 @@
 // Using JUnit 4.13.2, designing with Page Object Model and generating an Allure(2.32.2) report
 // The expected search results are parsed from src\resources\SearchResults.txt
 
-import config.Base;
+import config.BaseTest;
 import config.CriticalTests;
 import io.qameta.allure.*;
 import org.junit.Assert;
@@ -16,7 +16,7 @@ import pages.ProductsPage;
 import java.io.IOException;
 
 @Category(CriticalTests.class)
-public class Exercise9SearchTest extends Base {
+public class Exercise9SearchTest extends BaseTest {
 
     private static MainPage mainPage;
     private static ProductsPage productsPage;

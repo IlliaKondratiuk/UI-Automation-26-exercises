@@ -4,7 +4,7 @@
 // Step 4 has been added by me to increase the complexity of the exercise
 // The expected TC names are parsed from src\resources\TestCases.txt
 
-import config.Base;
+import config.BaseTest;
 import config.CriticalTests;
 
 import io.qameta.allure.*;
@@ -18,7 +18,7 @@ import pages.TestCasesPage;
 import java.io.IOException;
 
 @Category(CriticalTests.class)
-public class Exercise7VerifyTCsTest extends Base {
+public class Exercise7VerifyTCsTest extends BaseTest {
 
     private static MainPage mainPage;
     private static TestCasesPage testCasesPage;

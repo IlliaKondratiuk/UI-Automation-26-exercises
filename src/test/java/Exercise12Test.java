@@ -3,7 +3,7 @@
 // Steps 1(Launch browser) and 2(Navigate to url) have been skipped as common sense.
 // Using JUnit 4.13.2, designing with Page Object Model and generating an Allure(2.32.2) report.
 
-import config.Base;
+import config.BaseTest;
 import config.CriticalTests;
 import io.qameta.allure.*;
 import org.junit.Assert;
@@ -17,7 +17,7 @@ import pages.ProductsPage;
 import java.util.Map;
 
 @Category(CriticalTests.class)
-public class Exercise12Test extends Base {
+public class Exercise12Test extends BaseTest {
 
     MainPage mainPage;
     ProductsPage productsPage;

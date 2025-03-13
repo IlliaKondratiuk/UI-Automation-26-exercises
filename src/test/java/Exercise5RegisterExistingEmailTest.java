@@ -3,7 +3,7 @@
 // Using JUnit 4.13.2, designing with Page Object Model and generating an Allure(2.32.2) report
 // The user data is parsed from src\resources\invalidregister.properties
 
-import config.Base;
+import config.BaseTest;
 import config.CriticalTests;
 import io.qameta.allure.*;
 import org.junit.Assert;
@@ -15,7 +15,7 @@ import pages.*;
 import java.util.ResourceBundle;
 
 @Category(CriticalTests.class)
-public class Exercise5RegisterExistingEmailTest extends Base {
+public class Exercise5RegisterExistingEmailTest extends BaseTest {
 
     private static MainPage mainPage;
     private static LoginPage loginPage;

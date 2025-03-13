@@ -4,7 +4,7 @@
 // The user data is parsed from src\resources\contactvalues.properties
 // The dummy file for step 5 is stored in src\resources\contactfile.pdf
 
-import config.Base;
+import config.BaseTest;
 import config.CriticalTests;
 import io.qameta.allure.*;
 import org.junit.Assert;
@@ -17,7 +17,7 @@ import pages.MainPage;
 import java.util.ResourceBundle;
 
 @Category(CriticalTests.class)
-public class Exercise6ContactUsTest extends Base {
+public class Exercise6ContactUsTest extends BaseTest {
 
     private static MainPage mainPage;
     private static ContactPage contactPage;

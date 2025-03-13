@@ -7,7 +7,7 @@
 // Using JUnit 4.13.2, designing with Page Object Model and generating an Allure(2.32.2) report.
 // The credentials are located in the Parameters class.
 
-import config.Base;
+import config.BaseTest;
 import config.CriticalTests;
 import io.qameta.allure.*;
 import org.junit.*;
@@ -22,7 +22,7 @@ import java.util.Collection;
 
 @Category(CriticalTests.class)
 @RunWith(Parameterized.class)
-public class Exercises2and3LoginTests extends Base {
+public class Exercises2and3LoginTests extends BaseTest {
 
     private static MainPage mainPage;
     private static LoginPage loginPage;
