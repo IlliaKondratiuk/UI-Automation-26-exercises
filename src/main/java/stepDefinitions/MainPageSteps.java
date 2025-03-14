@@ -35,7 +35,7 @@ public class MainPageSteps {
         context.getDriver().get("https://automationexercise.com/product_details/" + index);
     }
 
-    @Given("{int} product(s) {word} added to the cart")
+    @Given("{int} products are added to the cart")
     public void products_are_added_to_the_cart(int quantity) {
         mainPage.handleAds();
 
@@ -43,5 +43,12 @@ public class MainPageSteps {
             mainPage.clickAddToCart(i+1);
             mainPage.clickContinueShopping();
         }
+    }
+
+    @Given("a product is added to the cart")
+    public void a_product_is_added_to_the_cart() {
+        mainPage.handleAds();
+        mainPage.clickAddToCart(1);
+        mainPage.clickContinueShopping();
     }
 }
