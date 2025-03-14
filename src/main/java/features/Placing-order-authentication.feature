@@ -20,7 +20,7 @@ Feature: Place Order with Different Authentication Flows
 
     # Test Case 14: Place Order: Register while Checkout
   Scenario: Register during checkout
-    Given products are added to the cart
+    Given 2 products are added to the cart
     And the 'cart' page is opened
     And checkout is initiated
     And login page is opened via the modal window
@@ -38,7 +38,7 @@ Feature: Place Order with Different Authentication Flows
     And registration is initiated
     And registration is completed
     And the 'main' page is opened
-    And products are added to the cart
+    And 2 products are added to the cart
     And the 'cart' page is opened
     And checkout is initiated
     And the order is placed
@@ -50,7 +50,7 @@ Feature: Place Order with Different Authentication Flows
     Given the 'login' page is opened
     And the user logs in
     And the 'main' page is opened
-    And products are added to the cart
+    And 2 products are added to the cart
     And the 'cart' page is opened
     And checkout is initiated
     And the order is placed
