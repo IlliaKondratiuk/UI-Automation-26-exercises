@@ -35,7 +35,7 @@ public class MainPageSteps {
         context.getDriver().get("https://automationexercise.com/product_details/" + index);
     }
 
-    @Given("{int} product(s) are added to the cart")
+    @Given("{int} product(s) {word} added to the cart")
     public void products_are_added_to_the_cart(int quantity) {
         mainPage.handleAds();
 
