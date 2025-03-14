@@ -1,4 +1,4 @@
-# Test Automation Exercises
+# UI Test Automation Exercises
 
 This repository contains a collection of completed 26 UI test automation exercises from https://automationexercise.com/test_cases
 
@@ -6,13 +6,13 @@ This repository contains a collection of completed 26 UI test automation exercis
 
 It is designed for learning, practicing, and demonstrating UI test automation skills. 
 
-## 🛠 Technologies Used
+## 🛠 Technologies used
 - **Language:** Java
 - **Frameworks:** Selenium, Cucumber, JUnit 4  
 - **Build Tool:** Maven  
 - **Reporting:** Allure  
 
-## 📂 Project Structure
+## 📂 Project structure
 * 📂 src/test/java  - Test classes for exercises from 1 to 12.
 * 📁 src/main/java/config - WebDriver setup, test context management, and utility classes.
 * 📁 src/main/java/features - Cucumber scenarios that cover exercises from 13 to 26 **(only 13 to 16 for now.)**
@@ -30,14 +30,14 @@ It is designed for learning, practicing, and demonstrating UI test automation sk
 - - Test Case 7 now contains an additional step that verifies all the names of each test case listed on the tested page.
 - I'm still working on the project. The exercises 17-26 are yet to be done, and I might change some parts of the project in future(Like moving to JUnit 5).
 
-## 🚀 Running the Tests
+## 🚀 Running the tests
 Ensure you have the following installed:
 - Java (JDK 11+)
 - Maven
 - Allure
 - Chrome & ChromeDriver
 
-### Running Tests
+### The commands:
 Execute the following command to run the tests via Maven:
 ```mvn clean test```
 
