@@ -38,7 +38,7 @@ public class BasePage {
 
     protected boolean isElementVisible(By el) {
         try {
-            new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(el));
+            new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfElementLocated(el));
         } catch (TimeoutException e) {
             return false;
         }
