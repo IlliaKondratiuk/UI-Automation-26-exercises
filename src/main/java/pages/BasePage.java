@@ -45,6 +45,15 @@ public class BasePage {
         return true;
     }
 
+    protected boolean isElementVisible(By el, int secondsToWait) {
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(secondsToWait)).until(ExpectedConditions.visibilityOfElementLocated(el));
+        } catch (TimeoutException e) {
+            return false;
+        }
+        return true;
+    }
+
     public void handleCookies() {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
