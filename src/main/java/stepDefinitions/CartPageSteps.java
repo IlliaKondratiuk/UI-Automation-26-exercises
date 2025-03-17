@@ -2,8 +2,14 @@ package stepDefinitions;
 
 import config.TestContext;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.CartPage;
+
+import java.time.Duration;
 
 public class CartPageSteps {
 
@@ -30,5 +36,21 @@ public class CartPageSteps {
     @And("login page is opened via the modal window")
     public void login_page_is_opened_via_the_modal_window() {
         cartPage.clickRegisterLoginModalButton();
+    }
+
+    @When("user removes the product from the cart")
+    public void user_removes_the_product_from_the_cart() {
+        cartPage.clickRemoveFromCartByIndex(1); //1 by default as "the product" assumes it's just one product
+    }
+
+    @Then("the cart is empty")
+    public void the_cart_is_empty() {
+        try {
+            WebDriverWait wait = new WebDriverWait(context.getDriver(), Duration.ofSeconds(2));
+            wait.until(driver -> cartPage.isCartEmpty());
+        } catch (TimeoutException e) {
+            Assert.fail("The cart did not become empty in 2 seconds");
+        }
+
     }
 }

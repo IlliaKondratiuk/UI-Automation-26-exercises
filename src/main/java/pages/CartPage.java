@@ -2,6 +2,7 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
@@ -13,10 +14,13 @@ public class CartPage extends BasePage {
     By checkoutButton = new By.ByXPath("//a[contains(@class, 'check_out')]");
     By registerLoginModalButton = new By.ByXPath("//div[@class='modal-body']//a[@href='/login']");
 
+    By productTableRow = new By.ByXPath("//tr[contains(@id, 'product')]");
+
     String cartNameXPathBegin = "(//td[@class='cart_description']//a)[";
     String cartPriceXPathBegin = "(//td[@class='cart_price']//p)[";
     String cartQuantXPathBegin = "(//td[@class='cart_quantity']//button)[";
     String cartTotalXPathBegin = "(//td[@class='cart_total']//p)[";
+    String removeFromCartButtonXPathBegin = "(//a[@class='cart_quantity_delete'])[";
 
     public CartPage(WebDriver driver) {
         super(driver);
@@ -100,5 +104,18 @@ public class CartPage extends BasePage {
 
     public void clickRegisterLoginModalButton() {
         clickElement(registerLoginModalButton);
+    }
+
+    public void clickRemoveFromCartByIndex(int i) {
+        clickElement(new By.ByXPath(removeFromCartButtonXPathBegin + i + "]"));
+    }
+
+    public boolean isCartEmpty() {
+        try {
+            driver.findElement(productTableRow);
+        } catch (NoSuchElementException e) {
+            return true;
+        }
+        return false;
     }
 }
