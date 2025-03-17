@@ -30,6 +30,12 @@ public class BasePage {
         driver.findElement(el).click();
     }
 
+    protected void clickElement(By el, int secondsToWait) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(secondsToWait));
+        wait.until(ExpectedConditions.elementToBeClickable(el));
+        driver.findElement(el).click();
+    }
+
     protected boolean isElementVisible(By el) {
         try {
             new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(el));
