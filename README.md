@@ -28,7 +28,7 @@ It is designed for learning, practicing, and demonstrating UI test automation sk
 - - Each test case that involved filling inputs used external files as sources.
 - - Exercises 2-3 and 10-11 were fused into one **parameterized** test class.
 - - Test Case 7 now contains an additional step that verifies all the names of each test case listed on the tested page.
-- I'm still working on the project. The exercises 17-26 are yet to be done, and I might change some parts of the project in future(Like moving to JUnit 5).
+- I'm still working on the project. The exercises 18-26 are yet to be done, and I might change some parts of the project in future(Like moving to JUnit 5).
 
 ## 🚀 Running the tests
 Ensure you have the following installed:
