@@ -2,10 +2,13 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainPage extends BasePage {
 
@@ -17,6 +20,9 @@ public class MainPage extends BasePage {
     By logOutButton = new By.ByXPath("//a[@href='/logout']");
     By contactUsButton = new By.ByXPath("//a[@href='/contact_us']");
     By continueShoppingButton = new By.ByXPath("//button[contains(@class, 'close-modal') and text()='Continue Shopping']");
+
+    //No separate locators for general categories as their names can be retrieved from the subcategories' parent nodes
+    By subcategories = new By.ByXPath("//div[contains(@class, 'category-products')]//a[contains(@href, 'category')]");
 
     By loggedInAsLabelNav = new By.ByXPath("//i[contains(@class, 'fa-user')]");
     By usernameNav;
@@ -72,5 +78,18 @@ public class MainPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.elementToBeClickable(continueShoppingButton));
         clickElement(continueShoppingButton);
+    }
+
+    public ArrayList<String> getCategoriesSubcategoriesList() {
+        ArrayList<String> result = new ArrayList<>();
+
+        List<WebElement> subcategoriesList = driver.findElements(subcategories);
+
+        for(WebElement el : subcategoriesList) {
+            result.add((el.findElement(new By.ByXPath("ancestor::div[2]")).getAttribute("id") + " - "
+                    + el.getAttribute("textContent")).trim());
+        }
+
+        return result;
     }
 }

@@ -51,4 +51,9 @@ public class MainPageSteps {
         mainPage.clickAddToCart(1);
         mainPage.clickContinueShopping();
     }
+
+    @Given("all categories and subcategories are available")
+    public void all_categories_and_subcategories_are_available() {
+        context.setCategoryList(mainPage.getCategoriesSubcategoriesList());
+    }
 }
