@@ -16,3 +16,9 @@ Feature: Catalog
   Scenario: View product details
     When 'View Product' is clicked for product 1
     Then the product 1 detail page is opened
+
+    # Exercise 18 steps 4-8 (expanded)
+  Scenario: View product categories
+    Given all categories and subcategories are available
+    When the user visits each subcategory page
+    Then the headers include both the category and subcategory of the product
