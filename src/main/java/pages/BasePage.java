@@ -17,6 +17,7 @@ public class BasePage {
 
     WebDriver driver;
 
+    By homeButton = new By.ByXPath("//a[@href='/']");
     By cookieConsentButton = new By.ByXPath("//button[contains(@class, 'fc-cta-consent')]");
     By subscriptionArrowButton = new By.ById("subscribe");
     By deleteAccButton = new By.ByXPath("//a[@href='/delete_account']");
@@ -52,6 +53,10 @@ public class BasePage {
             return false;
         }
         return true;
+    }
+
+    public void clickHomeButton() {
+        clickElement(homeButton);
     }
 
     public void handleCookies() {

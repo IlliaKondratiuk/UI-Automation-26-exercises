@@ -21,6 +21,9 @@ public class ProductDetailsPage extends BasePage {
     By productBrand = new By.ByXPath("//div[@class='product-details']//b[contains(text(), 'Brand')]" +
             "/parent::p[text()]");
 
+    By productCatAndSubcat = new By.ByXPath("//div[contains(@class, 'features_items')]" +
+            "//h2[contains(@class, 'title')]");
+
     By viewCartButton = new By.ByXPath("//div[@id='cartModal']//a[@href='/view_cart']");
     By addToCartButton = new By.ByXPath("//button[contains(@class, 'btn-default cart')]");
 
@@ -72,5 +75,11 @@ public class ProductDetailsPage extends BasePage {
 
     public void clickAddToCart() {
         clickElement(addToCartButton);
+    }
+
+    public String getCatAndSubcat() {
+        String catAndSubcat = driver.findElement(productCatAndSubcat).getText();
+
+        return catAndSubcat.substring(0, catAndSubcat.length() - 9);
     }
 }

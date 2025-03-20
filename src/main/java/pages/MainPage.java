@@ -1,6 +1,8 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,8 +23,10 @@ public class MainPage extends BasePage {
     By contactUsButton = new By.ByXPath("//a[@href='/contact_us']");
     By continueShoppingButton = new By.ByXPath("//button[contains(@class, 'close-modal') and text()='Continue Shopping']");
 
-    //No separate locators for general categories as their names can be retrieved from the subcategories' parent nodes
+    By categories = new By.ByXPath("//div[contains(@class, 'category-products')]//a[@data-toggle]");
     By subcategories = new By.ByXPath("//div[contains(@class, 'category-products')]//a[contains(@href, 'category')]");
+    By visibleSubcategories = new By.ByXPath("//div[contains(@class, 'category-products')]" +
+            "//div[contains(@class, 'in')]//a[contains(@href, 'category')]");
 
     By loggedInAsLabelNav = new By.ByXPath("//i[contains(@class, 'fa-user')]");
     By usernameNav;
@@ -41,6 +45,7 @@ public class MainPage extends BasePage {
     public boolean logoIsVisible() {
         return isElementVisible(logo);
     }
+
 
     public void clickSignupLogin() {
         clickElement(signupLoginButton);
@@ -87,9 +92,31 @@ public class MainPage extends BasePage {
 
         for(WebElement el : subcategoriesList) {
             result.add((el.findElement(new By.ByXPath("ancestor::div[2]")).getAttribute("id") + " - "
-                    + el.getAttribute("textContent")).trim());
+                    + el.getAttribute("textContent")).trim().toUpperCase());
         }
 
         return result;
+    }
+
+    public int getCategoryQuantity() {
+        return driver.findElements(categories).size();
+    }
+
+    public int getVisibleSubcategoryQuantity() {
+        return driver.findElements(visibleSubcategories).size();
+    }
+
+    public void clickCategory(int index) {
+        driver.findElements(categories).get(index).click();
+    }
+
+    public void clickSubcategory(int index) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElements(visibleSubcategories).get(index)));
+            driver.findElements(visibleSubcategories).get(index).click();
+        } catch (ElementNotInteractableException e) {
+            Assert.fail("Subcategory couldn't be clicked as it's not visible");
+        }
     }
 }
