@@ -87,7 +87,11 @@ public class BasePage {
             throw new RuntimeException(e);
         }
 
-        driver.findElement(By.className("grippy-host")).click();
+        try {
+            driver.findElement(new By.ByClassName("grippy-host")).click();
+        } catch (NoSuchElementException e) {
+            System.out.println("The ads weren't loaded therefore handling was skipped");
+        }
     }
 
     public void scrollToTheBottom() {
