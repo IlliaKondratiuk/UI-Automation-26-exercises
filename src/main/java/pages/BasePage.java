@@ -17,13 +17,22 @@ public class BasePage {
 
     WebDriver driver;
 
-    By adsBottom = new By.ByClassName("grippy-host");
+    By logo = new By.ByXPath("//div[contains(@class, 'logo')]//a//img");
 
+    By productsButton = new By.ByXPath("//a[@href='/products']");
+    By signupLoginButton = new By.ByXPath("//a[@href='/login']");
+    By testCasesButton = new By.ByXPath("//a[@href='/test_cases']");
+    By logOutButton = new By.ByXPath("//a[@href='/logout']");
+    By contactUsButton = new By.ByXPath("//a[@href='/contact_us']");
     By homeButton = new By.ByXPath("//a[@href='/']");
     By cookieConsentButton = new By.ByXPath("//button[contains(@class, 'fc-cta-consent')]");
     By subscriptionArrowButton = new By.ById("subscribe");
     By deleteAccButton = new By.ByXPath("//a[@href='/delete_account']");
 
+    By loggedInAsLabelNav = new By.ByXPath("//i[contains(@class, 'fa-user')]");
+    By usernameNav;
+
+    By adsBottom = new By.ByClassName("grippy-host");
     By subscriptionFooterLabel = new By.ByXPath("//div[@class='single-widget']//h2[text()='Subscription']");
     By subscriptionSuccessLabel = new By.ByXPath("//div[contains(@class, 'alert-success') and text()='You have been successfully subscribed!']");
 
@@ -109,12 +118,44 @@ public class BasePage {
                 .executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 
+    public void clickSignupLogin() {
+        clickElement(signupLoginButton);
+    }
+
+    public void clickLogOut() {
+        clickElement(logOutButton);
+    }
+
+    public void clickContactUsButton() {
+        clickElement(contactUsButton);
+    }
+
+    public void clickTestCasesButton() {
+        clickElement(testCasesButton);
+    }
+
+    public void clickProductsButton() {
+        clickElement(productsButton);
+    }
+
     public void enterSubscriptionEmail(String email) {
         fillInput(subscribeEmailInput, email);
     }
 
     public void clickSubscriptionArrow() {
         clickElement(subscriptionArrowButton);
+    }
+
+    public void initUsername(String username) {
+        usernameNav = new By.ByXPath("//i[contains(@class, 'fa-user')]/parent::a/b[text()=\"" + username + "\"]");
+    }
+
+    public boolean logoIsVisible() {
+        return isElementVisible(logo);
+    }
+
+    public boolean checkLoggedInAsLabelNav() {
+        return isElementVisible(loggedInAsLabelNav) && isElementVisible(usernameNav);
     }
 
     public boolean isFooterSubscriptionLabelVisible() {
