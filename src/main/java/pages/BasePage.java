@@ -17,6 +17,8 @@ public class BasePage {
 
     WebDriver driver;
 
+    By adsBottom = new By.ByClassName("grippy-host");
+
     By homeButton = new By.ByXPath("//a[@href='/']");
     By cookieConsentButton = new By.ByXPath("//button[contains(@class, 'fc-cta-consent')]");
     By subscriptionArrowButton = new By.ById("subscribe");
@@ -82,6 +84,9 @@ public class BasePage {
     }
 
     public void handleAds() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(adsBottom));
+
         //Although using Thread.sleep() is a bad practice, this situation is caused by the fact that there are ads
         //on the website during testing, which is unlikely to happen in a proper testing environment. The Google Ads
         //arrow on the bottom ad isn't clickable until the ad is fully displayed on the page, which is not trackable
@@ -93,7 +98,7 @@ public class BasePage {
         }
 
         try {
-            driver.findElement(new By.ByClassName("grippy-host")).click();
+            clickElement(adsBottom);
         } catch (NoSuchElementException e) {
             System.out.println("The ads weren't loaded therefore handling was skipped");
         }
