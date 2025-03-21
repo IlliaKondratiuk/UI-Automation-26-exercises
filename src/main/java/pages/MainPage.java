@@ -111,7 +111,9 @@ public class MainPage extends BasePage {
     }
 
     public boolean isCategoryExpanded(int index) {
-        return !driver.findElements(categories).get(index).getAttribute("style").equals("height: 0px;");
+        return driver.findElements(categories).get(index).
+                findElements(new By.ByXPath("../../../div")).
+                get(1).getAttribute("style").equals("height: auto;");
     }
 
     public void clickSubcategory(int index) {
