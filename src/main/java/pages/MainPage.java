@@ -110,6 +110,10 @@ public class MainPage extends BasePage {
         driver.findElements(categories).get(index).click();
     }
 
+    public boolean isCategoryExpanded(int index) {
+        return !driver.findElements(categories).get(index).getAttribute("style").equals("height: 0px;");
+    }
+
     public void clickSubcategory(int index) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
