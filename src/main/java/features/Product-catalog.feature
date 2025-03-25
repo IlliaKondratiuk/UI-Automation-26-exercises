@@ -25,3 +25,9 @@ Feature: Catalog
     Given all categories and subcategories are available
     When the user visits each subcategory page
     Then the headers include both the category and subcategory of the product
+
+    #Exercise 19 steps 5-8 (expanded)
+  Scenario: View product brands
+    Given all product brands are available
+    When the user visits each brand page through the list
+    Then all opened pages correspond to the clicked brand
