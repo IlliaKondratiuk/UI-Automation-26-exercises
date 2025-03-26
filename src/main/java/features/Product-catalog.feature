@@ -1,9 +1,12 @@
-# This feature file includes the steps from: "Test Case 13: Add Products in Cart"
-# and "Test Case 18: View Category Products" with extended steps
+# This feature file includes the steps from: "Test Case 13: Add Products in Cart",
+# "Test Case 18: View Category Products" with extended steps,
+# and "Test Case 19: View & Cart Brand Products"
 # from the Automation Exercise page at automationexercise.com
 # Steps 1(Launch browser) and 2(Navigate to url) have been added as the background
 # Test Case 18 was intentionally made more difficult. It parses all the categories and subcategories from the sidebar
 # and then checks that each subcategory page contains a correct title, with no values hardcoded.
+# Test case 19 was intentionally made more difficult. It parses all the brands from the sidebar
+# and then checks that each opened brand page corresponds to the opened brand by checking the URL.
 # Each scenario has a comment explaining the source of the steps, as several tests might interact with the same feature
 # Using JUnit 4.13.2 and Cucumber 7.14.0
 
