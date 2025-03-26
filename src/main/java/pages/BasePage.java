@@ -92,6 +92,13 @@ public class BasePage {
                 .perform();
     }
 
+    protected void scrollToByIndex(By locator, int index) {
+        WebElement el = driver.findElements(locator).get(index);
+        new Actions(driver)
+                .scrollToElement(el)
+                .perform();
+    }
+
     public void handleAds() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(adsBottom));
