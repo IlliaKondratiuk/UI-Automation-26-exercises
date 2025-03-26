@@ -70,7 +70,6 @@ public class CatalogSteps {
     @When("the user visits each brand page through the list")
     public void the_user_visits_each_brand_page_through_the_list() {
         ArrayList<String> brandsInLinks = new ArrayList<>();
-        WebDriverWait wait = new WebDriverWait(context.getDriver(), Duration.ofSeconds(2));
         mainPage.handleAds();
 
         for (int i = 0; i < mainPage.getBrandQuantity(); i++) {
