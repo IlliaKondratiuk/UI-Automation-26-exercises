@@ -20,6 +20,7 @@ public class MainPage extends BasePage {
     By subcategories = new By.ByXPath("//div[contains(@class, 'category-products')]//a[contains(@href, 'category')]");
     By visibleSubcategories = new By.ByXPath("//div[contains(@class, 'category-products')]" +
             "//div[contains(@class, 'in')]//a[contains(@href, 'category')]");
+    By brands = new By.ByXPath("//div[@class='brands-name']//a");
 
     String addToCartButtonXPathBegin = "(//a[@data-product-id=";
     String viewProductXPathBegin = "(//a[contains(@href, 'product_details')])[";
@@ -60,12 +61,21 @@ public class MainPage extends BasePage {
         return driver.findElements(categories).size();
     }
 
+    public int getBrandQuantity() {
+        return driver.findElements(brands).size();
+    }
+
     public int getVisibleSubcategoryQuantity() {
         return driver.findElements(visibleSubcategories).size();
     }
 
     public void clickCategory(int index) {
         driver.findElements(categories).get(index).click();
+    }
+
+    public void clickBrand(int index) {
+        scrollToByIndex(brands, index);
+        driver.findElements(brands).get(index).click();
     }
 
     public boolean isCategoryExpanded(int index) {
@@ -82,5 +92,17 @@ public class MainPage extends BasePage {
         } catch (ElementNotInteractableException e) {
             Assert.fail("Subcategory couldn't be clicked as it's not visible");
         }
+    }
+
+    public ArrayList<String> getBrandNamesList() {
+        ArrayList<String> result = new ArrayList<>();
+
+        List<WebElement> brandList = driver.findElements(brands);
+
+        for(WebElement el : brandList) {
+            result.add(el.getText().replaceAll("^\\(\\d+\\)\\s*", ""));
+        }
+
+        return result;
     }
 }

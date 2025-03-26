@@ -10,6 +10,8 @@ public class TestContext {
     private WebDriver driver;
     private ArrayList<String> categoryList;
     private ArrayList<String> categoryFromDetailsList;
+    private ArrayList<String> brandNamesList;
+    private ArrayList<String> brandNamesFromLinksList;
 
     public WebDriver getDriver() {
         return driver;
@@ -33,5 +35,21 @@ public class TestContext {
 
     public void setDriver(WebDriver driver) {
         this.driver = driver;
+    }
+
+    public void setBrandNamesList(ArrayList<String> brandNamesList) {
+        this.brandNamesList = brandNamesList;
+    }
+
+    public void setBrandNamesFromLinksList(ArrayList<String> brandNamesFromLinksList) {
+        this.brandNamesFromLinksList = brandNamesFromLinksList;
+    }
+
+    public ArrayList<String> getBrandNamesList() {
+        return brandNamesList;
+    }
+
+    public ArrayList<String> getBrandNamesFromLinksList() {
+        return brandNamesFromLinksList;
     }
 }

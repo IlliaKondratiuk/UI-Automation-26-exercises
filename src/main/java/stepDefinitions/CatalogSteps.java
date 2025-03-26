@@ -61,4 +61,30 @@ public class CatalogSteps {
         Assert.assertEquals("The categories and subcategories of the products are not the same as in the list",
                 context.getCategoryList(), context.getCategoryFromDetailsList());
     }
+
+    @Given("all product brands are available")
+    public void all_product_brands_are_available() {
+        context.setBrandNamesList(mainPage.getBrandNamesList());
+    }
+
+    @When("the user visits each brand page through the list")
+    public void the_user_visits_each_brand_page_through_the_list() {
+        ArrayList<String> brandsInLinks = new ArrayList<>();
+        WebDriverWait wait = new WebDriverWait(context.getDriver(), Duration.ofSeconds(2));
+        mainPage.handleAds();
+
+        for (int i = 0; i < mainPage.getBrandQuantity(); i++) {
+            mainPage.clickBrand(i);
+            brandsInLinks.add(context.getDriver().getCurrentUrl().substring(46).toUpperCase()
+                    .replace("%20", " "));
+            context.getDriver().navigate().back();
+        }
+        context.setBrandNamesFromLinksList(brandsInLinks);
+    }
+
+    @Then("all opened pages correspond to the clicked brand")
+    public void all_opened_pages_correspond_to_the_clicked_brand() {
+        Assert.assertEquals("The brands in the opened pages are not the same as in the brand list in the catalog",
+                context.getBrandNamesList(), context.getBrandNamesFromLinksList());
+    }
 }
