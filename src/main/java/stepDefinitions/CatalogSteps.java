@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import config.TestContext;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -22,6 +23,11 @@ public class CatalogSteps {
         this.context = context;
         mainPage = new MainPage(context.getDriver());
         productDetailsPage = new ProductDetailsPage(context.getDriver());
+    }
+
+    @Given("all categories and subcategories are available")
+    public void all_categories_and_subcategories_are_available() {
+        context.setCategoryList(mainPage.getCategoriesSubcategoriesList());
     }
 
     @When("the user visits each subcategory page")
