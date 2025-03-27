@@ -55,7 +55,7 @@ public class Exercise9SearchTest extends BaseTest {
 
         //Step 5. Verify 'SEARCHED PRODUCTS' is visible
         Assert.assertTrue("Step 5: 'SEARCHED PRODUCTS' is not visible",
-                productsPage.isSearchedProductsVisible());
+                productsPage.areSearchedProductsVisible());
 
         //Step 6. Verify all the products related to search are visible
         try {

@@ -74,7 +74,7 @@ public class ProductsPage extends BasePage {
         clickElement(continueShoppingButton);
     }
 
-    public boolean isSearchedProductsVisible() {
+    public boolean areSearchedProductsVisible() {
         return isElementVisible(searchedProducts);
     }
 
