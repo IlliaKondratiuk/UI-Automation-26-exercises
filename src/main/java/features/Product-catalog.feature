@@ -34,3 +34,13 @@ Feature: Catalog
     Given all product brands are available
     When the user visits each brand page through the list
     Then all opened pages correspond to the clicked brand
+
+    #Exercise 20 steps 3-7
+  Scenario Outline: Search for a product
+    Given the 'products' page is opened
+    And the user enters "<color>" in the search bar
+    When user presses "search"
+    Then the products with "<color>" in the name are displayed
+    Examples:
+      | blue |
+      | pink |
