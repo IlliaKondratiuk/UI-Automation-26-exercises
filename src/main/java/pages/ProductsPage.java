@@ -18,6 +18,7 @@ import java.util.Map;
 public class ProductsPage extends BasePage {
 
     By productList = new By.ByClassName("single-products");
+    By allDisplayedProductNames = new By.ByXPath("//div[contains(@class, 'productinfo')]//p");
 
     By searchInput = new By.ByName("search");
     By searchButton = new By.ById("submit_search");
@@ -105,5 +106,12 @@ public class ProductsPage extends BasePage {
         details.put("price", driver.findElement(productPrice).getText());
 
         return details;
+    }
+
+    public boolean doAllProductsContainTheWord(String searchWord) {
+        List<WebElement> results = driver.findElements(allDisplayedProductNames);
+
+        return results.stream()
+                .allMatch(e -> e.getText().toUpperCase().contains(searchWord.toUpperCase())); //making it case-insensitive
     }
 }
