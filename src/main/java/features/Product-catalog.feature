@@ -7,6 +7,7 @@
 # and then checks that each subcategory page contains a correct title, with no values hardcoded.
 # Test case 19 was intentionally made more difficult. It parses all the brands from the sidebar
 # and then checks that each opened brand page corresponds to the opened brand by checking the URL.
+# Test case 20 steps 3-7 were intentionally implemented as a parameterized test.
 # Each scenario has a comment explaining the source of the steps, as several tests might interact with the same feature
 # Using JUnit 4.13.2 and Cucumber 7.14.0
 
