@@ -44,3 +44,12 @@ Feature: Catalog
     Examples:
       | blue |
       | pink |
+
+    #Exercise 20 steps 8-12
+  Scenario: Logging in after adding products to cart
+    Given the 'products' page is opened
+    And a product is added to the cart
+    And the 'login' page is opened
+    And the user logs in
+    And the 'cart' page is opened
+    Then the added product is still in the cart
