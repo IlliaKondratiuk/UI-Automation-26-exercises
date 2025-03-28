@@ -42,6 +42,7 @@ Feature: Catalog
     When user presses "search"
     Then the products with "<color>" in the name are displayed
     Examples:
+      | color |
       | blue |
       | pink |
 
