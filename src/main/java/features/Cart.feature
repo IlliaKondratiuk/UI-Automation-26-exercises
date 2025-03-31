@@ -24,7 +24,8 @@ Feature: Cart
 
     # Exercise 17
   Scenario: Remove products from the cart
-    Given a product is added to the cart
+    Given the 'products' page is opened
+    And a product is added to the cart
     And the 'cart' page is opened
     When user removes the product from the cart
     Then the cart is empty
