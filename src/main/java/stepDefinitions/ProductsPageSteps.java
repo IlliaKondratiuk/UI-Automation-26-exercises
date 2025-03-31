@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import config.TestContext;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -32,5 +33,12 @@ public class ProductsPageSteps {
     public void the_products_with_word_in_the_name_are_displayed(String word) {
         Assert.assertTrue("The results include a product that doesn't match the searched word",
                 productsPage.doAllProductsContainTheWord(word));
+    }
+
+    @Given("a product is added to the cart")
+    public void a_product_is_added_to_the_cart() {
+        productsPage.handleAds();
+        productsPage.clickAddToCart(1);
+        productsPage.clickContinueShopping();
     }
 }

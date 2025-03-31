@@ -44,12 +44,4 @@ public class MainPageSteps {
             mainPage.clickContinueShopping();
         }
     }
-
-    @Given("a product is added to the cart")
-    public void a_product_is_added_to_the_cart() {
-        mainPage.handleAds();
-        mainPage.clickAddToCart(1);
-        mainPage.clickContinueShopping();
-    }
-
 }
