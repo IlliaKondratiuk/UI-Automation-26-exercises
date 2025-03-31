@@ -118,4 +118,8 @@ public class CartPage extends BasePage {
         }
         return false;
     }
+
+    public String getProductNameByIndex(int index) {
+        return driver.findElement(new By.ByXPath(cartNameXPathBegin + index + "]")).getText();
+    }
 }

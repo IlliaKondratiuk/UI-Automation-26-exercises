@@ -53,4 +53,10 @@ public class CartPageSteps {
         }
 
     }
+
+    @Then("the added product is still in the cart")
+    public void theAddedProductIsStillInTheCart() {
+        Assert.assertEquals("The product in the cart is not the same as the one that was added previously",
+                context.getAddedProductName(), cartPage.getProductNameByIndex(1));
+    }
 }
