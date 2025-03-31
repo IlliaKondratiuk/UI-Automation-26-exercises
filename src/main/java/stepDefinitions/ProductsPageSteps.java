@@ -39,6 +39,7 @@ public class ProductsPageSteps {
     public void a_product_is_added_to_the_cart() {
         productsPage.handleAds();
         productsPage.clickAddToCart(1);
+        context.setAddedProductName(productsPage.getProductNameByIndex(1)); //saving the added product name
         productsPage.clickContinueShopping();
     }
 }
