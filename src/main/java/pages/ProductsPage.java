@@ -29,6 +29,7 @@ public class ProductsPage extends BasePage {
 
     String addToCartButtonXPathBegin = "(//a[@data-product-id=";
     String viewProductXPathBegin = "//a[@href='/product_details/";
+    String productXPathBegin = "(//div[contains(@class, 'productinfo')])[";
 
     public ProductsPage(WebDriver driver) {
         super(driver);
@@ -100,12 +101,16 @@ public class ProductsPage extends BasePage {
     public Map<String, String> getProductDetails(int productIndex) {
         Map<String, String> details = new HashMap<>();
 
-        By productPrice = new By.ByXPath("(//div[contains(@class, 'productinfo')])[" + productIndex + "]//h2");
-        By productName = new By.ByXPath("(//div[contains(@class, 'productinfo')])[" + productIndex + "]//p");
+        By productPrice = new By.ByXPath( productXPathBegin + productIndex + "]//h2");
+        By productName = new By.ByXPath(productXPathBegin + productIndex + "]//p");
         details.put("name", driver.findElement(productName).getText());
         details.put("price", driver.findElement(productPrice).getText());
 
         return details;
+    }
+
+    public String getProductNameByIndex(int productIndex) {
+        return driver.findElement(new By.ByXPath(productXPathBegin + productIndex + "]//p")).getText();
     }
 
     public boolean doAllProductsContainTheWord(String searchWord) {
