@@ -53,5 +53,5 @@ Feature: Catalog
     And a product is added to the cart
     And the 'login' page is opened
     And the user logs in
-    And the 'cart' page is opened
+    When the 'cart' page is opened
     Then the added product is still in the cart
