@@ -49,11 +49,11 @@ public class ContactPage extends BasePage {
     }
 
     public void clickSubmitButton() {
-        clickElement(submitButton);
+        clickElementByLocator(submitButton);
     }
 
     public void clickHomeButton() {
-        clickElement(homeButton);
+        clickElementByLocator(homeButton);
     }
 
     public boolean isSuccessTextVisible() {

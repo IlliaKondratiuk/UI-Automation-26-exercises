@@ -99,15 +99,15 @@ public class CartPage extends BasePage {
     }
 
     public void clickCheckoutButton() {
-        clickElement(checkoutButton);
+        clickElementByLocator(checkoutButton);
     }
 
     public void clickRegisterLoginModalButton() {
-        clickElement(registerLoginModalButton);
+        clickElementByLocator(registerLoginModalButton);
     }
 
     public void clickRemoveFromCartByIndex(int i) {
-        clickElement(new By.ByXPath(removeFromCartButtonXPathBegin + i + "]"));
+        clickElementByLocator(new By.ByXPath(removeFromCartButtonXPathBegin + i + "]"));
     }
 
     public boolean isCartEmpty() {

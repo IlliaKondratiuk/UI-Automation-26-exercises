@@ -50,10 +50,10 @@ public class LoginPage extends BasePage {
     }
 
     public void clickSignUpButton() {
-        clickElement(signUpButton);
+        clickElementByLocator(signUpButton);
     }
 
     public void clickLoginButton() {
-        clickElement(loginButton);
+        clickElementByLocator(loginButton);
     }
 }

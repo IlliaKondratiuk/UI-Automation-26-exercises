@@ -17,6 +17,6 @@ public class DeletedPage extends BasePage {
     }
 
     public void clickContinue() {
-        clickElement(continueButton);
+        clickElementByLocator(continueButton);
     }
 }

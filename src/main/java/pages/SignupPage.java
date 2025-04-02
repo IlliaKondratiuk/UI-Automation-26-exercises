@@ -35,7 +35,7 @@ public class SignupPage extends BasePage {
     }
 
     public void selectTitle() {
-        clickElement(titleRadioMr);
+        clickElementByLocator(titleRadioMr);
     }
 
     public void enterPass(String pass) {
@@ -53,11 +53,11 @@ public class SignupPage extends BasePage {
     }
 
     public void checkNewsletterBox() {
-        clickElement(newsletterBox);
+        clickElementByLocator(newsletterBox);
     }
 
     public void checkOffersBox() {
-        clickElement(offersBox);
+        clickElementByLocator(offersBox);
     }
 
     public void enterFirstName(String fName) {
@@ -102,6 +102,6 @@ public class SignupPage extends BasePage {
     }
 
     public void clickCreate() {
-        clickElement(createButton);
+        clickElementByLocator(createButton);
     }
 }

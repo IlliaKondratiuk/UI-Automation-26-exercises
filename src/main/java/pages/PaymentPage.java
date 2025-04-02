@@ -38,6 +38,6 @@ public class PaymentPage extends BasePage {
     }
 
     public void clickSubmitButton() {
-        clickElement(submitButton);
+        clickElementByLocator(submitButton);
     }
 }

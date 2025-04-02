@@ -17,6 +17,6 @@ public class CreatedPage extends BasePage {
     }
 
     public void clickContinue() {
-        clickElement(continueButton);
+        clickElementByLocator(continueButton);
     }
 }

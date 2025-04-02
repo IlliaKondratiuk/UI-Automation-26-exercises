@@ -38,11 +38,11 @@ public class BasePage {
 
     By subscribeEmailInput = new By.ById("susbscribe_email");
 
-    protected void clickElement(By el) {
+    protected void clickElementByLocator(By el) {
         driver.findElement(el).click();
     }
 
-    protected void clickElement(By el, int secondsToWait) {
+    protected void clickElementByLocator(By el, int secondsToWait) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(secondsToWait));
         wait.until(ExpectedConditions.elementToBeClickable(el));
         driver.findElement(el).click();
@@ -67,7 +67,7 @@ public class BasePage {
     }
 
     public void clickHomeButton() {
-        clickElement(homeButton);
+        clickElementByLocator(homeButton);
     }
 
     public void handleCookies() {
@@ -114,7 +114,7 @@ public class BasePage {
         }
 
         try {
-            clickElement(adsBottom);
+            clickElementByLocator(adsBottom);
         } catch (NoSuchElementException e) {
             System.out.println("The ads weren't loaded therefore handling was skipped");
         }
@@ -126,23 +126,23 @@ public class BasePage {
     }
 
     public void clickSignupLogin() {
-        clickElement(signupLoginButton);
+        clickElementByLocator(signupLoginButton);
     }
 
     public void clickLogOut() {
-        clickElement(logOutButton);
+        clickElementByLocator(logOutButton);
     }
 
     public void clickContactUsButton() {
-        clickElement(contactUsButton);
+        clickElementByLocator(contactUsButton);
     }
 
     public void clickTestCasesButton() {
-        clickElement(testCasesButton);
+        clickElementByLocator(testCasesButton);
     }
 
     public void clickProductsButton() {
-        clickElement(productsButton);
+        clickElementByLocator(productsButton);
     }
 
     public void enterSubscriptionEmail(String email) {
@@ -150,7 +150,7 @@ public class BasePage {
     }
 
     public void clickSubscriptionArrow() {
-        clickElement(subscriptionArrowButton);
+        clickElementByLocator(subscriptionArrowButton);
     }
 
     public void initUsername(String username) {
@@ -174,12 +174,12 @@ public class BasePage {
     }
 
     public void clickDeleteAccButton() {
-        clickElement(deleteAccButton);
+        clickElementByLocator(deleteAccButton);
     }
 
     public void scrollToAndClickElement(By locator) {
         scrollToElement(locator);
-        clickElement(locator);
+        clickElementByLocator(locator);
     }
 
 }

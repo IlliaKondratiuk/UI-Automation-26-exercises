@@ -50,16 +50,16 @@ public class ProductsPage extends BasePage {
 
     public void clickViewProduct(int productIndex) {
         scrollToElement(new By.ByXPath(viewProductXPathBegin + productIndex + "']"));
-        clickElement(new By.ByXPath(viewProductXPathBegin + productIndex + "']"));
+        clickElementByLocator(new By.ByXPath(viewProductXPathBegin + productIndex + "']"));
     }
 
     public void clickAddToCart(int productIndex) {
         scrollToElement(new By.ByXPath(viewProductXPathBegin + productIndex + "']"));
-        clickElement(new By.ByXPath(addToCartButtonXPathBegin + productIndex + "])"));
+        clickElementByLocator(new By.ByXPath(addToCartButtonXPathBegin + productIndex + "])"));
     }
 
     public void clickViewCart() {
-        clickElement(viewCartButton);
+        clickElementByLocator(viewCartButton);
     }
 
     public void enterProduct(String product) {
@@ -67,13 +67,13 @@ public class ProductsPage extends BasePage {
     }
 
     public void clickSearchButton() {
-        clickElement(searchButton);
+        clickElementByLocator(searchButton);
     }
 
     public void clickContinueShopping() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(continueShoppingButton));
-        clickElement(continueShoppingButton);
+        clickElementByLocator(continueShoppingButton);
     }
 
     public boolean areSearchedProductsVisible() {

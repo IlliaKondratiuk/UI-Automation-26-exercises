@@ -65,7 +65,7 @@ public class ProductDetailsPage extends BasePage {
     public void clickViewCart() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.elementToBeClickable(viewCartButton));
-        clickElement(viewCartButton);
+        clickElementByLocator(viewCartButton);
     }
 
     public void enterQuantity(int quantity) {
@@ -74,7 +74,7 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public void clickAddToCart() {
-        clickElement(addToCartButton);
+        clickElementByLocator(addToCartButton);
     }
 
     public String getCatAndSubcat() {

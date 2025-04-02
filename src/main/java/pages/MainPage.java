@@ -35,13 +35,13 @@ public class MainPage extends BasePage {
 
     public void clickAddToCart(int productIndex) {
         scrollToElement(new By.ByXPath(viewProductXPathBegin + productIndex + "]"));
-        clickElement(new By.ByXPath(addToCartButtonXPathBegin + productIndex + "])"));
+        clickElementByLocator(new By.ByXPath(addToCartButtonXPathBegin + productIndex + "])"));
     }
 
     public void clickContinueShopping() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.elementToBeClickable(continueShoppingButton));
-        clickElement(continueShoppingButton);
+        clickElementByLocator(continueShoppingButton);
     }
 
     public ArrayList<String> getCategoriesSubcategoriesList() {
