@@ -1,5 +1,7 @@
-package config;
+package config.testConfigs;
 
+import config.Config;
+import config.Drivers;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;

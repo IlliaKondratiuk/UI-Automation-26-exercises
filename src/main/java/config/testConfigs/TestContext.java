@@ -1,6 +1,6 @@
 //This class is used for sharing the driver state between Cucumber scenarios
 
-package config;
+package config.testConfigs;
 
 import org.openqa.selenium.WebDriver;
 

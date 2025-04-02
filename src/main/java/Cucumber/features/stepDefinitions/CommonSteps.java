@@ -1,7 +1,7 @@
 package Cucumber.features.stepDefinitions;
 
 import config.PageNames;
-import config.TestContext;
+import config.testConfigs.TestContext;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

@@ -7,8 +7,8 @@
 // possible to run it for each page of the website. Even though technically the footer is the same on all pages,
 // the test was made pretending it's not, as it can theoretically be different on a commercial project.
 
-import config.BaseTest;
-import config.CriticalTests;
+import config.testConfigs.BaseTest;
+import config.testConfigs.CriticalTests;
 import config.PageNames;
 import io.qameta.allure.*;
 import org.junit.After;

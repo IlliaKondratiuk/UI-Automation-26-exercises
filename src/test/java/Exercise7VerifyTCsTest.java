@@ -4,8 +4,8 @@
 // Step 4 has been added by me to increase the complexity of the exercise
 // The expected TC names are parsed from src\resources\TestCases.txt
 
-import config.BaseTest;
-import config.CriticalTests;
+import config.testConfigs.BaseTest;
+import config.testConfigs.CriticalTests;
 
 import io.qameta.allure.*;
 import org.junit.Assert;

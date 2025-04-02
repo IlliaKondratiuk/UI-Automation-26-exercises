@@ -2,7 +2,7 @@ package Cucumber.features.stepDefinitions;
 
 import config.Config;
 import config.Drivers;
-import config.TestContext;
+import config.testConfigs.TestContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;

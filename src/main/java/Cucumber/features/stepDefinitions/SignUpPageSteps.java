@@ -1,6 +1,6 @@
 package Cucumber.features.stepDefinitions;
 
-import config.TestContext;
+import config.testConfigs.TestContext;
 import io.cucumber.java.en.And;
 import pages.SignupPage;
 

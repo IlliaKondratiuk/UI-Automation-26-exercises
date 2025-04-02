@@ -3,8 +3,8 @@
 // Using JUnit 4.13.2, designing with Page Object Model and generating an Allure(2.32.2) report
 // The expected search results are parsed from src\resources\SearchResults.txt
 
-import config.BaseTest;
-import config.CriticalTests;
+import config.testConfigs.BaseTest;
+import config.testConfigs.CriticalTests;
 import io.qameta.allure.*;
 import org.junit.Assert;
 import org.junit.Before;
