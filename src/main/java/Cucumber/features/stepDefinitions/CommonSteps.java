@@ -1,4 +1,4 @@
-package stepDefinitions;
+package Cucumber.features.stepDefinitions;
 
 import config.PageNames;
 import config.TestContext;

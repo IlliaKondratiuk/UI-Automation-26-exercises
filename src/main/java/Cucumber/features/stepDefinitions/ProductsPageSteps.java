@@ -1,4 +1,4 @@
-package stepDefinitions;
+package Cucumber.features.stepDefinitions;
 
 import config.TestContext;
 import io.cucumber.java.en.And;
