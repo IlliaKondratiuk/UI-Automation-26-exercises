@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -28,6 +29,8 @@ public class ProductDetailsPage extends BasePage {
     By addToCartButton = new By.ByXPath("//button[contains(@class, 'btn-default cart')]");
 
     By quantityInput = new By.ById("quantity");
+
+    By reviewLabel = new By.ByXPath("//a[@href=\"#reviews\"]");
 
     public ProductDetailsPage(WebDriver driver) {
         super(driver);
@@ -81,5 +84,15 @@ public class ProductDetailsPage extends BasePage {
         String catAndSubcat = driver.findElement(productCatAndSubcat).getText();
 
         return catAndSubcat.substring(0, catAndSubcat.length() - 9);
+    }
+
+    public boolean isReviewLabelVisible() {
+        return isElementVisible(reviewLabel);
+    }
+
+    public boolean isReviewTextLabelCorrect(String expectedText) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        //Forced to use JS here as getText() returns all uppercase because of CSS
+        return expectedText.equals((String) js.executeScript("return arguments[0].textContent;", driver.findElement(reviewLabel)));
     }
 }

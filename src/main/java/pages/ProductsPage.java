@@ -26,6 +26,7 @@ public class ProductsPage extends BasePage {
     By searchResults = new By.ByXPath("//div[@class='single-products']//div//p");
     By viewCartButton = new By.ByXPath("//a[@href='/view_cart']");
     By continueShoppingButton = new By.ByXPath("//button[contains(@class, 'btn-success')]");
+    By viewProductButton = new By.ByXPath("//a[contains(@href, 'product_details/')]");
 
     String addToCartButtonXPathBegin = "(//a[@data-product-id=";
     String viewProductXPathBegin = "//a[@href='/product_details/";

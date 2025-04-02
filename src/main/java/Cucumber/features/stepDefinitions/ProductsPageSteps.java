@@ -42,4 +42,10 @@ public class ProductsPageSteps {
         context.setAddedProductName(productsPage.getProductNameByIndex(1)); //saving the added product name
         productsPage.clickContinueShopping();
     }
+
+    @When("any product's details page is opened")
+    public void any_products_details_page_is_opened() {
+        productsPage.handleAds();
+        productsPage.clickViewProduct(1);
+    }
 }

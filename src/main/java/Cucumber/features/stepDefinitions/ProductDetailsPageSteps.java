@@ -2,7 +2,9 @@ package Cucumber.features.stepDefinitions;
 
 import config.testConfigs.TestContext;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pages.ProductDetailsPage;
 
 public class ProductDetailsPageSteps {
@@ -29,5 +31,12 @@ public class ProductDetailsPageSteps {
     @When("'View Cart' is clicked")
     public void view_cart_is_clicked() {
         productDetailsPage.clickViewCart();
+    }
+
+
+    @Then("the review label {string} is visible")
+    public void the_label_is_visible(String reviewLabelText) {
+        Assert.assertTrue("The review writing label is not visible", productDetailsPage.isReviewLabelVisible());
+        Assert.assertTrue("The review label text is incorrect", productDetailsPage.isReviewTextLabelCorrect(reviewLabelText));
     }
 }
