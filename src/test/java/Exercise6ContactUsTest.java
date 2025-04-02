@@ -4,6 +4,7 @@
 // The user data is parsed from src\resources\contactvalues.properties
 // The dummy file for step 5 is stored in src\resources\contactfile.pdf
 
+import config.PageNames;
 import config.testConfigs.BaseTest;
 import config.testConfigs.CriticalTests;
 import io.qameta.allure.*;
@@ -28,7 +29,7 @@ public class Exercise6ContactUsTest extends BaseTest {
 
     @Before
     public void begin() {
-        driver.get("https://automationexercise.com/");
+        driver.get(PageNames.MAIN.getUrl());
 
         mainPage = new MainPage(driver);
         mainPage.handleCookies();

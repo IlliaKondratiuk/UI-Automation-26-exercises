@@ -3,6 +3,7 @@
 // Using JUnit 4.13.2, designing with Page Object Model and generating an Allure(2.32.2) report
 // The user data is parsed from src\resources\invalidregister.properties
 
+import config.PageNames;
 import config.testConfigs.BaseTest;
 import config.testConfigs.CriticalTests;
 import io.qameta.allure.*;
@@ -24,7 +25,7 @@ public class Exercise5RegisterExistingEmailTest extends BaseTest {
 
     @Before
     public void begin() {
-        driver.get("https://automationexercise.com/");
+        driver.get(PageNames.MAIN.getUrl());
 
         mainPage = new MainPage(driver);
         mainPage.handleCookies();

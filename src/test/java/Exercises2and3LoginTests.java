@@ -7,6 +7,7 @@
 // Using JUnit 4.13.2, designing with Page Object Model and generating an Allure(2.32.2) report.
 // The credentials are located in the Parameters class.
 
+import config.PageNames;
 import config.testConfigs.BaseTest;
 import config.testConfigs.CriticalTests;
 import io.qameta.allure.*;
@@ -51,7 +52,7 @@ public class Exercises2and3LoginTests extends BaseTest {
 
     @Before
     public void begin() {
-        driver.get("https://automationexercise.com/");
+        driver.get(PageNames.MAIN.getUrl());
 
         mainPage = new MainPage(driver);
         mainPage.handleCookies();

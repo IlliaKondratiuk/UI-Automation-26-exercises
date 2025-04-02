@@ -4,6 +4,7 @@
 // Step 4 has been added by me to increase the complexity of the exercise
 // The expected TC names are parsed from src\resources\TestCases.txt
 
+import config.PageNames;
 import config.testConfigs.BaseTest;
 import config.testConfigs.CriticalTests;
 
@@ -28,7 +29,7 @@ public class Exercise7VerifyTCsTest extends BaseTest {
 
     @Before
     public void begin() {
-        driver.get("https://automationexercise.com/");
+        driver.get(PageNames.MAIN.getUrl());
 
         mainPage = new MainPage(driver);
         mainPage.handleCookies();

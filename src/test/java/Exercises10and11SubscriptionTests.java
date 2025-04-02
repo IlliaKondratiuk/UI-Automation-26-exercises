@@ -48,7 +48,7 @@ public class Exercises10and11SubscriptionTests extends BaseTest {
 
     @Before
     public void begin() {
-        driver.get("https://automationexercise.com/");
+        driver.get(PageNames.MAIN.getUrl());
 
         mainPage = new MainPage(driver);
         mainPage.handleCookies();

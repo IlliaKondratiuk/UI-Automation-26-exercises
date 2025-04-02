@@ -3,6 +3,7 @@
 // Steps 1(Launch browser) and 2(Navigate to url) have been skipped as common sense.
 // Using JUnit 4.13.2, designing with Page Object Model and generating an Allure(2.32.2) report.
 
+import config.PageNames;
 import config.testConfigs.BaseTest;
 import config.testConfigs.CriticalTests;
 import io.qameta.allure.*;
@@ -25,7 +26,7 @@ public class Exercise12Test extends BaseTest {
 
     @Before
     public void begin() {
-        driver.get("https://automationexercise.com/");
+        driver.get(PageNames.MAIN.getUrl());
 
         mainPage = new MainPage(driver);
         mainPage.handleCookies();
