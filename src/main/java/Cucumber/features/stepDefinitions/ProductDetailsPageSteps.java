@@ -59,6 +59,7 @@ public class ProductDetailsPageSteps {
 
     @Then("the review is posted successfully")
     public void the_review_is_posted_successfully() {
+        //Perfectly speaking, such steps should confirm it via backend, but as we don't have access to it, we just check the success message appearance
         Assert.assertTrue("Successfull review submission message is not visible",
                 productDetailsPage.isReviewSubmittedSuccessVisible());
         Assert.assertTrue("The text of the successfull review submission message is correct",
