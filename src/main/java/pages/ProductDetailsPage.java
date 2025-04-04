@@ -99,7 +99,7 @@ public class ProductDetailsPage extends BasePage {
     public boolean isReviewTextLabelCorrect(String expectedText) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         //Forced to use JS here as getText() returns all uppercase because of CSS
-        return expectedText.equals((String) js.executeScript("return arguments[0].textContent;", driver.findElement(reviewLabel)));
+        return expectedText.equals(js.executeScript("return arguments[0].textContent;", driver.findElement(reviewLabel)));
     }
 
     public void fillReviewName(String name) {
