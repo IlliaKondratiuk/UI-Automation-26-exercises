@@ -31,6 +31,12 @@ public class ProductDetailsPage extends BasePage {
     By quantityInput = new By.ById("quantity");
 
     By reviewLabel = new By.ByXPath("//a[@href=\"#reviews\"]");
+    By reviewNameInput = new By.ById("name");
+    By reviewEmailInput = new By.ById("email");
+    By reviewTextInput = new By.ById("review");
+    By submitReviewButton = new By.ById("button-review");
+
+    By successfullReviewLabel = new By.ByXPath("//div[@id='review-section']//div[contains(@class, 'alert-success')]//span");
 
     public ProductDetailsPage(WebDriver driver) {
         super(driver);
@@ -94,5 +100,35 @@ public class ProductDetailsPage extends BasePage {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         //Forced to use JS here as getText() returns all uppercase because of CSS
         return expectedText.equals((String) js.executeScript("return arguments[0].textContent;", driver.findElement(reviewLabel)));
+    }
+
+    public void fillReviewName(String name) {
+        fillInput(reviewNameInput, name);
+    }
+
+    public void fillReviewEmail(String email) {
+        fillInput(reviewEmailInput, email);
+    }
+
+    public void fillReviewText(String review) {
+        fillInput(reviewTextInput, review);
+    }
+
+    public void fillAllReviewInputs(String name, String email, String review) {
+        fillReviewName(name);
+        fillReviewEmail(email);
+        fillReviewText(review);
+    }
+
+    public void clickSubmitReview() {
+        clickElementByLocator(submitReviewButton);
+    }
+
+    public boolean isReviewSubmittedSuccessVisible() {
+        return isElementVisible(successfullReviewLabel, 2);
+    }
+
+    public boolean isReviewSubmittedTextCorrect(String expected) {
+        return expected.equals(driver.findElement(successfullReviewLabel).getText());
     }
 }
