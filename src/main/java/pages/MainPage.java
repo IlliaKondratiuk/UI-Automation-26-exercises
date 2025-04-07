@@ -22,6 +22,12 @@ public class MainPage extends BasePage {
             "//div[contains(@class, 'in')]//a[contains(@href, 'category')]");
     By brands = new By.ByXPath("//div[@class='brands-name']//a");
 
+    By recommendedItemsLabel = new By.ByXPath("//div[@class='recommended_items']//h2[contains(@class, 'title')]");
+    By recommendedItemsImages = new By.ByXPath("//div[@class='recommended_items']//div[@class='item active']//img"); //sadly no unique attributes
+    By recommendedItemsPrices = new By.ByXPath("//div[@class='recommended_items']//div[@class='item active']//h2"); //sadly no unique attributes
+    By recommendedItemsNames = new By.ByXPath("//div[@class='recommended_items']//div[@class='item active']//p");  //sadly no unique attributes
+    By recommendedItemsAddToCart = new By.ByXPath("//div[@class='recommended_items']//div[@class='item active']//button[contains(@class, 'add-to-cart')]");
+
     String addToCartButtonXPathBegin = "(//a[@data-product-id=";
     String viewProductXPathBegin = "(//a[contains(@href, 'product_details')])[";
 
@@ -104,5 +110,25 @@ public class MainPage extends BasePage {
         }
 
         return result;
+    }
+
+    public boolean isRecommendedItemsTitleVisible() {
+        return isElementVisible(recommendedItemsLabel);
+    }
+
+    public boolean areRecommendedItemsImagesVisible() {
+        return driver.findElements(recommendedItemsImages).stream().allMatch(WebElement::isDisplayed);
+    }
+
+    public boolean areRecommendedItemsPricesVisible() {
+        return driver.findElements(recommendedItemsPrices).stream().allMatch(WebElement::isDisplayed);
+    }
+
+    public boolean areRecommendedItemsNamesVisible() {
+        return driver.findElements(recommendedItemsNames).stream().allMatch(WebElement::isDisplayed);
+    }
+
+    public boolean areRecommendedItemsAddToCartVisible() {
+        return driver.findElements(recommendedItemsAddToCart).stream().allMatch(WebElement::isDisplayed);
     }
 }

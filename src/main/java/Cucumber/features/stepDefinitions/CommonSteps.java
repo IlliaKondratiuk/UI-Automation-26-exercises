@@ -57,4 +57,9 @@ public class CommonSteps {
     public void the_user_is_redirected_to_payment_done() {
         Assert.assertTrue(context.getDriver().getCurrentUrl().toUpperCase().contains("payment_done".toUpperCase()));
     }
+
+    @When("the user scrolls to the bottom of the page")
+    public void the_user_scrolls_to_the_bottom_of_the_page() {
+        mainPage.scrollToTheBottom();
+    }
 }

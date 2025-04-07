@@ -44,4 +44,18 @@ public class MainPageSteps {
             mainPage.clickContinueShopping();
         }
     }
+
+    @Then("the recommended items are visible")
+    public void the_recommended_items_are_visible() {
+        Assert.assertTrue("The 'Recommended Items' title is not visible.",
+                mainPage.isRecommendedItemsTitleVisible());
+        Assert.assertTrue("The images of recommended items are not visible.",
+                mainPage.areRecommendedItemsImagesVisible());
+        Assert.assertTrue("The prices of recommended items are not visible.",
+                mainPage.areRecommendedItemsPricesVisible());
+        Assert.assertTrue("The names of recommended items are not visible.",
+                mainPage.areRecommendedItemsNamesVisible());
+        Assert.assertTrue("The 'Add to Cart' buttons of recommended items are not visible.",
+                mainPage.areRecommendedItemsAddToCartVisible());
+    }
 }
