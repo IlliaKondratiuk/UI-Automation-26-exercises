@@ -55,3 +55,15 @@ Feature: Catalog
     And the user logs in
     When the 'cart' page is opened
     Then the added product is still in the cart
+
+    #Exercise 22 steps 3-4
+  Scenario: Viewing recommended items on the main page
+    When the user scrolls to the bottom of the page
+    Then the recommended items are visible
+
+   #Exercise 22 steps 5-7
+  Scenario: Adding products from the recommended items to the cart
+    Given the user scrolls to the bottom of the page
+    And the user adds all prodcts to the cart
+    When the 'cart' page is opened
+    Then the added products are present in the cart
