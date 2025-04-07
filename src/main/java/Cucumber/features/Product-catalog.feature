@@ -64,6 +64,6 @@ Feature: Catalog
    #Exercise 22 steps 5-7
   Scenario: Adding products from the recommended items to the cart
     Given the user scrolls to the bottom of the page
-    And the user adds all prodcts to the cart
+    And the user adds all products to the cart
     When the 'cart' page is opened
     Then the added products are present in the cart
