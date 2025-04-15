@@ -56,3 +56,14 @@ Feature: Place Order with Different Authentication Flows
     And the order is placed
     When payment is completed
     Then the user is redirected to 'payment done'
+
+    # Exercise 23
+  Scenario: Register before checkout
+    Given the 'login' page is opened
+    And registration is initiated
+    And registration is completed
+    And the 'main' page is opened
+    And 2 products are added to the cart
+    And the 'cart' page is opened
+    When checkout is initiated
+    Then displayed addresses correspond to the address entered during registration
