@@ -17,7 +17,7 @@ It is designed for learning, practicing, and demonstrating UI test automation sk
 * 📁 src/main/java/config - WebDriver setup and page enums.
 * 📁 src/main/java/config/testConfigs - Base test class, test context class for Cucumber, interface for test grouping.
 * 📁 src/main/java/pages - Page classes for tested pages(written using the Page Object model).
-* 📁 src/main/java/Cucumber/features - Cucumber scenarios that cover exercises from 13 to 26 **(only 13 to 21 for now.)**
+* 📁 src/main/java/Cucumber/features - Cucumber scenarios that cover exercises from 13 to 26 **(only 13 to 22 for now.)**
 * 📁 src/main/java/Cucumber/stepDefinitions - Step definitions for Cucumber scenarios, organized per tested page.
 * 📁 src/main/resources - Resources for the tests, including dummy files and data parsed during the test executions.
 
@@ -29,7 +29,7 @@ It is designed for learning, practicing, and demonstrating UI test automation sk
 - - Each test case that involved filling inputs used external files as sources.
 - - Exercises 2-3 and 10-11 were fused into one **parameterized** test class.
 - - Test Case 7 now contains an additional step that verifies all the names of each test case listed on the tested page.
-- I'm still working on the project. The exercises 22-26 are yet to be done, and I might change some parts of the project in future(Like moving to JUnit 5).
+- I'm still working on the project. The exercises 23-26 are yet to be done, and I might change some parts of the project in future(Like moving to JUnit 5).
 
 ## 🚀 Running the tests
 Ensure you have the following installed:
