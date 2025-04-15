@@ -18,7 +18,7 @@ Feature: Place Order with Different Authentication Flows
     When cookies window is handled
     Then the logo is visible
 
-    # Test Case 14: Place Order: Register while Checkout
+    # Exercise 14
   Scenario: Register during checkout
     Given 2 products are added to the cart
     And the 'cart' page is opened
@@ -32,7 +32,7 @@ Feature: Place Order with Different Authentication Flows
     When payment is completed
     Then the user is redirected to 'payment done'
 
-    # Test Case 15: Place Order: Register before Checkout
+    # Exercise 15
   Scenario: Register before checkout
     Given the 'login' page is opened
     And registration is initiated
@@ -45,7 +45,7 @@ Feature: Place Order with Different Authentication Flows
     When payment is completed
     Then the user is redirected to 'payment done'
 
-    # Test Case 16: Place Order: Login before Checkout
+    # Exercise 16
   Scenario: Login before checkout
     Given the 'login' page is opened
     And the user logs in
