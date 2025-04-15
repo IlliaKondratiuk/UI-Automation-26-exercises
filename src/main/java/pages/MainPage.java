@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MainPage extends BasePage {
 
@@ -26,7 +27,7 @@ public class MainPage extends BasePage {
     By recommendedItemsImages = new By.ByXPath("//div[@class='recommended_items']//div[@class='item active']//img"); //sadly no unique attributes
     By recommendedItemsPrices = new By.ByXPath("//div[@class='recommended_items']//div[@class='item active']//h2"); //sadly no unique attributes
     By recommendedItemsNames = new By.ByXPath("//div[@class='recommended_items']//div[@class='item active']//p");  //sadly no unique attributes
-    By recommendedItemsAddToCart = new By.ByXPath("//div[@class='recommended_items']//div[@class='item active']//button[contains(@class, 'add-to-cart')]");
+    By recommendedItemsAddToCart = new By.ByXPath("//div[@class='recommended_items']//div[@class='item active']//a[contains(@class, 'add-to-cart')]");
 
     String addToCartButtonXPathBegin = "(//a[@data-product-id=";
     String viewProductXPathBegin = "(//a[contains(@href, 'product_details')])[";
@@ -130,5 +131,22 @@ public class MainPage extends BasePage {
 
     public boolean areRecommendedItemsAddToCartVisible() {
         return driver.findElements(recommendedItemsAddToCart).stream().allMatch(WebElement::isDisplayed);
+    }
+
+    public void addAllRecommendedItemsToCart() {
+//        for (WebElement el : driver.findElements(recommendedItemsAddToCart)) {
+//            el.click();
+//            clickContinueShopping();
+//        }
+
+        for (int i = 0; i <  driver.findElements(recommendedItemsAddToCart).size(); i++) {
+            driver.findElements(recommendedItemsAddToCart).get(i).click();
+            clickContinueShopping();
+        }
+    }
+
+    public ArrayList<String> getRecommendedItemsNames() {
+        return driver.findElements(recommendedItemsNames).stream().map(WebElement::getText)
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 }

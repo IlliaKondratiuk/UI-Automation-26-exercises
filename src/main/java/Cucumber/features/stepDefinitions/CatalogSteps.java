@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.CartPage;
 import pages.MainPage;
 import pages.ProductDetailsPage;
 
@@ -18,11 +19,13 @@ public class CatalogSteps {
 
     MainPage mainPage;
     ProductDetailsPage productDetailsPage;
+    CartPage cartPage;
 
     public CatalogSteps(TestContext context) {
         this.context = context;
         mainPage = new MainPage(context.getDriver());
         productDetailsPage = new ProductDetailsPage(context.getDriver());
+        cartPage = new CartPage(context.getDriver());
     }
 
     @Given("all categories and subcategories are available")
@@ -85,5 +88,12 @@ public class CatalogSteps {
     public void all_opened_pages_correspond_to_the_clicked_brand() {
         Assert.assertEquals("The brands in the opened pages are not the same as in the brand list in the catalog",
                 context.getBrandNamesList(), context.getBrandNamesFromLinksList());
+    }
+
+    @Then("the added products are present in the cart")
+    public void the_added_products_are_present_in_the_cart() {
+        //Just comparing the product names as we don't have access to the DB
+        Assert.assertEquals("The products in the cart are different from the recommended products that were added to the cart",
+                context.getAddedProductsNames(), cartPage.getProductsInCartNames());
     }
 }

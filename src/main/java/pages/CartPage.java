@@ -4,15 +4,19 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class CartPage extends BasePage {
 
     By allQuantitiesButtons = new By.ByXPath("//td[@class='cart_quantity']//button");
     By checkoutButton = new By.ByXPath("//a[contains(@class, 'check_out')]");
     By registerLoginModalButton = new By.ByXPath("//div[@class='modal-body']//a[@href='/login']");
+    By allCartProductNames = new By.ByXPath("//td[@class='cart_description']//a[@href]");
 
     By productTableRow = new By.ByXPath("//tr[contains(@id, 'product')]");
 
@@ -121,5 +125,10 @@ public class CartPage extends BasePage {
 
     public String getProductNameByIndex(int index) {
         return driver.findElement(new By.ByXPath(cartNameXPathBegin + index + "]")).getText();
+    }
+
+    public ArrayList<String> getProductsInCartNames() {
+        return driver.findElements(allCartProductNames).stream().map(WebElement::getText)
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 }

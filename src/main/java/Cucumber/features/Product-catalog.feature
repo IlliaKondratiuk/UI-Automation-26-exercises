@@ -1,6 +1,8 @@
 # This feature file includes the steps from: "Test Case 13: Add Products in Cart",
 # "Test Case 18: View Category Products" with extended steps,
-# and "Test Case 19: View & Cart Brand Products"
+# "Test Case 19: View & Cart Brand Products",
+# "Test Case 20: Search Products and Verify Cart After Login"
+# and "Test Case 22: Add to cart from Recommended items"
 # from the Automation Exercise page at automationexercise.com
 # Steps 1(Launch browser) and 2(Navigate to url) have been added as the background
 # Test Case 18 was intentionally made more difficult. It parses all the categories and subcategories from the sidebar

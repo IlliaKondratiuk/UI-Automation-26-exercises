@@ -1,6 +1,7 @@
 package Cucumber.features.stepDefinitions;
 
 import config.testConfigs.TestContext;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -57,5 +58,11 @@ public class MainPageSteps {
                 mainPage.areRecommendedItemsNamesVisible());
         Assert.assertTrue("The 'Add to Cart' buttons of recommended items are not visible.",
                 mainPage.areRecommendedItemsAddToCartVisible());
+    }
+
+    @And("the user adds all recommended products to the cart")
+    public void the_user_adds_all_recommended_products_to_the_cart() {
+        context.setAddedProductsNames(mainPage.getRecommendedItemsNames());
+        mainPage.addAllRecommendedItemsToCart();
     }
 }
