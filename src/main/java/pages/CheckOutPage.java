@@ -28,11 +28,11 @@ public class CheckOutPage extends BasePage {
     }
 
     public String getDeliveryFirstName() {
-        return driver.findElement(deliveryName).getText().split(" ")[0];
+        return driver.findElement(deliveryName).getText().split(" ")[1];
     }
 
     public String getDeliveryLastName() {
-        return driver.findElement(deliveryName).getText().split(" ")[1];
+        return driver.findElement(deliveryName).getText().split(" ")[2];
     }
 
     public String getDeliveryCompany() {
@@ -69,11 +69,11 @@ public class CheckOutPage extends BasePage {
     }
 
     public String getBillingFirstName() {
-        return driver.findElement(billingName).getText().split(" ")[0];
+        return driver.findElement(billingName).getText().split(" ")[1];
     }
 
     public String getBillingLastName() {
-        return driver.findElement(billingName).getText().split(" ")[1];
+        return driver.findElement(billingName).getText().split(" ")[2];
     }
 
     public String getBillingCompany() {
