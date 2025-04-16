@@ -58,7 +58,7 @@ Feature: Place Order with Different Authentication Flows
     Then the user is redirected to 'payment done'
 
     # Exercise 23
-  Scenario: Register before checkout
+  Scenario: Entering delivery and billing addresses during registration before checkout
     Given the 'login' page is opened
     And registration is initiated
     And registration is completed
