@@ -2,6 +2,7 @@
 # 1) "Test Case 14: Place Order: Register while Checkout"
 # 2) "Test Case 15: Place Order: Register before Checkout"
 # 3) "Test Case 16: Place Order: Login before Checkout"
+# 4) "Test Case 23: Verify address details in checkout page"
 # from the Test Cases page at automationexercise.com
 # Steps 1(Launch browser) and 2(Navigate to url) have been added as the background.
 # Each scenario has a comment explaining the source of the steps, as several tests might interact with the same feature.
