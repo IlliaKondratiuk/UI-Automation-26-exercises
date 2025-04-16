@@ -27,85 +27,85 @@ public class CheckOutPage extends BasePage {
         scrollToAndClickElement(checkOutButton);
     }
 
-    String getDeliveryFirstName() {
+    public String getDeliveryFirstName() {
         return driver.findElement(deliveryName).getText().split(" ")[0];
     }
 
-    String getDeliveryLastName() {
+    public String getDeliveryLastName() {
         return driver.findElement(deliveryName).getText().split(" ")[1];
     }
 
-    String getDeliveryCompany() {
+    public String getDeliveryCompany() {
         return driver.findElements(deliveryAddress1).get(0).getText();
     }
 
-    String getDeliveryStreet() {
+    public String getDeliveryStreet() {
         return driver.findElements(deliveryAddress1).get(1).getText();
     }
 
-    String getDeliveryHouseNumber() {
+    public String getDeliveryHouseNumber() {
         return driver.findElements(deliveryAddress1).get(2).getText();
     }
 
-    String getDeliveryCity() {
+    public String getDeliveryCity() {
         return driver.findElement(deliveryAddress2).getText().split(" ")[0];
     }
 
-    String getDeliveryState() {
+    public String getDeliveryState() {
         return driver.findElement(deliveryAddress2).getText().split(" ")[1];
     }
 
-    String getDeliveryZip() {
+    public String getDeliveryZip() {
         return driver.findElement(deliveryAddress2).getText().split(" ")[2] + " "
                 + driver.findElement(deliveryAddress2).getText().split(" ")[3];
     }
 
-    String getDeliveryCountry() {
+    public String getDeliveryCountry() {
         return driver.findElement(deliveryCountry).getText();
     }
 
-    String getDeliveryPhoneNumber() {
+    public String getDeliveryPhoneNumber() {
         return driver.findElement(deliveryPhone).getText();
     }
 
-    String getBillingFirstName() {
+    public String getBillingFirstName() {
         return driver.findElement(billingName).getText().split(" ")[0];
     }
 
-    String getBillingLastName() {
+    public String getBillingLastName() {
         return driver.findElement(billingName).getText().split(" ")[1];
     }
 
-    String getBillingCompany() {
+    public String getBillingCompany() {
         return driver.findElements(billingAddress1).get(0).getText();
     }
 
-    String getBillingStreet() {
+    public String getBillingStreet() {
         return driver.findElements(billingAddress1).get(1).getText();
     }
 
-    String getBillingHouseNumber() {
+    public String getBillingHouseNumber() {
         return driver.findElements(billingAddress1).get(2).getText();
     }
 
-    String getBillingCity() {
+    public String getBillingCity() {
         return driver.findElement(billingAddress2).getText().split(" ")[0];
     }
 
-    String getBillingState() {
+    public String getBillingState() {
         return driver.findElement(billingAddress2).getText().split(" ")[1];
     }
 
-    String getBillingZip() {
+    public String getBillingZip() {
         return driver.findElement(billingAddress2).getText().split(" ")[2] + " "
                 + driver.findElement(billingAddress2).getText().split(" ")[3];
     }
 
-    String getBillingCountry() {
+    public String getBillingCountry() {
         return driver.findElement(billingCountry).getText();
     }
 
-    String getBillingPhoneNumber() {
+    public String getBillingPhoneNumber() {
         return driver.findElement(billingPhone).getText();
     }
 
