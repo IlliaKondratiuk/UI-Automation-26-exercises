@@ -3,11 +3,13 @@
 # 2) "Test Case 15: Place Order: Register before Checkout"
 # 3) "Test Case 16: Place Order: Login before Checkout"
 # 4) "Test Case 23: Verify address details in checkout page"
+# 5) "Test Case 24: Downloading the invoice after placing the order"
 # from the Test Cases page at automationexercise.com
 # Steps 1(Launch browser) and 2(Navigate to url) have been added as the background.
 # Each scenario has a comment explaining the source of the steps, as several tests might interact with the same feature.
 # These test cases have A LOT of "and" annotation used, and even though this is not very BDD-friendly, this was done to
 # separate the step definitions by tested pages, instead of creating one step definition class with a ton of pages used.
+
 # Using JUnit 4.13.2 and Cucumber 7.14.0
 
 @AccountCleanup
@@ -70,6 +72,7 @@ Feature: Place Order with Different Authentication Flows
     Then displayed addresses correspond to the address entered during registration
 
     # Exercise 24
+    # The registration steps were replaces by logging in as they are covered in exercise 15
   Scenario: Downloading the invoice after placing the order
     Given the 'login' page is opened
     And the user logs in
