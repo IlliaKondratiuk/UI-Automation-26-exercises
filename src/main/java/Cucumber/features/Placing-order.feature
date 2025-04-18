@@ -68,3 +68,17 @@ Feature: Place Order with Different Authentication Flows
     And the 'cart' page is opened
     When checkout is initiated
     Then displayed addresses correspond to the address entered during registration
+
+    # Exercise 24
+  Scenario: Downloading the invoice after placing the order
+    Given the 'login' page is opened
+    And the user logs in
+    And the 'main' page is opened
+    And 2 products are added to the cart
+    And the 'cart' page is opened
+    And checkout is initiated
+    And the order is placed
+    And payment is completed
+    When 'Download Invoice' is clicked
+    Then the invoice is downloaded successfully
+
