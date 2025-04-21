@@ -72,7 +72,7 @@ Feature: Place Order with Different Authentication Flows
     Then displayed addresses correspond to the address entered during registration
 
     # Exercise 24
-    # The registration steps were replaces by logging in as they are covered in exercise 15
+    # The registration steps were replaced by logging in as they are covered in exercise 15
   Scenario: Downloading the invoice after placing the order
     Given the 'login' page is opened
     And the user logs in
