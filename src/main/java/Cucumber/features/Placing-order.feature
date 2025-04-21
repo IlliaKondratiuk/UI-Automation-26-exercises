@@ -12,7 +12,6 @@
 
 # Using JUnit 4.13.2 and Cucumber 7.14.0
 
-@AccountCleanup
 Feature: Place Order with Different Authentication Flows
 
   Background:
@@ -22,6 +21,7 @@ Feature: Place Order with Different Authentication Flows
     Then the logo is visible
 
     # Exercise 14
+  @AccountCleanup
   Scenario: Register during checkout
     Given 2 products are added to the cart
     And the 'cart' page is opened
@@ -36,6 +36,7 @@ Feature: Place Order with Different Authentication Flows
     Then the user is redirected to 'payment done'
 
     # Exercise 15
+  @AccountCleanup
   Scenario: Register before checkout
     Given the 'login' page is opened
     And registration is initiated
@@ -84,4 +85,3 @@ Feature: Place Order with Different Authentication Flows
     And payment is completed
     When 'Download Invoice' is clicked
     Then the invoice is downloaded successfully
-
