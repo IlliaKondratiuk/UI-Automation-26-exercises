@@ -16,12 +16,12 @@ Feature: UI interactions
 
     #Exercise 25 steps 4-7
   Scenario: Scrolling up using the arrow up button
-    Given the user scrolls to the bottom of the page
+    Given the user scrolls to the 'bottom' of the page
     When the user clicks the 'Scroll Up' button
     Then the page is to the top border
 
     #Exercise 26 steps 4-7
   Scenario: Arrow up button disappearing after scrolling the page back up
-    Given the user scrolls to the bottom of the page
-    When the user scrolls to the top of the page
+    Given the user scrolls to the 'bottom' of the page
+    When the user scrolls to the 'top' of the page
     Then the 'Scroll Up' button disappears
