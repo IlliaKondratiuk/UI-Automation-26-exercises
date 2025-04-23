@@ -58,8 +58,17 @@ public class CommonSteps {
         Assert.assertTrue(context.getDriver().getCurrentUrl().toUpperCase().contains("payment_done".toUpperCase()));
     }
 
-    @When("the user scrolls to the bottom of the page")
-    public void the_user_scrolls_to_the_bottom_of_the_page() {
-        mainPage.scrollToTheBottom();
+    @When("the user scrolls to the {string} of the page")
+    public void the_user_scrolls_to_the_direction_of_the_page(String direction) {
+        switch (direction) {
+            case "top":
+                mainPage.scrollToTheTop();
+                break;
+            case "bottom":
+                mainPage.scrollToTheBottom();
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid direction: " + direction);
+        }
     }
 }
