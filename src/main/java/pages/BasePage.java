@@ -120,6 +120,11 @@ public class BasePage {
         }
     }
 
+    public void scrollToTheTop() {
+        ((JavascriptExecutor) driver)
+                .executeScript("window.scrollTo(0, 0)");
+    }
+
     public void scrollToTheBottom() {
         ((JavascriptExecutor) driver)
                 .executeScript("window.scrollTo(0, document.body.scrollHeight)");
