@@ -15,10 +15,10 @@ Feature: UI interactions
     Then the logo is visible
 
     #Exercise 25 steps 4-7
-  Scenario: Scrolling up using the arrow up button
+  Scenario: Using the "Scroll Up" button
     Given the user scrolls to the 'bottom' of the page
     When the user clicks the 'Scroll Up' button
-    Then the page is to the top border
+    Then the page is scrolled to the top border
 
     #Exercise 26 steps 4-7
   Scenario: Arrow up button disappearing after scrolling the page back up

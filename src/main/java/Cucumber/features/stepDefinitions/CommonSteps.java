@@ -83,8 +83,8 @@ public class CommonSteps {
         mainPage.clickScrollUpButton();
     }
 
-    @Then("the page is to the top border")
-    public void the_page_is_to_the_top_border() {
+    @Then("the page is scrolled to the top border")
+    public void the_page_is_scrolled_to_the_top_border() {
         try {
             WebDriverWait wait = new WebDriverWait(context.getDriver(), Duration.ofSeconds(2));
             wait.until(driver -> mainPage.isAtTopOfPage());
