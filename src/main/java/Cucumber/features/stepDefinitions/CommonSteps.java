@@ -98,7 +98,7 @@ public class CommonSteps {
 
     }
 
-    @Then("the 'Scroll Up' button disappears")
+    @Then("the 'Scroll Up' button i not visible")
     public void theScrollUpButtonDisappears() {
     }
 }

@@ -24,4 +24,4 @@ Feature: UI interactions
   Scenario: Arrow up button disappearing after scrolling the page back up
     Given the user scrolls to the 'bottom' of the page
     When the user scrolls to the 'top' of the page
-    Then the 'Scroll Up' button disappears
+    Then the 'Scroll Up' button is not visible
