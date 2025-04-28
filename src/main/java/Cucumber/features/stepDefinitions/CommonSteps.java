@@ -7,7 +7,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.MainPage;
+
+import java.time.Duration;
 
 public class CommonSteps {
 
@@ -60,6 +64,8 @@ public class CommonSteps {
 
     @When("the user scrolls to the {string} of the page")
     public void the_user_scrolls_to_the_direction_of_the_page(String direction) {
+        mainPage.handleAds();
+
         switch (direction) {
             case "top":
                 mainPage.scrollToTheTop();
@@ -70,5 +76,29 @@ public class CommonSteps {
             default:
                 throw new IllegalArgumentException("Invalid direction: " + direction);
         }
+    }
+
+    @When("the user clicks the 'Scroll Up' button")
+    public void the_user_clicks_the_scroll_up_button() {
+        mainPage.clickScrollUpButton();
+    }
+
+    @Then("the page is to the top border")
+    public void the_page_is_to_the_top_border() {
+        try {
+            WebDriverWait wait = new WebDriverWait(context.getDriver(), Duration.ofSeconds(2));
+            wait.until(driver -> mainPage.isAtTopOfPage());
+        } catch (TimeoutException e) {
+            Assert.fail("The page is not scrolled to the top border");
+        }
+    }
+
+    @When("the user scrolls to the top of the page")
+    public void theUserScrollsToTheTopOfThePage() {
+
+    }
+
+    @Then("the 'Scroll Up' button disappears")
+    public void theScrollUpButtonDisappears() {
     }
 }

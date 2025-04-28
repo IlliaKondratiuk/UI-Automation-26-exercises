@@ -28,6 +28,7 @@ public class BasePage {
     By cookieConsentButton = new By.ByXPath("//button[contains(@class, 'fc-cta-consent')]");
     By subscriptionArrowButton = new By.ById("subscribe");
     By deleteAccButton = new By.ByXPath("//a[@href='/delete_account']");
+    By scrollUpButton = new By.ById("scrollUp");
 
     By loggedInAsLabelNav = new By.ByXPath("//i[contains(@class, 'fa-user')]");
     By usernameNav;
@@ -185,6 +186,18 @@ public class BasePage {
     public void scrollToAndClickElement(By locator) {
         scrollToElement(locator);
         clickElementByLocator(locator);
+    }
+
+    public void clickScrollUpButton() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(scrollUpButton));
+        clickElementByLocator(scrollUpButton);
+    }
+
+    public boolean isAtTopOfPage() {
+        Long scrollPosition = (Long) ((JavascriptExecutor) driver)
+                .executeScript("return window.pageYOffset;");
+        return scrollPosition == 0;
     }
 
 }
