@@ -60,12 +60,12 @@ Feature: Catalog
 
     # Test Case 22: Add to cart from Recommended items (steps 3-4)
   Scenario: Viewing recommended items on the main page
-    When the user scrolls to the bottom of the page
+    When the user scrolls to the "bottom" of the page
     Then the recommended items are visible
 
    # Test Case 22: Add to cart from Recommended items (steps 5-7)
   Scenario: Adding products from the recommended items to the cart
-    Given the user scrolls to the bottom of the page
+    Given the user scrolls to the "bottom" of the page
     And the user adds all recommended products to the cart
     When the 'cart' page is opened
     Then the added products are present in the cart
