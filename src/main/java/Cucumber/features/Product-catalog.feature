@@ -2,7 +2,7 @@
 # "Test Case 18: View Category Products" with extended steps,
 # "Test Case 19: View & Cart Brand Products",
 # "Test Case 20: Search Products and Verify Cart After Login"
-# and "Test Case 22: Add to cart from Recommended items"
+# "Test Case 22: Add to cart from Recommended items"
 # from the Automation Exercise page at automationexercise.com
 # Steps 1(Launch browser) and 2(Navigate to url) have been added as the background
 # Test Case 18 was intentionally made more difficult. It parses all the categories and subcategories from the sidebar
@@ -21,24 +21,24 @@ Feature: Catalog
     When cookies window is handled
     Then the logo is visible
 
-    # Exercise 13 steps 4-5
+    # Test Case 13: Add Products in Cart (steps 4-5)
   Scenario: View product details
     When 'View Product' is clicked for product 1
     Then the product 1 detail page is opened
 
-    # Exercise 18 steps 4-8 (expanded)
+    # Test Case 18: View Category Products (steps 4-8 expanded)
   Scenario: View product categories
     Given all categories and subcategories are available
     When the user visits each subcategory page
     Then the headers include both the category and subcategory of the product
 
-    #Exercise 19 steps 5-8 (expanded)
+    # Test Case 19: View & Cart Brand Products (steps 5-8 expanded)
   Scenario: View product brands
     Given all product brands are available
     When the user visits each brand page through the list
     Then all opened pages correspond to the clicked brand
 
-    #Exercise 20 steps 3-7
+    # Test Case 20: Search Products and Verify Cart After Login (steps 3-7)
   Scenario Outline: Search for a product
     Given the 'products' page is opened
     And the user enters "<color>" in the search bar
@@ -49,7 +49,7 @@ Feature: Catalog
       | blue |
       | pink |
 
-    #Exercise 20 steps 8-12
+    # Test Case 20: Search Products and Verify Cart After Login (steps 8-12)
   Scenario: Logging in after adding products to cart
     Given the 'products' page is opened
     And a product is added to the cart
@@ -58,12 +58,12 @@ Feature: Catalog
     When the 'cart' page is opened
     Then the added product is still in the cart
 
-    #Exercise 22 steps 3-4
+    # Test Case 22: Add to cart from Recommended items (steps 3-4)
   Scenario: Viewing recommended items on the main page
     When the user scrolls to the bottom of the page
     Then the recommended items are visible
 
-   #Exercise 22 steps 5-7
+   # Test Case 22: Add to cart from Recommended items (steps 5-7)
   Scenario: Adding products from the recommended items to the cart
     Given the user scrolls to the bottom of the page
     And the user adds all recommended products to the cart

@@ -14,13 +14,13 @@ Feature: UI interactions
     When cookies window is handled
     Then the logo is visible
 
-    #Exercise 25 steps 4-7
+    # Test Case 25: Verify Scroll Up using 'Arrow' button and Scroll Down functionality (steps 4-7)
   Scenario: Using the "Scroll Up" button
     Given the user scrolls to the 'bottom' of the page
     When the user clicks the 'Scroll Up' button
     Then the page is scrolled to the top border
 
-    #Exercise 26 steps 4-7
+    # Test Case 26: Verify Scroll Up without 'Arrow' button and Scroll Down functionality (steps 4-7)
   Scenario: Arrow up button disappearing after scrolling the page back up
     Given the user scrolls to the 'bottom' of the page
     When the user scrolls to the 'top' of the page

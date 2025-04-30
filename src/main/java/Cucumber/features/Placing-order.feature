@@ -20,7 +20,7 @@ Feature: Place Order with Different Authentication Flows
     When cookies window is handled
     Then the logo is visible
 
-    # Exercise 14
+    # Test Case 14: Place Order: Register while Checkout
   @AccountCleanup
   Scenario: Register during checkout
     Given 2 products are added to the cart
@@ -35,7 +35,7 @@ Feature: Place Order with Different Authentication Flows
     When payment is completed
     Then the user is redirected to 'payment done'
 
-    # Exercise 15
+    # Test Case 15: Place Order: Register before Checkout
   @AccountCleanup
   Scenario: Register before checkout
     Given the 'login' page is opened
@@ -49,7 +49,7 @@ Feature: Place Order with Different Authentication Flows
     When payment is completed
     Then the user is redirected to 'payment done'
 
-    # Exercise 16
+    # Test Case 16: Place Order: Login before Checkout
   Scenario: Login before checkout
     Given the 'login' page is opened
     And the user logs in
@@ -61,7 +61,7 @@ Feature: Place Order with Different Authentication Flows
     When payment is completed
     Then the user is redirected to 'payment done'
 
-    # Exercise 23
+    # Test Case 23: Verify address details in checkout page
   Scenario: Entering delivery and billing addresses during registration before checkout
     Given the 'login' page is opened
     And registration is initiated
@@ -72,8 +72,8 @@ Feature: Place Order with Different Authentication Flows
     When checkout is initiated
     Then displayed addresses correspond to the address entered during registration
 
-    # Exercise 24
-    # The registration steps were replaced by logging in as they are covered in exercise 15
+    # Test Case 24: Downloading the invoice after placing the order
+    # The registration steps have been replaced by logging in as they are covered in exercise 15
   Scenario: Downloading the invoice after placing the order
     Given the 'login' page is opened
     And the user logs in

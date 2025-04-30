@@ -12,14 +12,14 @@
       When cookies window is handled
       Then the logo is visible
 
-    #Exercise 21 steps 3-6
+    # Test Case 21: Add review on product (steps 3-6)
     Scenario: Opening a product details page
       Given the 'products' page is opened
       When any product's details page is opened
       Then the review label 'Write Your Review' is visible
 
 
-    #Exercise 21 steps 7-9
+    # Test Case 21: Add review on product (steps 7-9)
     Scenario: Leaving a review for a product
       Given the 'products' page is opened
       And any product's details page is opened
