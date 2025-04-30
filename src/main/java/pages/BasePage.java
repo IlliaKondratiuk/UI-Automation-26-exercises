@@ -200,4 +200,7 @@ public class BasePage {
         return scrollPosition == 0;
     }
 
+    public boolean isScrollUpVisible() {
+        return isElementVisible(scrollUpButton, 3);
+    }
 }

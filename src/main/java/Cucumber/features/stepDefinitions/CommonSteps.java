@@ -94,11 +94,17 @@ public class CommonSteps {
     }
 
     @When("the user scrolls to the top of the page")
-    public void theUserScrollsToTheTopOfThePage() {
-
+    public void the_user_scrolls_to_the_top_of_the_page() {
+        mainPage.scrollToTheTop();
     }
 
     @Then("the 'Scroll Up' button is not visible")
-    public void theScrollUpButtonDisappears() {
+    public void the_scroll_up_button_disappears() {
+        try {
+            WebDriverWait wait = new WebDriverWait(context.getDriver(), Duration.ofSeconds(2));
+            wait.until(driver -> !mainPage.isScrollUpVisible());
+        } catch (TimeoutException e) {
+            Assert.fail("The 'Scroll Up' button is still visible after scrolling to the top of the page");
+        }
     }
 }
