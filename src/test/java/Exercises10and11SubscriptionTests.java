@@ -20,6 +20,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import pages.BasePage;
 import pages.CartPage;
+import pages.CommonElementsPage;
 import pages.MainPage;
 
 import java.util.Arrays;
@@ -29,7 +30,7 @@ import java.util.Collection;
 @Category(CriticalTests.class)
 public class Exercises10and11SubscriptionTests extends BaseTest {
 
-    BasePage testedPage;
+    CommonElementsPage commonElementsPage;
     MainPage mainPage;
 
     public PageNames page;
@@ -71,23 +72,23 @@ public class Exercises10and11SubscriptionTests extends BaseTest {
         //Step 1.1. Switch to the tested page
         driver.get(page.getUrl());
         switch (page) {
-            case MAIN: testedPage = new MainPage(driver);
-            case CART: testedPage = new CartPage(driver);
+            case MAIN: commonElementsPage = new MainPage(driver);
+            case CART: commonElementsPage = new CartPage(driver);
         }
 
         //Step 2. Scroll down to the footer.
-        testedPage.scrollToTheBottom();
+        commonElementsPage.scrollToTheBottom();
 
         //Step 3. Verify that text 'SUBSCRIPTION' is visible
         Assert.assertTrue("Step 3: 'SUBSCRIPTION' label in the footer is not visible",
-                testedPage.isFooterSubscriptionLabelVisible());
+                commonElementsPage.isFooterSubscriptionLabelVisible());
 
         //Step 4. Enter email address in the subscription input and click arrow button
-        testedPage.enterSubscriptionEmail("test@qa.test");
-        testedPage.clickSubscriptionArrow();
+        commonElementsPage.enterSubscriptionEmail("test@qa.test");
+        commonElementsPage.clickSubscriptionArrow();
 
         //Step 5. Verify that success message 'You have been successfully subscribed!' is visible
         Assert.assertTrue("Step 5: 'You have been successfully subscribed!' is not visible",
-                testedPage.isSubscriptionSuccessLabelVisible());
+                commonElementsPage.isSubscriptionSuccessLabelVisible());
     }
 }
