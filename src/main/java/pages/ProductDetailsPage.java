@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class ProductDetailsPage extends CommonElements {
+public class ProductDetailsPage extends CommonElementsPage {
     //The "//div[@class='product-details']" is included in all paths to ensure that the found elements are located
     //under the product details div as other names/categories/prices/etc. potentially may be added to the page later
     //e.g. recommended products and their details. "text()" is added to ensure the details are not empty.

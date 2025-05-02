@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class SignupPage extends CommonElements {
+public class SignupPage extends CommonElementsPage {
 
     By enterAccInfoLabel = new By.ByXPath("//b[text()='Enter Account Information']");
     By titleRadioMr = new By.ById("id_gender1");

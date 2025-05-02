@@ -6,9 +6,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class CommonElements extends BasePage {
+public class CommonElementsPage extends BasePage {
 
-    public CommonElements(WebDriver driver) {
+    public CommonElementsPage(WebDriver driver) {
         super(driver);
     }
 

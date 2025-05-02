@@ -9,7 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class TestCasesPage extends CommonElements {
+public class TestCasesPage extends CommonElementsPage {
 
     By testCases = new By.ByXPath("//a[@data-toggle='collapse']//u");
 

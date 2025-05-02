@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class CartPage extends CommonElements {
+public class CartPage extends CommonElementsPage {
 
     By allQuantitiesButtons = new By.ByXPath("//td[@class='cart_quantity']//button");
     By checkoutButton = new By.ByXPath("//a[contains(@class, 'check_out')]");
