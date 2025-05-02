@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
-public class ContactPage extends BasePage {
+public class ContactPage extends CommonElements {
 
     By getInTouchLabel = new By.ByXPath("//h2[text()='Get In Touch']");
     By successLabel = new By.ByXPath("//div[@class='contact-form']" +

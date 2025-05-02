@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends BasePage {
+public class LoginPage extends CommonElements {
 
     By signUpText = new By.ByXPath("//h2[text()='New User Signup!']");
     By loginText = new By.ByXPath("//h2[text()='Login to your account']");

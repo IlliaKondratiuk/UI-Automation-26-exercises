@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MainPage extends BasePage {
+public class MainPage extends CommonElements {
 
     By continueShoppingButton = new By.ByXPath("//button[contains(@class, 'close-modal') and text()='Continue Shopping']");
 

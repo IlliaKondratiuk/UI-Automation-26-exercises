@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ProductsPage extends BasePage {
+public class ProductsPage extends CommonElements {
 
     By productList = new By.ByClassName("single-products");
     By allDisplayedProductNames = new By.ByXPath("//div[contains(@class, 'productinfo')]//p");

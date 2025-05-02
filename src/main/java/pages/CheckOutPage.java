@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class CheckOutPage extends BasePage {
+public class CheckOutPage extends CommonElements {
 
     By checkOutButton = new By.ByXPath("//a[contains(@class, 'check_out')]");
 

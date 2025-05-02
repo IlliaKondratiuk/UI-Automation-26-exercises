@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class PaymentPage extends BasePage {
+public class PaymentPage extends CommonElements {
 
     By nameOnCardInput = new By.ByName("name_on_card");
     By cardNumberInput = new By.ByName("card_number");
