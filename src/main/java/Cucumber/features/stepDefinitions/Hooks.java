@@ -6,14 +6,12 @@ import config.testConfigs.TestContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
-import pages.BasePage;
+import pages.CommonElementsPage;
 
 //This class contains the setUp and tearDown methods for Cucumber features
 public class Hooks {
 
     private final TestContext context;
-
-    BasePage basePage;
 
     public Hooks(TestContext context) {
         this.context = context;
@@ -39,8 +37,8 @@ public class Hooks {
 
     @After(value = "@AccountCleanup", order = 2) //only used in scenarios that include creating a new account and deleting it at the end
     public void deleteAccountAfterScenario() {
-        BasePage basePage = new BasePage(context.getDriver());
+        CommonElementsPage commonElementsPage = new CommonElementsPage(context.getDriver());
 
-        basePage.clickDeleteAccButton();
+        commonElementsPage.clickDeleteAccButton();
     }
 }
