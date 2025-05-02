@@ -18,7 +18,6 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import pages.BasePage;
 import pages.CartPage;
 import pages.CommonElementsPage;
 import pages.MainPage;
