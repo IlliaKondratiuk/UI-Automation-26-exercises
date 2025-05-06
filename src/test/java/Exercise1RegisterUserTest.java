@@ -5,16 +5,16 @@
 
 import config.PageNames;
 import config.testConfigs.BaseTest;
-import config.testConfigs.CriticalTests;
+
 import io.qameta.allure.*;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 import pages.*;
 import java.util.ResourceBundle;
 
-@Category(CriticalTests.class)
+@Tag("Critical")
 public class Exercise1RegisterUserTest extends BaseTest
 {
 
@@ -25,7 +25,7 @@ public class Exercise1RegisterUserTest extends BaseTest
     private static DeletedPage deletedPage;
     private static ResourceBundle values;
 
-    @Before
+    @BeforeEach
     public void begin() {
         driver.get(PageNames.MAIN.getUrl());
 
@@ -42,14 +42,16 @@ public class Exercise1RegisterUserTest extends BaseTest
     @Severity(SeverityLevel.CRITICAL)
     public void Ex1RegisterDeleteTest() {
         //Step 1. Check if the logo is visible.
-        Assert.assertTrue("Step 1: The logo is not visible", mainPage.logoIsVisible());
+        Assertions.assertTrue(mainPage.logoIsVisible(),
+                "Step 1: The logo is not visible");
 
         //Step 2. Click on 'Signup / Login' button
         mainPage.clickSignupLogin();
 
         //Step 3. Verify 'New User Signup!' is visible
         loginPage = new LoginPage(driver);
-        Assert.assertTrue("Step 3: The sign up text is not visible",loginPage.isSignUpTextVisible());
+        Assertions.assertTrue(loginPage.isSignUpTextVisible(),
+                "Step 3: The sign up text is not visible");
 
         //Step 4. Enter name and email address
         loginPage.enterNameEmailSignup(values.getString("name"), values.getString("email"));
@@ -59,7 +61,8 @@ public class Exercise1RegisterUserTest extends BaseTest
 
         //Step 6. Verify that 'ENTER ACCOUNT INFORMATION' is visible
         signupPage = new SignupPage(driver);
-        Assert.assertTrue("Step 6: 'ENTER ACCOUNT INFORMATION' is not visible", signupPage.enterAccInfoIsVisible());
+        Assertions.assertTrue(signupPage.enterAccInfoIsVisible(),
+                "Step 6: 'ENTER ACCOUNT INFORMATION' is not visible");
 
         //Step 7. Fill details: Title, Email, Password, Date of birth
         signupPage.selectTitle();
@@ -89,22 +92,24 @@ public class Exercise1RegisterUserTest extends BaseTest
 
         //Step 12. Verify that 'ACCOUNT CREATED!' is visible
         createdPage = new CreatedPage(driver);
-        Assert.assertTrue("Step 12: 'ACCOUNT CREATED' is not visible", createdPage.createdIsVisible());
+        Assertions.assertTrue(createdPage.createdIsVisible(),
+                "Step 12: 'ACCOUNT CREATED' is not visible");
 
         //Step 13. Click 'Continue' button
         createdPage.clickContinue();
 
         //Step 14. Verify that 'Logged in as username' is visible
         mainPage.initUsername(values.getString("name"));
-        Assert.assertTrue("Step 14: 'Logged in as username' is not visible or the username is incorrect",
-                mainPage.checkLoggedInAsLabelNav());
+        Assertions.assertTrue(mainPage.checkLoggedInAsLabelNav(),
+                "Step 14: 'Logged in as username' is not visible or the username is incorrect");
 
         //Step 15. Click 'Delete Account' button
         mainPage.clickDeleteAccButton();
 
         //Step 16. Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
         deletedPage = new DeletedPage(driver);
-        Assert.assertTrue("Step 16: 'ACCOUNT DELETED!' is not visible", deletedPage.deletedLabelIsVisible());
+        Assertions.assertTrue(deletedPage.deletedLabelIsVisible(),
+                "Step 16: 'ACCOUNT DELETED!' is not visible");
         deletedPage.clickContinue();
     }
 }
