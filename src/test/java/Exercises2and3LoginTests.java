@@ -9,10 +9,9 @@
 
 import config.PageNames;
 import config.testConfigs.BaseTest;
-import config.testConfigs.CriticalTests;
 import io.qameta.allure.*;
 import org.junit.*;
-import org.junit.experimental.categories.Category;
+import org.junit.jupiter.api.Tag;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import pages.LoginPage;
@@ -21,7 +20,7 @@ import pages.MainPage;
 import java.util.Arrays;
 import java.util.Collection;
 
-@Category(CriticalTests.class)
+@Tag("Critical")
 @RunWith(Parameterized.class)
 public class Exercises2and3LoginTests extends BaseTest {
 

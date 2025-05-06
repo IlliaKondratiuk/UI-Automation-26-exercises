@@ -5,17 +5,17 @@
 
 import config.PageNames;
 import config.testConfigs.BaseTest;
-import config.testConfigs.CriticalTests;
+
 import io.qameta.allure.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
+import org.junit.jupiter.api.Tag;
 import pages.*;
 
 import java.util.ResourceBundle;
 
-@Category(CriticalTests.class)
+@Tag("Critical")
 public class Exercise5RegisterExistingEmailTest extends BaseTest {
 
     private static MainPage mainPage;

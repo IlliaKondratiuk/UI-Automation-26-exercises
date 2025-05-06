@@ -8,14 +8,14 @@
 // the test was made pretending it's not, as it can theoretically be different on a commercial project.
 
 import config.testConfigs.BaseTest;
-import config.testConfigs.CriticalTests;
+
 import config.PageNames;
 import io.qameta.allure.*;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
+import org.junit.jupiter.api.Tag;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import pages.CartPage;
@@ -26,7 +26,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-@Category(CriticalTests.class)
+@Tag("Critical")
 public class Exercises10and11SubscriptionTests extends BaseTest {
 
     CommonElementsPage commonElementsPage;

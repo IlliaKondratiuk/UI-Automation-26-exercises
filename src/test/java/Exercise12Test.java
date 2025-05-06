@@ -5,19 +5,19 @@
 
 import config.PageNames;
 import config.testConfigs.BaseTest;
-import config.testConfigs.CriticalTests;
+
 import io.qameta.allure.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
+import org.junit.jupiter.api.Tag;
 import pages.CartPage;
 import pages.MainPage;
 import pages.ProductsPage;
 
 import java.util.Map;
 
-@Category(CriticalTests.class)
+@Tag("Critical")
 public class Exercise12Test extends BaseTest {
 
     MainPage mainPage;
