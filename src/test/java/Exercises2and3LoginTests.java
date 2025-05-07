@@ -4,52 +4,28 @@
 // Two exercises have been merged into one test class as they test the same login functionality with valid/invalid data.
 // Steps 1(Launch browser) and 2(Navigate to url) have been skipped as common sense.
 // Steps 9(delete user) and 10(confirm delete) from Test Case 2 have been skipped to keep the account for future runs.
-// Using JUnit 4.13.2, designing with Page Object Model and generating an Allure(2.32.2) report.
+// Using JUnit 5.10.0, designing with Page Object Model and generating an Allure(2.32.2) report.
 // The credentials are located in the Parameters class.
 
 import config.PageNames;
 import config.testConfigs.BaseTest;
 import io.qameta.allure.*;
-import org.junit.*;
-import org.junit.jupiter.api.Tag;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import pages.LoginPage;
 import pages.MainPage;
 
-import java.util.Arrays;
-import java.util.Collection;
-
 @Tag("Critical")
-@RunWith(Parameterized.class)
 public class Exercises2and3LoginTests extends BaseTest {
 
     private static MainPage mainPage;
     private static LoginPage loginPage;
 
-    private final String email;
-    private final String password;
-    private final String name;
+    private final String name = "test1";
 
-    private final boolean isValid;
-
-    public Exercises2and3LoginTests(String email, String password, boolean isValid) {
-        this.email = email;
-        this.password = password;
-        this.isValid = isValid;
-        this.name = "test1";
-    }
-
-    @Parameterized.Parameters
-    public static Collection<Object[]> testData() {
-        return Arrays.asList(new Object[][] {
-                { "anything@qa.test", "q123456_", true }, //both valid credentials to login
-                { "anything@qa.test", "wrongPass", false }, //valid email but wrong password
-                { "notregistered@qa.test", "q123456_", false } //invalid email
-        });
-    }
-
-    @Before
+    @BeforeEach
     public void begin() {
         driver.get(PageNames.MAIN.getUrl());
 
@@ -57,44 +33,47 @@ public class Exercises2and3LoginTests extends BaseTest {
         mainPage.handleCookies();
     }
 
-    @After
+    @AfterEach
     public void tearDown() { //restoring the driver state every time the test is run with new parameters
         driver.manage().deleteAllCookies();
     }
 
-    @Test
     @Epic("User management")
     @Feature("Login functionality")
     @Story("As a user, I can log in to my account so that I can access the system securely.")
     @Severity(SeverityLevel.CRITICAL)
-    public void Ex2and3LoginTest() {
+    @ParameterizedTest
+    @CsvSource({"anything@qa.test, q123456_, true",
+            "anything@qa.test, wrongPass, false",
+            "notregistered@qa.test, q123456_, false"})
+    public void Ex2and3LoginTest(String email, String password, boolean isValid) {
         //Step 1. Check if the logo is visible.
-        Assert.assertTrue("Step 1: The logo is not visible", mainPage.logoIsVisible());
+        Assertions.assertTrue(mainPage.logoIsVisible(), "Step 1: The logo is not visible");
 
         //Step 2. Click on 'Signup / Login' button
         mainPage.clickSignupLogin();
 
         //Step 3. Verify 'Login to your account' is visible
         loginPage = new LoginPage(driver);
-        Assert.assertTrue("Step 3: The 'Login to your account' label is not visible",
-                loginPage.isLoginTextVisible());
+        Assertions.assertTrue(loginPage.isLoginTextVisible(),
+                "Step 3: The 'Login to your account' label is not visible");
 
         //Step 4. Enter valid/invalid email address and password
-        loginPage.enterEmailPassLogin(this.email, this.password);
+        loginPage.enterEmailPassLogin(email, password);
 
         //Step 5. Click 'login' button
         loginPage.clickLoginButton();
 
         if(isValid) { //splitting the test depending on if the credentials valid or not
             //Step 6(Valid data). Verify that 'Logged in as username' is visible
-            mainPage.initUsername(this.name);
-            Assert.assertTrue("Step 6: 'Logged in as username' is not visible or the username is incorrect",
-                    mainPage.checkLoggedInAsLabelNav());
+            mainPage.initUsername(name);
+            Assertions.assertTrue(mainPage.checkLoggedInAsLabelNav(),
+                    "Step 6: 'Logged in as username' is not visible or the username is incorrect");
 
         } else {
             //Step 6(Invalid data). Verify error 'Your email or password is incorrect!' is visible
-            Assert.assertTrue("Step 6: 'Your email or password is incorrect!' is  not visible",
-                    loginPage.isIncorrectCredentialsVisible());
+            Assertions.assertTrue(loginPage.isIncorrectCredentialsVisible(),
+                    "Step 6: 'Your email or password is incorrect!' is  not visible");
         }
     }
 }
