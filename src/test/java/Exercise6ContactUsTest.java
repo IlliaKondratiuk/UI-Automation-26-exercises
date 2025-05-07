@@ -8,17 +8,17 @@ import config.PageNames;
 import config.testConfigs.BaseTest;
 
 import io.qameta.allure.*;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 import pages.ContactPage;
 import pages.MainPage;
 
 import java.util.ResourceBundle;
 
 @Tag("Critical")
-public class Exercise6ContactUsTest extends BaseTest {
+class Exercise6ContactUsTest extends BaseTest {
 
     private static MainPage mainPage;
     private static ContactPage contactPage;
@@ -27,7 +27,7 @@ public class Exercise6ContactUsTest extends BaseTest {
 
     private final String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\contactfile.pdf";
 
-    @Before
+    @BeforeEach
     public void begin() {
         driver.get(PageNames.MAIN.getUrl());
 
@@ -42,16 +42,16 @@ public class Exercise6ContactUsTest extends BaseTest {
     @Feature("Contact form")
     @Story("As a user, I can fill out and submit a contact form so that I can communicate with the support team.")
     @Severity(SeverityLevel.CRITICAL)
-    public void Ex6ContactUsTest() {
+    void Ex6ContactUsTest() {
         //Step 1. Check if the logo is visible.
-        Assert.assertTrue("Step 1: The logo is not visible", mainPage.logoIsVisible());
+        Assertions.assertTrue(mainPage.logoIsVisible(), "Step 1: The logo is not visible");
 
         //Step 2. Click on 'Contact Us' button
         mainPage.clickContactUsButton();
 
         //Step 3. Verify 'GET IN TOUCH' is visible
         contactPage = new ContactPage(driver);
-        Assert.assertTrue("Step 3: 'GET IN TOUCH' is not visible", contactPage.getInTouchIsVisible());
+        Assertions.assertTrue(contactPage.getInTouchIsVisible(), "Step 3: 'GET IN TOUCH' is not visible");
 
         //Step 4. Enter name, email, subject and message
         contactPage.enterName(values.getString("name"));
@@ -69,12 +69,12 @@ public class Exercise6ContactUsTest extends BaseTest {
         driver.switchTo().alert().accept();
 
         //Step 8. Verify success message 'Success! Your details have been submitted successfully.' is visible
-        Assert.assertTrue("Step 8: success message 'Success! Your details have been submitted successfully.' is not visible",
-                contactPage.isSuccessTextVisible());
+        Assertions.assertTrue(contactPage.isSuccessTextVisible(),
+                "Step 8: success message 'Success! Your details have been submitted successfully.' is not visible");
 
         //Step 9. Click 'Home' button and verify that landed to home page successfully
         contactPage.clickHomeButton();
-        Assert.assertEquals("Step 9: The user is not navigated to the login page after logging out.",
-                "https://automationexercise.com/", driver.getCurrentUrl());
+        Assertions.assertEquals("https://automationexercise.com/", driver.getCurrentUrl(),
+                "Step 9: The user is not navigated to the login page after logging out.");
     }
 }
