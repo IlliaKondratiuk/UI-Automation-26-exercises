@@ -1,7 +1,7 @@
 // This is "Test Case 12: Add Products in Cart" from the Automation Exercise page at automationexercise.com
 // from the Automation Exercise page at automationexercise.com.
 // Steps 1(Launch browser) and 2(Navigate to url) have been skipped as common sense.
-// Using JUnit 4.13.2, designing with Page Object Model and generating an Allure(2.32.2) report.
+// Using JUnit 5.10.0, designing with Page Object Model and generating an Allure(2.32.2) report.
 
 import config.PageNames;
 import config.testConfigs.BaseTest;
