@@ -16,7 +16,7 @@ import pages.ProductsPage;
 import java.util.Map;
 
 @Tag("Critical")
-class Exercise12Test extends BaseTest {
+class Exercise12AddProductsInCartTest extends BaseTest {
 
     MainPage mainPage;
     ProductsPage productsPage;
@@ -35,7 +35,7 @@ class Exercise12Test extends BaseTest {
     @Feature("Add to cart")
     @Story("As a user, I can add products to the cart so that I can review their details at a convenient time before completing a purchase.")
     @Severity(SeverityLevel.CRITICAL)
-    void Ex10and11SubscriptionTest() { //CHANGE THISSSS AND THE CLASS NAME
+    void Ex12AddProductsInCartTest() { //CHANGE THISSSS AND THE CLASS NAME
         //Step 1. Check if the logo is visible.
         Assertions.assertTrue(mainPage.logoIsVisible(), "Step 1: The logo is not visible");
 
