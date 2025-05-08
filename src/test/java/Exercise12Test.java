@@ -7,10 +7,8 @@ import config.PageNames;
 import config.testConfigs.BaseTest;
 
 import io.qameta.allure.*;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
 import pages.CartPage;
 import pages.MainPage;
 import pages.ProductsPage;
@@ -18,13 +16,13 @@ import pages.ProductsPage;
 import java.util.Map;
 
 @Tag("Critical")
-public class Exercise12Test extends BaseTest {
+class Exercise12Test extends BaseTest {
 
     MainPage mainPage;
     ProductsPage productsPage;
     CartPage cartPage;
 
-    @Before
+    @BeforeEach
     public void begin() {
         driver.get(PageNames.MAIN.getUrl());
 
@@ -37,9 +35,9 @@ public class Exercise12Test extends BaseTest {
     @Feature("Add to cart")
     @Story("As a user, I can add products to the cart so that I can review their details at a convenient time before completing a purchase.")
     @Severity(SeverityLevel.CRITICAL)
-    public void Ex10and11SubscriptionTest() {
+    void Ex10and11SubscriptionTest() { //CHANGE THISSSS AND THE CLASS NAME
         //Step 1. Check if the logo is visible.
-        Assert.assertTrue("Step 1: The logo is not visible", mainPage.logoIsVisible());
+        Assertions.assertTrue(mainPage.logoIsVisible(), "Step 1: The logo is not visible");
 
         //Step 2. Click 'Products' button
         mainPage.clickProductsButton();
@@ -63,11 +61,11 @@ public class Exercise12Test extends BaseTest {
         cartPage = new CartPage(driver);
 
         //Step 7. Verify both products are added to Cart
-        Assert.assertEquals("Step 7: The quantity of added products is not 2",
-                2, cartPage.getAllProductsQuantity());
+        Assertions.assertEquals(2, cartPage.getAllProductsQuantity(),
+                "Step 7: The quantity of added products is not 2");
 
         //Step 8. Verify their prices, quantity and total price
-        Assert.assertTrue(cartPage.verifyDetails(details1, 1,1, 8));
-        Assert.assertTrue(cartPage.verifyDetails(details2, 2,1, 8));
+        Assertions.assertTrue(cartPage.verifyDetails(details1, 1,1, 8));
+        Assertions.assertTrue(cartPage.verifyDetails(details2, 2,1, 8));
     }
 }
