@@ -1,1 +1,1 @@
-{"total":0,"items":[]}
+{"total":2,"items":[{"uid":"88644a1e0d24010ac751a53c979a94d9","name":"Exercises2and3LoginTests","statistic":{"failed":0,"broken":4,"skipped":0,"passed":3,"unknown":0,"total":7}},{"uid":"cd37771f6ecd7d5ac4fbce564c9ade92","name":"Exercise1RegisterUserTest","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}
