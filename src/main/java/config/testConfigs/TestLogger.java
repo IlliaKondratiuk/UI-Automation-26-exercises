@@ -7,7 +7,7 @@ import org.junit.jupiter.api.extension.TestWatcher;
 
 import java.util.Optional;
 
-public class TestListener implements TestWatcher, BeforeTestExecutionCallback, AfterTestExecutionCallback {
+public class TestLogger implements TestWatcher, BeforeTestExecutionCallback, AfterTestExecutionCallback {
 
     @Override
     public void testDisabled(ExtensionContext context, Optional<String> reason) {
