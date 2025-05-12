@@ -6,17 +6,20 @@
 import config.PageNames;
 import config.testConfigs.BaseTest;
 
+import config.testConfigs.TestLogger;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import pages.MainPage;
 import pages.ProductsPage;
 
 import java.io.IOException;
 
 @Tag("Critical")
+@ExtendWith(TestLogger.class)
 class Exercise9SearchTest extends BaseTest {
 
     private static MainPage mainPage;
