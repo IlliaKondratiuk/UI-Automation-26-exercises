@@ -84,7 +84,7 @@ public class ProductsPage extends CommonElementsPage {
         //Extracting the expected names of the results from the .txt file
         List<String> expectedNames = Files.readAllLines(Paths.get(nameFilePath));
 
-        //Finding all the collapsed TC names on the page
+        //Finding all the products names on the page
         List<WebElement> productResults = driver.findElements(searchResults);
 
         //Comparing the name of each second element in the list with each expected name
