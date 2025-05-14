@@ -56,6 +56,7 @@ class Exercise9SearchTest extends BaseTest {
         productsPage = new ProductsPage(driver);
         productsPage.enterProduct("Dress");
         productsPage.clickSearchButton();
+        productsPage.handleAds();
 
         //Step 5. Verify 'SEARCHED PRODUCTS' is visible
         Assertions.assertTrue(productsPage.areSearchedProductsVisible(),
