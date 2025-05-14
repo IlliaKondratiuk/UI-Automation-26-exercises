@@ -1,15 +1,29 @@
+<!-- This is the file to configure the logs -->
+
 <configuration>
+
+    <!-- Removing the noise from the output-->
     <logger name="org.openqa.selenium.remote" level="WARN"/>
     <logger name="org.asynchttpclient" level="WARN"/>
     <logger name="io.netty" level="WARN"/>
 
+    <!-- Setting up the console output -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger - %msg%n</pattern>
         </encoder>
     </appender>
 
+    <!-- Setting up the text file output -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/testlog.txt</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+
     <root level="info">
         <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
     </root>
 </configuration>

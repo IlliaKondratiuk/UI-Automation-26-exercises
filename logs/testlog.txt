@@ -1,0 +1,6 @@
+14:03:39.280 INFO  config.testConfigs.TestLogger - ✅ Test started: Ex9SearchProduct()
+14:03:45.321 INFO  config.testConfigs.TestLogger - ✅ Test ended: Ex9SearchProduct()
+14:03:45.327 ERROR config.testConfigs.TestLogger - ❌ Test failed: Ex9SearchProduct(). Reason: org.opentest4j.AssertionFailedError: Step 6: The search results are incorrect or not visible. ==> expected: <true> but was: <false>
+14:04:00.143 INFO  config.testConfigs.TestLogger - ✅ Test started: Ex9SearchProduct()
+14:04:05.767 INFO  config.testConfigs.TestLogger - ✅ Test ended: Ex9SearchProduct()
+14:04:05.774 ERROR config.testConfigs.TestLogger - ❌ Test failed: Ex9SearchProduct(). Reason: org.opentest4j.AssertionFailedError: Step 6: The search results are incorrect or not visible. ==> expected: <true> but was: <false>
