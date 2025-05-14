@@ -17,6 +17,7 @@
     <!-- Setting up the text file output -->
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
         <file>logs/testlog.txt</file>
+        <append>false</append> <!-- To rewrite logs every test execution -->
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} %-5level %logger - %msg%n</pattern>
         </encoder>
