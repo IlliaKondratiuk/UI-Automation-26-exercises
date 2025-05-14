@@ -4,7 +4,7 @@ package utils;
 
 import java.io.File;
 
-public class FileUtils {
+public class FileTestUtil {
 
     public static boolean isFileDownloaded(String downloadDir, String fileName) {
         File dir = new File(downloadDir);

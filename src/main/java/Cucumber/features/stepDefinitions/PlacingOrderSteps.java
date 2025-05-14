@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.OrderPlacedPage;
-import utils.FileUtils;
+import utils.FileTestUtil;
 
 public class PlacingOrderSteps
 
@@ -27,6 +27,6 @@ public class PlacingOrderSteps
     @Then("the invoice is downloaded successfully")
     public void the_invoice_is_downloaded_successfully() {
         Assert.assertTrue("The invoice was not downloaded",
-                FileUtils.isFileDownloaded(System.getProperty("user.home") + "/Downloads", "invoice.txt"));
+                FileTestUtil.isFileDownloaded(System.getProperty("user.home") + "/Downloads", "invoice.txt"));
     }
 }
