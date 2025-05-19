@@ -10,15 +10,15 @@ public class Config {
 
     static public WebDriver create(Drivers driver) {
         switch (driver) {
-            case CHROME -> createchrome();
-            case CHROME_INC -> createchromeinc();
+            case CHROME -> createChrome();
+            case CHROME_INC -> createChromeInc();
         }
 
         return driv;
     }
 
     // Basic config for running tests in Chrome
-    private static void createchrome() {
+    private static void createChrome() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--start-maximized");
@@ -27,7 +27,7 @@ public class Config {
     }
 
     //Basic config for running tests in Chrome using incognito mode
-    private static void createchromeinc() {
+    private static void createChromeInc() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--start-maximized");
