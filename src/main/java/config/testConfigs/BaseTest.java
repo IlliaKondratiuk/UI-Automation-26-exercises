@@ -2,23 +2,26 @@ package config.testConfigs;
 
 import config.Config;
 import config.Drivers;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 
 public class BaseTest {
 
-    public static WebDriver driver;
-
     //Initializing the driver before executing each test case
-    @BeforeAll
-    public static void base_before(){
-        driver = Config.create(Drivers.CHROME);
+    @BeforeEach
+    public void setUp() {
+        Config.create(Drivers.CHROME);
     }
 
     //Closing the driver after executing each test case
-    @AfterAll
-    public static void base_after(){
-        driver.quit();
+    @AfterEach
+    public void tearDown() {
+        Config.quitDriver();
+    }
+
+    //Used in each test to get its own driver
+    public WebDriver getDriver() {
+        return Config.getDriver();
     }
 }
