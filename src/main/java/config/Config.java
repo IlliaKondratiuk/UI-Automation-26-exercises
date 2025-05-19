@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Config {
 
-    static WebDriver driv;
+    private static final ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
 
     static public WebDriver create(Drivers driver) {
         switch (driver) {
@@ -14,7 +14,7 @@ public class Config {
             case CHROME_INC -> createChromeInc();
         }
 
-        return driv;
+        return driverThread.get();
     }
 
     // Basic config for running tests in Chrome
@@ -23,7 +23,7 @@ public class Config {
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--start-maximized");
 
-        driv = new ChromeDriver(options);
+        driverThread.set(new ChromeDriver(options));
     }
 
     //Basic config for running tests in Chrome using incognito mode
@@ -33,6 +33,6 @@ public class Config {
         options.addArguments("--start-maximized");
         options.addArguments("--incognito");
 
-        driv = new ChromeDriver(options);
+        driverThread.set(new ChromeDriver(options));
     }
 }
