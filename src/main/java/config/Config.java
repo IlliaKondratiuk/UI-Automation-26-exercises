@@ -35,4 +35,16 @@ public class Config {
 
         driverThread.set(new ChromeDriver(options));
     }
+
+    public static WebDriver getDriver() {
+        return driverThread.get();
+    }
+
+    public static void quitDriver() {
+        WebDriver driver = driverThread.get();
+        if (driver != null) {
+            driver.quit();
+            driverThread.remove();
+        }
+    }
 }
