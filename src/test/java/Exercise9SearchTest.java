@@ -32,7 +32,7 @@ class Exercise9SearchTest extends BaseTest {
     public void begin() {
         driver.get(PageNames.MAIN.getUrl());
 
-        mainPage = new MainPage(driver);
+        mainPage = new MainPage();
         mainPage.handleCookies();
     }
 
@@ -53,7 +53,7 @@ class Exercise9SearchTest extends BaseTest {
                 "Step 3: The user is not navigated to the 'All Products' page.");
 
         //Step 4. Enter product name in search input and click search button
-        productsPage = new ProductsPage(driver);
+        productsPage = new ProductsPage();
         productsPage.enterProduct("Dress");
         productsPage.clickSearchButton();
         productsPage.handleAds();

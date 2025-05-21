@@ -25,7 +25,7 @@ class Exercise8VerifyProductsTest extends BaseTest {
     public void begin() {
         driver.get(PageNames.MAIN.getUrl());
 
-        mainPage = new MainPage(driver);
+        mainPage = new MainPage();
         mainPage.handleCookies();
     }
 

@@ -31,7 +31,7 @@ class Exercise6ContactUsTest extends BaseTest {
     public void begin() {
         driver.get(PageNames.MAIN.getUrl());
 
-        mainPage = new MainPage(driver);
+        mainPage = new MainPage();
         mainPage.handleCookies();
 
         values = ResourceBundle.getBundle("contactvalues");

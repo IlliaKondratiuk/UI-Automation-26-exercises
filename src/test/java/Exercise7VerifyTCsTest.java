@@ -28,7 +28,7 @@ class Exercise7VerifyTCsTest extends BaseTest {
     public void begin() {
         driver.get(PageNames.MAIN.getUrl());
 
-        mainPage = new MainPage(driver);
+        mainPage = new MainPage();
         mainPage.handleCookies();
     }
 
@@ -49,7 +49,7 @@ class Exercise7VerifyTCsTest extends BaseTest {
                 "Step 3: The user is not navigated to the test cases page.");
 
         //Step 4. Verify that all test cases' names are correct
-        testCasesPage = new TestCasesPage(driver);
+        testCasesPage = new TestCasesPage();
         try {
             Assertions.assertTrue(testCasesPage.areTestNamesCorrect(filePath),
                     "Step 4: The test cases' names are incorrect");

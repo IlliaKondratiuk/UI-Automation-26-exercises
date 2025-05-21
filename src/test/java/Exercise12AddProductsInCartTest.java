@@ -26,7 +26,7 @@ class Exercise12AddProductsInCartTest extends BaseTest {
     public void begin() {
         driver.get(PageNames.MAIN.getUrl());
 
-        mainPage = new MainPage(driver);
+        mainPage = new MainPage();
         mainPage.handleCookies();
     }
 
@@ -43,7 +43,7 @@ class Exercise12AddProductsInCartTest extends BaseTest {
         mainPage.clickProductsButton();
 
         //Step 3. Hover over first product and click 'Add to cart'
-        productsPage = new ProductsPage(driver);
+        productsPage = new ProductsPage();
 
         //Step 4. Click 'Continue Shopping' button
         productsPage.handleAds();
@@ -58,7 +58,7 @@ class Exercise12AddProductsInCartTest extends BaseTest {
 
         //Step 6. Click 'View Cart' button
         productsPage.clickViewCart();
-        cartPage = new CartPage(driver);
+        cartPage = new CartPage();
 
         //Step 7. Verify both products are added to Cart
         Assertions.assertEquals(2, cartPage.getAllProductsQuantity(),

@@ -49,7 +49,7 @@ public class Exercises10and11SubscriptionTests extends BaseTest {
     public void begin() {
         driver.get(PageNames.MAIN.getUrl());
 
-        mainPage = new MainPage(driver);
+        mainPage = new MainPage();
         mainPage.handleCookies();
     }
 
@@ -71,8 +71,8 @@ public class Exercises10and11SubscriptionTests extends BaseTest {
         //Step 1.1. Switch to the tested page
         driver.get(page.getUrl());
         switch (page) {
-            case MAIN: commonElementsPage = new MainPage(driver);
-            case CART: commonElementsPage = new CartPage(driver);
+            case MAIN: commonElementsPage = new MainPage();
+            case CART: commonElementsPage = new CartPage();
         }
 
         //Step 2. Scroll down to the footer.

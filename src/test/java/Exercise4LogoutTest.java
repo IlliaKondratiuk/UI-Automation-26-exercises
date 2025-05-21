@@ -28,7 +28,7 @@ public class Exercise4LogoutTest extends BaseTest {
     public void begin() {
         driver.get(PageNames.MAIN.getUrl());
 
-        mainPage = new MainPage(driver);
+        mainPage = new MainPage();
         mainPage.handleCookies();
 
         values = ResourceBundle.getBundle("validlogin");
@@ -48,7 +48,7 @@ public class Exercise4LogoutTest extends BaseTest {
         mainPage.clickSignupLogin();
 
         //Step 3. Verify 'Login to your account' is visible
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
         Assertions.assertTrue(loginPage.isLoginTextVisible(),
                 "Step 3: The 'Login to your account' label is not visible");
 

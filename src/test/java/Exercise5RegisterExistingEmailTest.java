@@ -27,7 +27,7 @@ class Exercise5RegisterExistingEmailTest extends BaseTest {
     public void begin() {
         driver.get(PageNames.MAIN.getUrl());
 
-        mainPage = new MainPage(driver);
+        mainPage = new MainPage();
         mainPage.handleCookies();
 
         values = ResourceBundle.getBundle("invalidregister");
@@ -46,7 +46,7 @@ class Exercise5RegisterExistingEmailTest extends BaseTest {
         mainPage.clickSignupLogin();
 
         //Step 3. Verify 'New User Signup!' is visible
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
         Assertions.assertTrue(loginPage.isSignUpTextVisible(),
                 "Step 3: The sign up text is not visible");
 

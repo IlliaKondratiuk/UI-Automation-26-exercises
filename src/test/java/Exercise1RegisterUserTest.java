@@ -4,6 +4,7 @@
 // The user data is parsed from src\resources\validregister.properties
 
 import config.PageNames;
+import config.WebDriverConfig;
 import config.testConfigs.BaseTest;
 
 import io.qameta.allure.*;
@@ -27,9 +28,10 @@ public class Exercise1RegisterUserTest extends BaseTest
 
     @BeforeEach
     public void begin() {
-        driver.get(PageNames.MAIN.getUrl());
 
-        mainPage = new MainPage(driver);
+        WebDriverConfig.getDriver().get(PageNames.MAIN.getUrl());
+
+        mainPage = new MainPage();
         mainPage.handleCookies();
 
         values = ResourceBundle.getBundle("validregister");
@@ -49,7 +51,7 @@ public class Exercise1RegisterUserTest extends BaseTest
         mainPage.clickSignupLogin();
 
         //Step 3. Verify 'New User Signup!' is visible
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
         Assertions.assertTrue(loginPage.isSignUpTextVisible(),
                 "Step 3: The sign up text is not visible");
 
@@ -60,7 +62,7 @@ public class Exercise1RegisterUserTest extends BaseTest
         loginPage.clickSignUpButton();
 
         //Step 6. Verify that 'ENTER ACCOUNT INFORMATION' is visible
-        signupPage = new SignupPage(driver);
+        signupPage = new SignupPage();
         Assertions.assertTrue(signupPage.enterAccInfoIsVisible(),
                 "Step 6: 'ENTER ACCOUNT INFORMATION' is not visible");
 
@@ -91,7 +93,7 @@ public class Exercise1RegisterUserTest extends BaseTest
         signupPage.clickCreate();
 
         //Step 12. Verify that 'ACCOUNT CREATED!' is visible
-        createdPage = new CreatedPage(driver);
+        createdPage = new CreatedPage();
         Assertions.assertTrue(createdPage.createdIsVisible(),
                 "Step 12: 'ACCOUNT CREATED' is not visible");
 
@@ -107,7 +109,7 @@ public class Exercise1RegisterUserTest extends BaseTest
         mainPage.clickDeleteAccButton();
 
         //Step 16. Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
-        deletedPage = new DeletedPage(driver);
+        deletedPage = new DeletedPage();
         Assertions.assertTrue(deletedPage.deletedLabelIsVisible(),
                 "Step 16: 'ACCOUNT DELETED!' is not visible");
         deletedPage.clickContinue();
