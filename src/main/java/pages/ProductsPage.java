@@ -31,8 +31,8 @@ public class ProductsPage extends CommonElementsPage {
     String viewProductXPathBegin = "//a[@href='/product_details/";
     String productXPathBegin = "(//div[contains(@class, 'productinfo')])[";
 
-    public ProductsPage(WebDriver driver) {
-        super(driver);
+    public ProductsPage() {
+        super();
     }
 
     public boolean isProductListVisible() {

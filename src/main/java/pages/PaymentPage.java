@@ -13,8 +13,8 @@ public class PaymentPage extends CommonElementsPage {
 
     By submitButton = new By.ById("submit");
 
-    public PaymentPage(WebDriver driver) {
-        super(driver);
+    public PaymentPage() {
+        super();
     }
 
     public void enterNameOnCard(String name) {

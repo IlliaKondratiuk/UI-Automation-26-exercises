@@ -19,8 +19,8 @@ public class LoginPage extends CommonElementsPage {
 
     By incorrectCredentialsMessage = new By.ByXPath("//p[text()='Your email or password is incorrect!']");
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
+    public LoginPage() {
+        super();
     }
 
     public boolean isSignUpTextVisible() {

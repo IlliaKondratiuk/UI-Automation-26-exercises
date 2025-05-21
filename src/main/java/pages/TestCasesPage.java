@@ -13,8 +13,8 @@ public class TestCasesPage extends CommonElementsPage {
 
     By testCases = new By.ByXPath("//a[@data-toggle='collapse']//u");
 
-    public TestCasesPage(WebDriver driver) {
-        super(driver);
+    public TestCasesPage() {
+        super();
     }
 
     public boolean areTestNamesCorrect(String nameFilePath) throws IOException {

@@ -26,8 +26,8 @@ public class SignupPage extends CommonElementsPage {
     By numberInput = new By.ById("mobile_number");
     By createButton = new By.ByXPath("//button[@data-qa = 'create-account']");
 
-    public SignupPage(WebDriver driver) {
-        super(driver);
+    public SignupPage() {
+        super();
     }
 
     public boolean enterAccInfoIsVisible() {

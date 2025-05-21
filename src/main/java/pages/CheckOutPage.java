@@ -19,8 +19,8 @@ public class CheckOutPage extends CommonElementsPage {
     By billingCountry = new By.ByXPath("//ul[@id='address_invoice']//li[@class='address_country_name']");
     By billingPhone = new By.ByXPath("//ul[@id='address_invoice']//li[@class='address_phone']");
 
-    public CheckOutPage(WebDriver driver) {
-        super(driver);
+    public CheckOutPage() {
+        super();
     }
 
     public void clickCheckOutButton() {

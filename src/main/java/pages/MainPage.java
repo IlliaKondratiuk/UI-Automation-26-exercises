@@ -32,8 +32,8 @@ public class MainPage extends CommonElementsPage {
     String addToCartButtonXPathBegin = "(//a[@data-product-id=";
     String viewProductXPathBegin = "(//a[contains(@href, 'product_details')])[";
 
-    public MainPage(WebDriver driver) {
-        super(driver);
+    public MainPage() {
+        super();
     }
 
     public void clickViewProduct(int index) {

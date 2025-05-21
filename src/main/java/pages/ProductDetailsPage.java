@@ -38,8 +38,8 @@ public class ProductDetailsPage extends CommonElementsPage {
 
     By successfullReviewLabel = new By.ByXPath("//div[@id='review-section']//div[contains(@class, 'alert-success')]//span");
 
-    public ProductDetailsPage(WebDriver driver) {
-        super(driver);
+    public ProductDetailsPage() {
+        super();
     }
 
     public boolean isNameVisible() {

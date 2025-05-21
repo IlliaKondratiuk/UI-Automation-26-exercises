@@ -20,8 +20,8 @@ public class ContactPage extends CommonElementsPage {
     By submitButton = new By.ByName("submit");
     By homeButton = new By.ByXPath("//div[@id='form-section']//a[@href='/']");
 
-    public ContactPage(WebDriver driver) {
-        super(driver);
+    public ContactPage() {
+        super();
     }
 
     public boolean getInTouchIsVisible() {

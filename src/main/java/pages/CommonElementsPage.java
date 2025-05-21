@@ -8,8 +8,8 @@ import java.time.Duration;
 
 public class CommonElementsPage extends BasePage {
 
-    public CommonElementsPage(WebDriver driver) {
-        super(driver);
+    public CommonElementsPage() {
+        super();
     }
 
     By logo = new By.ByXPath("//div[contains(@class, 'logo')]//a//img");
