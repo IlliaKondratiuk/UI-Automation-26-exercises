@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class Config {
+public class WebDriverConfig {
 
     private static final ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
 

@@ -1,6 +1,6 @@
 package Cucumber.features.stepDefinitions;
 
-import config.Config;
+import config.WebDriverConfig;
 import config.Drivers;
 import config.testConfigs.TestContext;
 import io.cucumber.java.After;
@@ -20,7 +20,7 @@ public class Hooks {
     //Setting up the driver and the test context
     @Before
     public void setUp() {
-        WebDriver driver = Config.create(Drivers.CHROME);
+        WebDriver driver = WebDriverConfig.create(Drivers.CHROME);
         context.setDriver(driver);
         System.out.println("Driver initialized.");
     }
