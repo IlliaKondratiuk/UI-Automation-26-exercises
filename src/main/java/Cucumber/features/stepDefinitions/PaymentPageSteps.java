@@ -17,7 +17,7 @@ public class PaymentPageSteps {
 
     public PaymentPageSteps(TestContext context) {
         this.context = context;
-        paymentPage = new PaymentPage(context.getDriver());
+        paymentPage = new PaymentPage();
         values = ResourceBundle.getBundle("validpayment");
     }
 

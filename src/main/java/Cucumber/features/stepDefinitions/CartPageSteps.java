@@ -19,7 +19,7 @@ public class CartPageSteps {
 
     public CartPageSteps(TestContext context) {
         this.context = context;
-        cartPage = new CartPage(context.getDriver());
+        cartPage = new CartPage();
     }
 
     @And("the product {int} in the cart has quantity {int}")

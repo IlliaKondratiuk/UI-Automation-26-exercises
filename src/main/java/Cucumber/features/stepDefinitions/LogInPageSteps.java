@@ -17,7 +17,7 @@ public class LogInPageSteps {
 
     public LogInPageSteps(TestContext context) {
         this.context = context;
-        loginPage = new LoginPage(context.getDriver());
+        loginPage = new LoginPage();
         valuesReg = ResourceBundle.getBundle("validregister");
         valuesLog = ResourceBundle.getBundle("validlogin");
     }

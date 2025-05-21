@@ -16,7 +16,7 @@ public class PlacingOrderSteps
 
     public PlacingOrderSteps(TestContext context) {
         this.context = context;
-        orderPlacedPage = new OrderPlacedPage(context.getDriver());
+        orderPlacedPage = new OrderPlacedPage();
     }
 
     @When("'Download Invoice' is clicked")

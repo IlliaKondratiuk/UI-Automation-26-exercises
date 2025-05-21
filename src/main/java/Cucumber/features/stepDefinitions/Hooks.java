@@ -37,7 +37,7 @@ public class Hooks {
 
     @After(value = "@AccountCleanup", order = 2) //only used in scenarios that include creating a new account and deleting it at the end
     public void deleteAccountAfterScenario() {
-        CommonElementsPage commonElementsPage = new CommonElementsPage(context.getDriver());
+        CommonElementsPage commonElementsPage = new CommonElementsPage();
 
         commonElementsPage.clickDeleteAccButton();
     }

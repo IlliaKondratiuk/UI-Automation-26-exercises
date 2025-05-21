@@ -16,7 +16,7 @@ public class SignUpPageSteps {
 
     public SignUpPageSteps(TestContext context) {
         this.context = context;
-        signupPage = new SignupPage(context.getDriver());
+        signupPage = new SignupPage();
         values = ResourceBundle.getBundle("validregister");
     }
 

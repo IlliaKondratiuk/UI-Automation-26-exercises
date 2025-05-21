@@ -16,7 +16,7 @@ public class MainPageSteps {
 
     public MainPageSteps(TestContext context) {
         this.context = context;
-        this.mainPage = new MainPage(context.getDriver());
+        this.mainPage = new MainPage();
     }
 
     @When("'View Product' is clicked for product {int}")

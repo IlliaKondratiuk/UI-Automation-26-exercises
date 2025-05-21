@@ -18,7 +18,7 @@ public class ProductDetailsPageSteps {
 
     public ProductDetailsPageSteps(TestContext context) {
         this.context = context;
-        productDetailsPage = new ProductDetailsPage(context.getDriver());
+        productDetailsPage = new ProductDetailsPage();
         review = ResourceBundle.getBundle("validreview");
     }
     

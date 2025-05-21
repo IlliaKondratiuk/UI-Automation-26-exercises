@@ -16,7 +16,7 @@ public class ProductsPageSteps {
 
     public ProductsPageSteps(TestContext context) {
         this.context = context;
-        productsPage = new ProductsPage(context.getDriver());
+        productsPage = new ProductsPage();
     }
 
     @And("the user enters {string} in the search bar")

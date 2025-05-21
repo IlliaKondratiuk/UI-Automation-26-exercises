@@ -21,7 +21,7 @@ public class CommonSteps {
 
     public CommonSteps(TestContext context) {
         this.context = context;
-        mainPage = new MainPage(context.getDriver());
+        mainPage = new MainPage();
     }
 
     @Given("the browser is launched")

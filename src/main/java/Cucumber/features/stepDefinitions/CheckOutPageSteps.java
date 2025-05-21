@@ -17,7 +17,7 @@ public class CheckOutPageSteps {
 
     public CheckOutPageSteps(TestContext context) {
         this.context = context;
-        checkOutPage = new CheckOutPage(context.getDriver());
+        checkOutPage = new CheckOutPage();
         registerData = ResourceBundle.getBundle("validregister");
     }
 

@@ -23,9 +23,9 @@ public class CatalogSteps {
 
     public CatalogSteps(TestContext context) {
         this.context = context;
-        mainPage = new MainPage(context.getDriver());
-        productDetailsPage = new ProductDetailsPage(context.getDriver());
-        cartPage = new CartPage(context.getDriver());
+        mainPage = new MainPage();
+        productDetailsPage = new ProductDetailsPage();
+        cartPage = new CartPage();
     }
 
     @Given("all categories and subcategories are available")
