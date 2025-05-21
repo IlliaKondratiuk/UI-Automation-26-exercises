@@ -27,7 +27,7 @@ public class CartPage extends CommonElementsPage {
     String removeFromCartButtonXPathBegin = "(//a[@class='cart_quantity_delete'])[";
 
     public CartPage() {
-        super(driver);
+        super();
     }
 
     public int getAllProductsQuantity() {
