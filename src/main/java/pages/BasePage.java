@@ -2,6 +2,7 @@
 
 package pages;
 
+import config.WebDriverConfig;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,11 +12,11 @@ import java.time.Duration;
 
 public class BasePage {
 
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
-    }
+    protected WebDriver driver;
 
-    WebDriver driver;
+    public BasePage() {
+        this.driver = WebDriverConfig.getDriver();
+    }
 
     protected void clickElementByLocator(By el) {
         driver.findElement(el).click();
