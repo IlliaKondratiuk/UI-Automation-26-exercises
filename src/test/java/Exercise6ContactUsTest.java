@@ -51,7 +51,7 @@ class Exercise6ContactUsTest extends BaseTest {
         mainPage.clickContactUsButton();
 
         //Step 3. Verify 'GET IN TOUCH' is visible
-        contactPage = new ContactPage(driver);
+        contactPage = new ContactPage();
         Assertions.assertTrue(contactPage.getInTouchIsVisible(), "Step 3: 'GET IN TOUCH' is not visible");
 
         //Step 4. Enter name, email, subject and message

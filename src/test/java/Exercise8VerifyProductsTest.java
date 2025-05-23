@@ -48,7 +48,7 @@ class Exercise8VerifyProductsTest extends BaseTest {
                 "Step 3: The user is not navigated to the 'All Products' page.");
 
         //Step 4. The products list is visible
-        productsPage = new ProductsPage(driver);
+        productsPage = new ProductsPage();
         Assertions.assertTrue(productsPage.isProductListVisible(),
                 "Step 4: The product list is not visible or has less than 2 elements");
 
@@ -61,7 +61,7 @@ class Exercise8VerifyProductsTest extends BaseTest {
                 "Step 6: The user is not navigated to the product details page.");
 
         //Step 7. Verify that every detail is visible: product name, category, price, availability, condition, brand
-        productDetailsPage =  new ProductDetailsPage(driver);
+        productDetailsPage =  new ProductDetailsPage();
         Assertions.assertTrue(productDetailsPage.areAllDetailsVisible(),
                 "Step 7: Not all product details are visible");
     }
