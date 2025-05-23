@@ -40,6 +40,10 @@ public class WebDriverConfig {
         return driverThread.get();
     }
 
+    public static void openURL(String URL) {
+        driverThread.get().get(URL);
+    }
+
     public static void quitDriver() {
         WebDriver driver = driverThread.get();
         if (driver != null) {

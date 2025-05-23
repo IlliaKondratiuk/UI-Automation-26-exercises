@@ -7,6 +7,7 @@
 // possible to run it for each page of the website. Even though technically the footer is the same on all pages,
 // the test was made pretending it's not, as it can theoretically be different on a commercial project.
 
+import config.WebDriverConfig;
 import config.testConfigs.BaseTest;
 import config.PageNames;
 
@@ -47,7 +48,7 @@ public class Exercises10and11SubscriptionTests extends BaseTest {
 
     @BeforeEach
     public void begin() {
-        driver.get(PageNames.MAIN.getUrl());
+        WebDriverConfig.openURL(PageNames.MAIN.getUrl());
 
         mainPage = new MainPage();
         mainPage.handleCookies();

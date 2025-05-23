@@ -28,8 +28,7 @@ public class Exercise1RegisterUserTest extends BaseTest
 
     @BeforeEach
     public void begin() {
-
-        WebDriverConfig.getDriver().get(PageNames.MAIN.getUrl());
+        WebDriverConfig.openURL(PageNames.MAIN.getUrl());
 
         mainPage = new MainPage();
         mainPage.handleCookies();

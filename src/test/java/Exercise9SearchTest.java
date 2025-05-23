@@ -4,6 +4,7 @@
 // The expected search results are parsed from src\resources\SearchResults.txt
 
 import config.PageNames;
+import config.WebDriverConfig;
 import config.testConfigs.BaseTest;
 
 import config.testConfigs.TestLogger;
@@ -30,7 +31,7 @@ class Exercise9SearchTest extends BaseTest {
 
     @BeforeEach
     public void begin() {
-        driver.get(PageNames.MAIN.getUrl());
+        WebDriverConfig.openURL(PageNames.MAIN.getUrl());
 
         mainPage = new MainPage();
         mainPage.handleCookies();

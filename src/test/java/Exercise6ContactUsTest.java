@@ -5,6 +5,7 @@
 // The dummy file for step 5 is stored in src\resources\contactfile.pdf
 
 import config.PageNames;
+import config.WebDriverConfig;
 import config.testConfigs.BaseTest;
 
 import io.qameta.allure.*;
@@ -29,7 +30,7 @@ class Exercise6ContactUsTest extends BaseTest {
 
     @BeforeEach
     public void begin() {
-        driver.get(PageNames.MAIN.getUrl());
+        WebDriverConfig.openURL(PageNames.MAIN.getUrl());
 
         mainPage = new MainPage();
         mainPage.handleCookies();

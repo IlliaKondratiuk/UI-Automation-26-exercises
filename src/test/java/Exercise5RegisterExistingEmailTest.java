@@ -4,6 +4,7 @@
 // The user data is parsed from src\resources\invalidregister.properties
 
 import config.PageNames;
+import config.WebDriverConfig;
 import config.testConfigs.BaseTest;
 
 import io.qameta.allure.*;
@@ -25,7 +26,7 @@ class Exercise5RegisterExistingEmailTest extends BaseTest {
 
     @BeforeEach
     public void begin() {
-        driver.get(PageNames.MAIN.getUrl());
+        WebDriverConfig.openURL(PageNames.MAIN.getUrl());
 
         mainPage = new MainPage();
         mainPage.handleCookies();

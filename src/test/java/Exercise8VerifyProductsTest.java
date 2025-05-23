@@ -3,6 +3,7 @@
 // Using JUnit 5.10.0, designing with Page Object Model and generating an Allure(2.32.2) report
 
 import config.PageNames;
+import config.WebDriverConfig;
 import config.testConfigs.BaseTest;
 
 import io.qameta.allure.*;
@@ -23,7 +24,7 @@ class Exercise8VerifyProductsTest extends BaseTest {
 
     @BeforeEach
     public void begin() {
-        driver.get(PageNames.MAIN.getUrl());
+        WebDriverConfig.openURL(PageNames.MAIN.getUrl());
 
         mainPage = new MainPage();
         mainPage.handleCookies();

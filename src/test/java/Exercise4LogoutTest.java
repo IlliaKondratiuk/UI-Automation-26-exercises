@@ -4,6 +4,7 @@
 // The user data is parsed from src\resources\validlogin.properties
 
 import config.PageNames;
+import config.WebDriverConfig;
 import config.testConfigs.BaseTest;
 
 import io.qameta.allure.*;
@@ -26,7 +27,7 @@ public class Exercise4LogoutTest extends BaseTest {
 
     @BeforeEach
     public void begin() {
-        driver.get(PageNames.MAIN.getUrl());
+        WebDriverConfig.openURL(PageNames.MAIN.getUrl());
 
         mainPage = new MainPage();
         mainPage.handleCookies();
