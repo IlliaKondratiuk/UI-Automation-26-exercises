@@ -68,7 +68,7 @@ public class Exercise4LogoutTest extends BaseTest {
         mainPage.clickLogOut();
 
         //Step 8. Verify that user is navigated to login page
-        Assertions.assertEquals("https://automationexercise.com/login", driver.getCurrentUrl(),
+        Assertions.assertEquals("https://automationexercise.com/login", WebDriverConfig.getCurrentURL(),
                 "Step 8: The user is not navigated to the login page after logging out.");
     }
 }

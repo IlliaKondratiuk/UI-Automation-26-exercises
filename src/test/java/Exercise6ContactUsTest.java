@@ -75,7 +75,7 @@ class Exercise6ContactUsTest extends BaseTest {
 
         //Step 9. Click 'Home' button and verify that landed to home page successfully
         contactPage.clickHomeButton();
-        Assertions.assertEquals("https://automationexercise.com/", driver.getCurrentUrl(),
+        Assertions.assertEquals("https://automationexercise.com/", WebDriverConfig.getCurrentURL(),
                 "Step 9: The user is not navigated to the login page after logging out.");
     }
 }

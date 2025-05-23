@@ -48,6 +48,10 @@ public class WebDriverConfig {
         driverThread.get().manage().deleteAllCookies();
     }
 
+    public static String getCurrentURL() {
+        return driverThread.get().getCurrentUrl();
+    }
+
     public static void quitDriver() {
         WebDriver driver = driverThread.get();
         if (driver != null) {

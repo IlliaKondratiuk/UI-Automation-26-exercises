@@ -46,7 +46,7 @@ class Exercise7VerifyTCsTest extends BaseTest {
         mainPage.clickTestCasesButton();
 
         //Step 3. Verify user is navigated to test cases page successfully
-        Assertions.assertEquals("https://automationexercise.com/test_cases", driver.getCurrentUrl(),
+        Assertions.assertEquals("https://automationexercise.com/test_cases", WebDriverConfig.getCurrentURL(),
                 "Step 3: The user is not navigated to the test cases page.");
 
         //Step 4. Verify that all test cases' names are correct

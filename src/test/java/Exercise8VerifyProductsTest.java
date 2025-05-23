@@ -44,7 +44,7 @@ class Exercise8VerifyProductsTest extends BaseTest {
         mainPage.clickProductsButton();
 
         //Step 3. Verify user is navigated to ALL PRODUCTS page successfully
-        Assertions.assertEquals("https://automationexercise.com/products", driver.getCurrentUrl(),
+        Assertions.assertEquals("https://automationexercise.com/products", WebDriverConfig.getCurrentURL(),
                 "Step 3: The user is not navigated to the 'All Products' page.");
 
         //Step 4. The products list is visible
@@ -57,7 +57,7 @@ class Exercise8VerifyProductsTest extends BaseTest {
         productsPage.clickViewProduct(1);
 
         //Step 6. User is landed to product detail page
-        Assertions.assertEquals("https://automationexercise.com/product_details/1", driver.getCurrentUrl(),
+        Assertions.assertEquals("https://automationexercise.com/product_details/1", WebDriverConfig.getCurrentURL(),
                 "Step 6: The user is not navigated to the product details page.");
 
         //Step 7. Verify that every detail is visible: product name, category, price, availability, condition, brand

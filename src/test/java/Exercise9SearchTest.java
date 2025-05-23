@@ -50,7 +50,7 @@ class Exercise9SearchTest extends BaseTest {
         mainPage.clickProductsButton();
 
         //Step 3. Verify user is navigated to ALL PRODUCTS page successfully
-        Assertions.assertEquals("https://automationexercise.com/products", driver.getCurrentUrl(),
+        Assertions.assertEquals("https://automationexercise.com/products", WebDriverConfig.getCurrentURL(),
                 "Step 3: The user is not navigated to the 'All Products' page.");
 
         //Step 4. Enter product name in search input and click search button
