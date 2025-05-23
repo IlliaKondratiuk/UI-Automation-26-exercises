@@ -19,6 +19,7 @@ import pages.LoginPage;
 import pages.MainPage;
 
 @Tag("Critical")
+@Tag("Parallel") //in case you want to check parallel execution
 public class Exercises2and3LoginTests extends BaseTest {
 
     private static MainPage mainPage;

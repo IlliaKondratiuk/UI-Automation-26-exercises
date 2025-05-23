@@ -18,6 +18,7 @@ import pages.MainPage;
 import java.util.ResourceBundle;
 
 @Tag("Critical")
+@Tag("Parallel") //in case you want to check parallel execution
 public class Exercise4LogoutTest extends BaseTest {
 
     private static MainPage mainPage;
