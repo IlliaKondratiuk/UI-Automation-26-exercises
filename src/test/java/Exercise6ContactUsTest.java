@@ -67,7 +67,7 @@ class Exercise6ContactUsTest extends BaseTest {
         contactPage.clickSubmitButton();
 
         //Step 7. Click OK button
-        driver.switchTo().alert().accept();
+        WebDriverConfig.getDriver().switchTo().alert().accept();
 
         //Step 8. Verify success message 'Success! Your details have been submitted successfully.' is visible
         Assertions.assertTrue(contactPage.isSuccessTextVisible(),
