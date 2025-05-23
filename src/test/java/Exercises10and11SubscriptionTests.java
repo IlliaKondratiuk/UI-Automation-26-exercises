@@ -18,13 +18,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
-import org.junit.runners.Parameterized;
-import pages.CartPage;
-import pages.CommonElementsPage;
-import pages.MainPage;
-
-import java.util.Arrays;
-import java.util.Collection;
+import pages.*;
 
 @Tag("Critical")
 public class Exercises10and11SubscriptionTests extends BaseTest {
@@ -33,18 +27,6 @@ public class Exercises10and11SubscriptionTests extends BaseTest {
     MainPage mainPage;
 
     public PageNames page;
-
-    public Exercises10and11SubscriptionTests(PageNames page) {
-        this.page = page;
-    }
-
-    @Parameterized.Parameters
-    public static Collection<Object[]> testData() {
-        return Arrays.asList(new Object[][] {
-                {PageNames.MAIN},
-                {PageNames.CART},
-        });
-    }
 
     @BeforeEach
     public void begin() {
@@ -59,12 +41,12 @@ public class Exercises10and11SubscriptionTests extends BaseTest {
         WebDriverConfig.deleteCookies();
     }
 
-    @ParameterizedTest
     @EnumSource(PageNames.class)
     @Epic("Subscription")
     @Feature("Subscription via footer")
     @Story("As a user, I can subscribe to the website's newsletter so that I can be notified of all important updates.")
     @Severity(SeverityLevel.CRITICAL)
+    @ParameterizedTest
     public void Ex10and11SubscriptionTest(PageNames page) {
         //Step 1. Check if the logo is visible.
         Assertions.assertTrue(mainPage.logoIsVisible(), "Step 1: The logo is not visible");
@@ -74,6 +56,11 @@ public class Exercises10and11SubscriptionTests extends BaseTest {
         switch (page) {
             case MAIN: commonElementsPage = new MainPage();
             case CART: commonElementsPage = new CartPage();
+            case LOGIN: commonElementsPage = new LoginPage();
+            case PRODUCTS: commonElementsPage = new ProductsPage();
+            case TEST_CASES: commonElementsPage = new TestCasesPage();
+            case CONTACT_US: commonElementsPage = new ContactPage();
+            case API_TESTING: commonElementsPage = new ApiTestingPage();
         }
 
         //Step 2. Scroll down to the footer.
