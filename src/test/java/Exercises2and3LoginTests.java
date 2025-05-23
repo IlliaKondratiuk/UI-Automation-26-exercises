@@ -36,7 +36,7 @@ public class Exercises2and3LoginTests extends BaseTest {
 
     @AfterEach
     public void tearDown() { //restoring the driver state every time the test is run with new parameters
-        driver.manage().deleteAllCookies();
+        WebDriverConfig.deleteCookies();
     }
 
     @Epic("User management")
