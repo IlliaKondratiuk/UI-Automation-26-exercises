@@ -53,7 +53,7 @@ public class Exercises10and11SubscriptionTests extends BaseTest {
         Assertions.assertTrue(mainPage.logoIsVisible(), "Step 1: The logo is not visible");
 
         //Step 1.1. Switch to the tested page
-        WebDriverConfig.openURL(page.getUrl());;
+        WebDriverConfig.openURL(page.getUrl());
         switch (page) {
             case MAIN: commonElementsPage = new MainPage();
             case CART: commonElementsPage = new CartPage();
