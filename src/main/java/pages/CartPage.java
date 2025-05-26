@@ -53,6 +53,18 @@ public class CartPage extends CommonElementsPage {
         return details;
     }
 
+    public boolean verifyProductName(int productIndex, String expectedName) {
+        return expectedName.equals(getProductDetails(productIndex).get("name"));
+    }
+
+    public boolean verifyProductPrice(int productIndex, String expectedPrice) {
+        return expectedPrice.equals(getProductDetails(productIndex).get("price"));
+    }
+
+    public boolean verifyProductQuantity(int productIndex, Integer expectedQuantity) {
+        return expectedQuantity.equals(Integer.parseInt(getProductDetails(productIndex).get("quantity")));
+    }
+
     public boolean verifyDetails(Map<String, String> expectedDetails, int productIndex, int expectedQuantity, int step) {
         boolean isValid = true;
 
