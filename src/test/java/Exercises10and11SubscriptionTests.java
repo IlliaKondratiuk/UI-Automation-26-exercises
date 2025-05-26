@@ -39,6 +39,7 @@ public class Exercises10and11SubscriptionTests extends BaseTest {
     @AfterEach
     public void tearDown() { //restoring the driver state every time the test is run with new parameters
         WebDriverConfig.deleteCookies();
+        WebDriverConfig.quitDriver();
     }
 
     @EnumSource(PageNames.class)
