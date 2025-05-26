@@ -26,8 +26,6 @@ public class Exercises10and11SubscriptionTests extends BaseTest {
     CommonElementsPage commonElementsPage;
     MainPage mainPage;
 
-    public PageNames page;
-
     @BeforeEach
     public void begin() {
         WebDriverConfig.openURL(PageNames.MAIN.getUrl());
