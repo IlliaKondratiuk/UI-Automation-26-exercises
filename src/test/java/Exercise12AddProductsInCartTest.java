@@ -66,7 +66,17 @@ class Exercise12AddProductsInCartTest extends BaseTest {
                 "Step 7: The quantity of added products is not 2");
 
         //Step 8. Verify their prices, quantity and total price
-        Assertions.assertTrue(cartPage.verifyDetails(details1, 1,1, 8));
-        Assertions.assertTrue(cartPage.verifyDetails(details2, 2,1, 8));
+        Assertions.assertTrue(cartPage.verifyProductName(1, details1.get("name")),
+                "The name of the first product is " + cartPage.getProductDetails(1).get("name"));
+        Assertions.assertTrue(cartPage.verifyProductName(2, details2.get("name")),
+                "The name of the second product is " + cartPage.getProductDetails(2).get("name"));
+        Assertions.assertTrue(cartPage.verifyProductPrice(1, details1.get("price")),
+                "The price of the first product is " + cartPage.getProductDetails(1).get("price"));
+        Assertions.assertTrue(cartPage.verifyProductPrice(2, details2.get("price")),
+                "The price of the second product is " + cartPage.getProductDetails(2).get("price"));
+        Assertions.assertTrue(cartPage.verifyProductQuantity(1, 1),
+                "The quantity of the first product is " + cartPage.getProductDetails(1).get("quantity"));
+        Assertions.assertTrue(cartPage.verifyProductQuantity(2, 1),
+                "The quantity of the first product is " + cartPage.getProductDetails(2).get("quantity"));
     }
 }
