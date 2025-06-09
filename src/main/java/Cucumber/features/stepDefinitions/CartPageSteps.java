@@ -24,7 +24,7 @@ public class CartPageSteps {
 
     @And("the product {int} in the cart has quantity {int}")
     public void theProductInTheCartHasQuantity(int productIndex, int quantity) {
-        Assertions.assertTrue(cartPage.isProductQuantityCorrect(productIndex, quantity)),
+        Assertions.assertTrue(cartPage.isProductQuantityCorrect(productIndex, quantity),
                 "The product " + productIndex + " quantity is incorrect");
     }
 
