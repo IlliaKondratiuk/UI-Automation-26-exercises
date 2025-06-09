@@ -64,49 +64,6 @@ public class CartPage extends CommonElementsPage {
         return expectedQuantity.equals(Integer.parseInt(getProductDetails(productIndex).get("quantity")));
     }
 
-    public boolean verifyDetails(Map<String, String> expectedDetails, int productIndex, int expectedQuantity, int step) {
-        boolean isValid = true;
-
-        // Get actual product details from the cart
-        Map<String, String> actualDetails = getProductDetails(productIndex);
-        int actualQuantity = Integer.parseInt(actualDetails.get("quantity"));
-
-        // Check Name
-        if (!expectedDetails.get("name").equals(actualDetails.get("name"))) {
-            Assert.fail("Product name mismatch at step " + step +
-                    ": expected '" + expectedDetails.get("name") +
-                    "' but found '" + actualDetails.get("name") + "'");
-            isValid = false;
-        }
-
-        // Check Price
-        if (!expectedDetails.get("price").equals(actualDetails.get("price"))) {
-            Assert.fail("Product price mismatch at step " + step +
-                    ": expected '" + expectedDetails.get("price") +
-                    "' but found '" + actualDetails.get("price") + "'");
-            isValid = false;
-        }
-
-        // Check Quantity
-        if (expectedQuantity != actualQuantity) {
-            Assert.fail("Product quantity mismatch at step " + step +
-                    ": expected '" + expectedQuantity +
-                    "' but found '" + actualQuantity + "'");
-            isValid = false;
-        }
-
-        //Check total(perfectly there would be an expected value of quantity*price but the price on the website is just a string
-        //so let's at least check that the price and the total price are equal since quantity is 1 in the only test for this)
-        if (!actualDetails.get("price").equals(actualDetails.get("total"))) { //
-            Assert.fail("Product total price mismatch at step " + step +
-                    ": expected '" + actualDetails.get("price") +
-                    "' but found '" + actualDetails.get("total") + "'");
-            isValid = false;
-        }
-
-        return isValid;
-    }
-
     public boolean isProductQuantityCorrect(int productIndex, int quantity) {
         By productQuantity = new By.ByXPath(cartQuantXPathBegin + productIndex + "]");
 
