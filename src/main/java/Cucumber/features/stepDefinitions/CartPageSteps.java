@@ -4,7 +4,7 @@ import config.testConfigs.TestContext;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.CartPage;
@@ -24,8 +24,8 @@ public class CartPageSteps {
 
     @And("the product {int} in the cart has quantity {int}")
     public void theProductInTheCartHasQuantity(int productIndex, int quantity) {
-        Assert.assertTrue("The product " + productIndex + " quantity is incorrect",
-                cartPage.isProductQuantityCorrect(productIndex, quantity));
+        Assertions.assertTrue(cartPage.isProductQuantityCorrect(productIndex, quantity)),
+                "The product " + productIndex + " quantity is incorrect");
     }
 
     @And("checkout is initiated")
@@ -49,14 +49,14 @@ public class CartPageSteps {
             WebDriverWait wait = new WebDriverWait(context.getDriver(), Duration.ofSeconds(2));
             wait.until(driver -> cartPage.isCartEmpty());
         } catch (TimeoutException e) {
-            Assert.fail("The cart did not become empty in 2 seconds");
+            Assertions.fail("The cart did not become empty in 2 seconds");
         }
 
     }
 
     @Then("the added product is still in the cart")
     public void theAddedProductIsStillInTheCart() {
-        Assert.assertEquals("The product in the cart is not the same as the one that was added previously",
-                context.getAddedProductName(), cartPage.getProductNameByIndex(1));
+        Assertions.assertEquals(context.getAddedProductName(), cartPage.getProductNameByIndex(1),
+                "The product in the cart is not the same as the one that was added previously");
     }
 }
