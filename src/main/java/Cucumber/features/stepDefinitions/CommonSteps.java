@@ -6,7 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.MainPage;
@@ -26,7 +26,7 @@ public class CommonSteps {
 
     @Given("the browser is launched")
     public void the_browser_is_launched() {
-        Assert.assertNotNull("Driver should be initialized in Hooks", context.getDriver());
+        Assertions.assertNotNull(context.getDriver(), "Driver should be initialized in Hooks");
     }
 
     @When("the {string} page is opened")
@@ -42,7 +42,7 @@ public class CommonSteps {
 
     @Then("the logo is visible")
     public void the_logo_is_visible() {
-        Assert.assertTrue("Step 1: The logo is not visible", mainPage.logoIsVisible());
+        Assertions.assertTrue(mainPage.logoIsVisible(), "Step 1: The logo is not visible");
     }
 
     @And("cookies window is handled")
@@ -52,14 +52,15 @@ public class CommonSteps {
 
     @Then("the cart page is opened successfully")
     public void the_cart_page_is_opened_successfully() {
-        Assert.assertEquals("The cart page is not opened",
-                "https://automationexercise.com/view_cart",
-                context.getDriver().getCurrentUrl());
+        Assertions.assertEquals("https://automationexercise.com/view_cart",
+                context.getDriver().getCurrentUrl(),
+                "The cart page is not opened, " +  context.getDriver().getCurrentUrl() + "is opened instead.");
     }
 
     @And("the user is redirected to 'payment done'")
     public void the_user_is_redirected_to_payment_done() {
-        Assert.assertTrue(context.getDriver().getCurrentUrl().toUpperCase().contains("payment_done".toUpperCase()));
+        Assertions.assertTrue(context.getDriver().getCurrentUrl().toUpperCase().contains("payment_done".toUpperCase()),
+                "The user wasn't redirected to the 'Payment Done' page");
     }
 
     @When("the user scrolls to the {string} of the page")
@@ -89,7 +90,7 @@ public class CommonSteps {
             WebDriverWait wait = new WebDriverWait(context.getDriver(), Duration.ofSeconds(2));
             wait.until(driver -> mainPage.isAtTopOfPage());
         } catch (TimeoutException e) {
-            Assert.fail("The page is not scrolled to the top border");
+            Assertions.fail("The page couldn't be scrolled to the top border");
         }
     }
 
@@ -104,7 +105,7 @@ public class CommonSteps {
             WebDriverWait wait = new WebDriverWait(context.getDriver(), Duration.ofSeconds(2));
             wait.until(driver -> !mainPage.isScrollUpVisible());
         } catch (TimeoutException e) {
-            Assert.fail("The 'Scroll Up' button is still visible after scrolling to the top of the page");
+            Assertions.fail("The 'Scroll Up' button is still visible after scrolling to the top of the page");
         }
     }
 }
