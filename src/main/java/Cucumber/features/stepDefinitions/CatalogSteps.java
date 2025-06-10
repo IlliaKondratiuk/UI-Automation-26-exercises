@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.CartPage;
 import pages.MainPage;
@@ -61,8 +62,8 @@ public class CatalogSteps {
 
     @Then("the headers include both the category and subcategory of the product")
     public void the_headers_include_both_the_category_and_subcategory_of_the_product() {
-        Assert.assertEquals("The categories and subcategories of the products are not the same as in the list",
-                context.getCategoryList(), context.getCategoryFromDetailsList());
+        Assertions.assertEquals(context.getCategoryList(), context.getCategoryFromDetailsList(),
+                "The categories and subcategories of the products are not the same as in the list");
     }
 
     @Given("all product brands are available")
