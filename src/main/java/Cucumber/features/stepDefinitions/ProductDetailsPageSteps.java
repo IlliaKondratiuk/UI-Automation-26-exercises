@@ -4,7 +4,7 @@ import config.testConfigs.TestContext;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import pages.ProductDetailsPage;
 
 import java.util.ResourceBundle;
@@ -40,8 +40,10 @@ public class ProductDetailsPageSteps {
 
     @Then("the review label {string} is visible")
     public void the_label_is_visible(String reviewLabelText) {
-        Assert.assertTrue("The review writing label is not visible", productDetailsPage.isReviewLabelVisible());
-        Assert.assertTrue("The review label text is incorrect", productDetailsPage.isReviewTextLabelCorrect(reviewLabelText));
+        Assertions.assertTrue(productDetailsPage.isReviewLabelVisible(),
+                "The review writing label is not visible");
+        Assertions.assertTrue(productDetailsPage.isReviewTextLabelCorrect(reviewLabelText),
+                "The review label text is incorrect");
     }
 
     @And("all review fields are filled")
@@ -60,10 +62,10 @@ public class ProductDetailsPageSteps {
     @Then("the review is posted successfully")
     public void the_review_is_posted_successfully() {
         //Perfectly speaking, such steps should confirm things via backend, but as we don't have access to it, we just check the success message appearance
-        Assert.assertTrue("Successful review submission message is not visible",
-                productDetailsPage.isReviewSubmittedSuccessVisible());
-        Assert.assertTrue("The text of the successful review submission message is correct",
-                productDetailsPage.isReviewSubmittedTextCorrect("Thank you for your review."));
+        Assertions.assertTrue(productDetailsPage.isReviewSubmittedSuccessVisible(),
+                "Successful review submission message is not visible");
+        Assertions.assertTrue(productDetailsPage.isReviewSubmittedTextCorrect("Thank you for your review."),
+                "The text of the successful review submission message is incorrect");
 
     }
 }
