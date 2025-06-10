@@ -5,7 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import pages.MainPage;
 
 public class MainPageSteps {
@@ -26,9 +26,9 @@ public class MainPageSteps {
 
     @Then("the product {int} detail page is opened")
     public void the_product_detail_page_is_opened(int index) {
-        Assert.assertEquals("Product details page is wrong",
-                "https://automationexercise.com/product_details/" + index,
-                context.getDriver().getCurrentUrl());
+        Assertions.assertEquals("https://automationexercise.com/product_details/" + index,
+                context.getDriver().getCurrentUrl(),
+                "Product details page is wrong");
     }
 
     @Given("the product {int} detail page was opened")
@@ -48,16 +48,16 @@ public class MainPageSteps {
 
     @Then("the recommended items are visible")
     public void the_recommended_items_are_visible() {
-        Assert.assertTrue("The 'Recommended Items' title is not visible.",
-                mainPage.isRecommendedItemsTitleVisible());
-        Assert.assertTrue("The images of recommended items are not visible.",
-                mainPage.areRecommendedItemsImagesVisible());
-        Assert.assertTrue("The prices of recommended items are not visible.",
-                mainPage.areRecommendedItemsPricesVisible());
-        Assert.assertTrue("The names of recommended items are not visible.",
-                mainPage.areRecommendedItemsNamesVisible());
-        Assert.assertTrue("The 'Add to Cart' buttons of recommended items are not visible.",
-                mainPage.areRecommendedItemsAddToCartVisible());
+        Assertions.assertTrue(mainPage.isRecommendedItemsTitleVisible(),
+                "The 'Recommended Items' title is not visible.");
+        Assertions.assertTrue(mainPage.areRecommendedItemsImagesVisible(),
+                "The images of recommended items are not visible.");
+        Assertions.assertTrue(mainPage.areRecommendedItemsPricesVisible(),
+                "The prices of recommended items are not visible.");
+        Assertions.assertTrue(mainPage.areRecommendedItemsNamesVisible(),
+                "The names of recommended items are not visible.");
+        Assertions.assertTrue(mainPage.areRecommendedItemsAddToCartVisible(),
+                "The 'Add to Cart' buttons of recommended items are not visible.");
     }
 
     @And("the user adds all recommended products to the cart")
