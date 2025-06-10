@@ -5,7 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import pages.ProductsPage;
 
 public class ProductsPageSteps {
@@ -31,8 +31,8 @@ public class ProductsPageSteps {
 
     @Then("the products with {string} in the name are displayed")
     public void the_products_with_word_in_the_name_are_displayed(String word) {
-        Assert.assertTrue("The results include a product that doesn't match the searched word",
-                productsPage.doAllProductsContainTheWord(word));
+        Assertions.assertTrue(productsPage.doAllProductsContainTheWord(word),
+                "The results include a product that doesn't match the searched word");
     }
 
     @Given("a product is added to the cart")
