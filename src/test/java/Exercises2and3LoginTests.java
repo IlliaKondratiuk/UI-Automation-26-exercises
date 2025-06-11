@@ -5,7 +5,7 @@
 // Steps 1(Launch browser) and 2(Navigate to url) have been skipped as common sense.
 // Steps 9(delete user) and 10(confirm delete) from Test Case 2 have been skipped to keep the account for future runs.
 // Using JUnit 5.10.0, designing with Page Object Model and generating an Allure(2.32.2) report.
-// The credentials are located in the Parameters class.
+// The credentials are located in the CSVSource
 
 import config.PageNames;
 import config.WebDriverConfig;
