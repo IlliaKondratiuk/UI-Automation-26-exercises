@@ -6,6 +6,10 @@ This repository contains a collection of completed 26 UI test automation exercis
 
 It is designed for learning, practicing, and demonstrating UI test automation skills. 
 
+## ❓ Is it as simple as on the website with the exercises?
+
+No. I've meddled with some tests to make them more complex in terms of the steps and technologies used. Everything different about the test cases is listed in TESTCASES.md
+
 ## 🛠 Technologies used
 - **Language:** Java
 - **Frameworks:** Selenium, Cucumber, JUnit 5  
@@ -22,14 +26,13 @@ It is designed for learning, practicing, and demonstrating UI test automation sk
 * 📁 src/main/resources - Resources for the tests, including dummy files and data parsed during the test executions.
 
 ## 🔹 Things to note and personal decisions
-- The first half of the collection(exercises 1-12) were done using pure JUnit 4. The second half(exercises 13-26) is be done using Cucumber+JUnit.
+- The first half of the collection(exercises 1-12) were done using pure JUnit 5. The second half(exercises 13-26) is done using Cucumber+JUnit 5.
 - Each step in test classes for exercises from 1 to 12 contains a comment, that is copied from https://automationexercise.com/test_cases, to show which step each method call or assertion corresponds to.
 - Some steps have been modified to be more clear. For example, the repeating step "Verify that home page is visible successfully" was changed to "Verify that the website logo is visible" as the original step is too vague with no criteria of what exactly to test to ensure that the page is visible.
 - Some test cases' steps were intentionally modified or added by me in order to increase the difficulty of the project. Including:
 - - Each test case that involved filling inputs used external files as sources.
 - - Exercises 2-3 and 10-11 were fused into one **parameterized** test class each.
 - - Test Case 7 now contains an additional step that verifies all the names of each test case listed on the tested page.
-- I'm still working on the project. I might change some parts of the project in future(Like adding listeners, loggers, reworking BasePage, etc.)
 
 ## 🚀 Running the tests
 Ensure you have the following installed:
