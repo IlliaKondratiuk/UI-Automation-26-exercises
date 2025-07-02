@@ -1,4 +1,5 @@
-# This feature file includes the steps from: "Test Case 13: Add Products in Cart"
+# This feature file includes the steps from:
+# "Test Case 13: Add Products in Cart",
 # and "Test Case 17: Remove Products From Cart"
 # from the Automation Exercise page at automationexercise.com
 # Steps 1(Launch browser) and 2(Navigate to url) have been added as the background
