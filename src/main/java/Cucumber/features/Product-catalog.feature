@@ -1,4 +1,5 @@
-# This feature file includes the steps from: "Test Case 13: Add Products in Cart",
+# This feature file includes the steps from:
+# "Test Case 13: Add Products in Cart",
 # "Test Case 18: View Category Products" with extended steps,
 # "Test Case 19: View & Cart Brand Products",
 # "Test Case 20: Search Products and Verify Cart After Login"
