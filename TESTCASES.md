@@ -55,7 +55,7 @@ Steps 4-5 are located in Product-catalog.feature, while steps 6-9 are located in
 
 # Test Case 14: Place Order: Register while Checkout, Test Case 15: Place Order: Register before Checkout, and Test Case 16: Place Order: Login before Checkout
  
-These three scenarios are located in Placing-order.feature, utilizing (almost)the same steps in different order. These test cases have A LOT of "and" annotation used, and even though this is not very BDD-friendly, this was done to separate the step definitions by tested pages, instead of creating a single step definition class with a ton of pages used.
+Located in Placing-order.feature, utilizing (almost)the same steps in different order. These test cases have A LOT of "and" annotation used, and even though this is not very BDD-friendly, this was done to separate the step definitions by tested pages, instead of creating a single step definition class with a ton of pages used.
 
 # Test Case 17: Remove Products From Cart
 
@@ -79,15 +79,20 @@ Located in Review.feature. Apart from dividing it into two smaller scenarios, no
 
 # Test Case 22: Add to cart from Recommended items
 
+Located in Product-catalog.feature. Apart from dividing it into two smaller scenarios, nothing was changed
 
 # Test Case 23: Verify address details in checkout page
 
+Located in Placing-order.feature.
 
 # Test Case 24: Download Invoice after purchase order
 
+Located in Placing-order.feature. The registration steps have been replaced by logging in as they are covered in TC 15.
 
 # Test Case 25: Verify Scroll Up using 'Arrow' button and Scroll Down functionality
 
+Located in UI-interactions.feature. 
 
 # Test Case 26: Verify Scroll Up without 'Arrow' button and Scroll Down functionality
 
+Located in UI-interactions.feature.
